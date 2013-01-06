@@ -1,0 +1,36 @@
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\HelloData.Web.Test.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\HelloData.Web.Test.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.csprojResolveAssemblyReference.cache
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\HelloData.Web.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\HelloData.FrameWork.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\log4net.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\Newtonsoft.Json.Net20.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\HelloData.Web.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\HelloData.FrameWork.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web.Test\bin\Aspose.Cells.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.Test.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.Test.pdb
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.FrameWork.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\Aspose.Cells.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\log4net.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\Newtonsoft.Json.Net20.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.pdb
+H:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.FrameWork.pdb
+H:\自己的产品\HelloData\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.csprojResolveAssemblyReference.cache
+H:\自己的产品\HelloData\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.dll
+H:\自己的产品\HelloData\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.pdb
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.Test.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.Test.pdb
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.FrameWork.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\Aspose.Cells.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\log4net.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\Newtonsoft.Json.Net20.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.Web.pdb
+D:\自己的产品\HelloData\HelloData.Web.Test\bin\HelloData.FrameWork.pdb
+D:\自己的产品\HelloData\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.dll
+D:\自己的产品\HelloData\HelloData.Web.Test\obj\Debug\HelloData.Web.Test.pdb

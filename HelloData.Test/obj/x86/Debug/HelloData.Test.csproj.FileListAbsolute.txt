@@ -1,0 +1,56 @@
+H:\自己的产品\DiougensSys\HelloData.Test\obj\x86\Debug\HelloData.Test.csprojResolveAssemblyReference.cache
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\HelloData.Test.exe.config
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\HelloData.Test.exe
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\HelloData.Test.pdb
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\HelloData.FrameWork.dll
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\log4net.dll
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\Newtonsoft.Json.Net20.dll
+H:\自己的产品\DiougensSys\HelloData.Test\bin\Debug\HelloData.FrameWork.pdb
+H:\自己的产品\DiougensSys\HelloData.Test\obj\x86\Debug\HelloData.Test.exe
+H:\自己的产品\DiougensSys\HelloData.Test\obj\x86\Debug\HelloData.Test.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\HelloData.Test.exe.config
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\HelloData.Test.exe
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\HelloData.Test.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\HelloData.FrameWork.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\log4net.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\Newtonsoft.Json.Net20.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\HelloData.FrameWork.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\obj\x86\Debug\HelloData.Test.csprojResolveAssemblyReference.cache
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\obj\x86\Debug\HelloData.Test.exe
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\obj\x86\Debug\HelloData.Test.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Test\bin\Debug\Aspose.Cells.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.Test.exe.config
+H:\自己的产品\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.exe
+H:\自己的产品\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.pdb
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.Test.exe
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.Test.pdb
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FrameWork.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\Aspose.Cells.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\log4net.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\Newtonsoft.Json.Net20.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FrameWork.pdb
+H:\自己的产品\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.csprojResolveAssemblyReference.cache
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FWExtend.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Redis.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Interfaces.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Messaging.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Common.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Text.dll
+H:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FWExtend.pdb
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.Test.exe.config
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.Test.exe
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.Test.pdb
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FrameWork.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FWExtend.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\log4net.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\Newtonsoft.Json.Net20.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Redis.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Interfaces.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Common.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\ServiceStack.Text.dll
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FrameWork.pdb
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\HelloData.FWExtend.pdb
+D:\自己的产品\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.exe
+D:\自己的产品\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.pdb
+D:\自己的产品\HelloData\HelloData.Test\bin\Debug\System.Data.SQLite.DLL

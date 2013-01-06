@@ -1,0 +1,165 @@
+
+/* CSS Document */
+/*以下是对整个页面控制的样式*/
+/*以下是对整个页面控制的样式*/
+body { padding: 0; margin: 0; background: url(../images/index_bg.gif) repeat-y #ffffff; }
+/*以下为头部样式，分顶部和信息指示层*/
+.head { background: url(../images/head_bg.png) repeat-x; width: 100%; height: 129px; }
+.head_top { background: url(../images/head_top.png) no-repeat; width: 100%; height: 89px; overflow: hidden; }
+.idx_logo { width: 548px; height: 89px; vertical-align: top; float: left; margin-left:10px;margin-top:5px;}
+.idx_tool { background: url(../images/head_tool_left_bg.png) no-repeat; width: auto; height: 89px; float: right; margin-right: 20px; _width: 250px; _margin-right: 10px; }
+* + html .idx_tool { background: url(../images/head_tool_left_bg.png) no-repeat; width: 250px; height: 89px; float: right; }
+/*ie7兼容宽度*/
+.tool_A { background: url(../images/head_tool_right_bg.png) no-repeat; background-position: right; width: 100%; height: 30px; margin-left: 11px; color: #ffffff; line-height: 30px; text-align: center; }
+.tool_B { width: 100%; height: 59px; text-align: center; margin: auto; }
+.tool_B ul { margin: 0; padding: 0; float: left; list-style: none; margin-top: 3px; width: 60px; height: 54px; padding-top: 1px; }
+.tool_B ul:hover { background: url(../images/toolB/mose_over_A.png) no-repeat; }
+.tool_B ul li { text-align: center; }
+.idx_tool a { color: #ffffff; text-decoration: none; }
+.idx_tool a:hover { color: #c9caca; text-decoration: underline; }
+.site_map { background: url(../images/map_ico.gif) no-repeat; padding-left: 18px; float: left; text-align: left; overflow: hidden; }
+/*以下是左侧导航功能条样式*/
+.idx_nav { width: 200px; position: absolute; top: 125px; left: 7px; z-index: 99; }
+.nav_bt, .nav_bt_over { width: 16px; height: 16px; background: url(../images/LeftNav/nav_bt.png) no-repeat; cursor: pointer; }
+.nav_bt_over { background: url(../images/LeftNav/nav_bt_over.png) no-repeat; }
+.nav_title { width: 210px; height: 50px; background: url(../images/LeftNav/title_bg.png) repeat-x; overflow: hidden; position: absolute; top: 75px; left: 2px; }
+.nav_samll, .nav_samll_over { width: 33px; height: 33px; overflow: hidden; position: absolute; top: 90px; left: 0px; display: none; cursor: pointer; }
+.nav_samll { background: url(../images/LeftNav/nav_samll.gif) repeat-x; }
+.nav_samll_over { background: url(../images/LeftNav/nav_samll_over.gif) repeat-x; }
+#box_styleA { width: 210px; height: 30px; float: left; }
+.title_img { _vertical-align: top; }
+#side { width: 200px; float: left; z-index: 99; }
+#side div, ul, li, h3 { margin: 0; padding: 0; }
+#side h3 { width: 200px; font-size: 14px; font-weight: bold; text-indent: 10px; background: url(../images/LeftNav/nav_title_out.gif) repeat-x; border-bottom: solid #b5b5b6 1px; overflow: hidden; }
+#side h3 a, #side h2 a { display: block; width: 200px; height: 30px; _height: 23px; _padding-top: 7px; color: #ffffff; text-decoration: none; vertical-align: sub; }
+* + html #side h3 a, #side h2 a { line-height: 30px; }
+/*ie7线高兼容*/
+#side li { list-style: none; text-indent: 20px; line-height: 30px; background: url(../images/LeftNav/nav_list_bg.gif) repeat-x; border: solid #b5b5b6 1px; border-top: none; }
+#side li a { display: block; padding-left: 40px; width: 160px; _width: 148px; height: 28px; line-height: 28px; text-decoration: none; color: #595757; }
+#side li a:hover { text-decoration: underline; color: #9fa0a0; }
+#side .side_icon { margin-left: 5px; margin-top: 7px; _margin-top: -5px; padding-right: 5px; vertical-align: bottom !important; vertical-align: sub; _vertical-align: bottom; }
+/*ie6/7/FF图片与文字垂直居中兼容*/
+* + html #side .side_icon { margin-top: 0px; }
+/*ie7垂直居中兼容*/
+#side .side_bt { float: right; margin-right: 5px; margin-top: 8px; _margin-right: 5px; _margin-top: -15px; }
+* + html #side .side_bt { float: right; margin-right: 5px; margin-top: -22px; }
+/*ie7控制标题内是否收缩三角符*/
+#side .menu_cur { background: url(../images/LeftNav/nav_list_clk.gif) no-repeat; padding-right: 10px; _padding-right: 2px; }
+#side .h3_cur { background: url(../images/LeftNav/nav_title_over.gif) repeat-x; color: #fff; width: 100%; }
+/*以下是右边内容层的样式*/
+.idx_content { padding-left: 208px; padding-right: 3px; padding-top: 0px; }
+.bt_style_F, .bt_style_F_over { float: right; }
+
+/*导航地图*/
+.map_body { width: 156px; height: 578px; display: none; padding-left: 8px; background: url(../images/LeftNav/web_map_box_bg.png) no-repeat; padding-top: 5px; position: absolute; z-index: 999; left: 30px; top: 118px; }
+.map_body h3 { height: 22px; line-height: 22px; font-size: 14px; padding-left: 15px; }
+.map_body ul { margin: 0; padding: 0; list-style: none; }
+.map_body ul li a { width: 108px; height: 22px; padding-left: 40px; line-height: 22px; font-size: 12px; text-decoration: none; color: #727171; display: block; }
+.map_body ul li a:hover { color: #ffffff; background: url(../images/LeftNav/web_map_list.gif) repeat-x; }
+.myapptrigger { float: right; position: relative; float: right; display: inline; margin-right: 15px; padding-top: 5px; width: 93px; height: 24px; z-index: 2; }
+.myapptrigger .myapptrigger-button { display: block; width: 93px; height: 24px; cursor: pointer; text-align: left; }
+.myapptrigger-button span { padding-left: 10px; }
+
+.myapptrigger #menu_appdock { padding-top: 2px; border-color: #368DC6; background: #fff url(../images/default/toolbar_menu_bg.png) repeat 0 -1px; padding-left: 2px; position: absolute; z-index: 1; top: 23px; right: 0px; border: 1px solid #368DC6; border-left: 1px solid #368DC6; }
+
+.disexpandmneu { display: none; }
+.expandmneu { display: block; }
+
+.myapptrigger .myapptrigger-button span { padding-right: 7px; display: block; width: 93px; height: 24px; line-height: 25px; color: #FFFFFF; background: url(../images/default/apptrigger_button.png) no-repeat 100% 0; text-shadow: 0 1px 0 #fff; background-position: 0 0; position: relative; z-index: 10; margin-top: -5px; }
+
+#menu_appdock .dropdownmenu { width: 250px; position: relative; top: -1px; left: -2px; background: #fff; }
+#menu_appdock .dropdownmenu-inner { padding: 5px; background-color: #AADDFF; overflow: hidden; }
+#menu_appdock .applist li { position: relative; float: left; width: 56px; margin: 0 2px 5px 2px; text-align: center; }
+#menu_appdock .applist li a { display: block; width: 56px; height: 60px; overflow: hidden; background: url(../images/default/app_hover.png) no-repeat 0 9999px; }
+#menu_appdock .applist li img { display: block; margin: 5px auto 0; }
+#menu_appdock .applist li span { white-space: nowrap; }
+#menu_appdock .applist a:link, #menu_appdock .applist a:visited { color: #333; text-decoration: none; }
+#menu_appdock .applist a:hover, #menu_appdock .applist a:active { background-position: 0 0; }
+#menu_appdock .applist .counts { position: absolute; font-size: 83%; font-weight: bold; top: 3px; right: 10px; padding: 0 .5em; color: #fff; background: #c00; -webkit-border-radius: 1em; -moz-border-radius: 1em; border-radius: 1em; }
+
+#menu_appdock .myaccesslist { margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px dotted #ddd; }
+
+#menu_appdock .needlogin { text-align: center; color: #666; padding: 20px; }
+
+.page_content {margin-left: 5px; border: 1px solid #9fa0a0; height: auto; width: 99%;padding-right: 5px; background-color: rgb(252, 252, 252);	border-radius:4px; border: 1px solid rgb(224, 224, 224);position: relative; box-sizing: border-box; background-color: rgb(247, 247, 247); -moz-box-sizing: border-box; -khtml-box-sizing: border-box; -webkit-box-sizing: border-box;  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius:4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: px 10px rgba(189,189,189,0.4);
+  -;
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;min-height: 100px;
+}
+
+
+/*标题工具条样式*/
+.cont_tools { width: 100%;padding-left:.3em; height: 24px; overflow: hidden; padding-top: 3px; padding-bottom: 5px; _padding-top: 2px; line-height: 22px; background: url(../Images/title_A_bg.gif) repeat-x; border-bottom: 1px solid #9fa0a0; }
+
+
+.z-toolbar .z-btn { margin: 1px 0px 0px; }
+.z-toolbar-ct { background: url("../images/bar.gif") no-repeat right -80px; padding-right: 6px; }
+.z-toolbar-overflow { background: url("../images/bar.gif") repeat-x 0px 0px; height: 33px; overflow: hidden; font-size: 1px; }
+.z-toolbar-nowrap { margin: 3px 0px 0px; height: 28px; overflow: hidden; white-space: nowrap; _width: 100%; }
+.z-toolbar-nowrap * { font-size: 12px; font-weight: normal; vertical-align: middle; }
+.z-tabpanel { background: url("../images/bar.gif") no-repeat 0px -160px; padding-left: 6px; }
+.z-tabpanel-ct { background: url("../images/bar.gif") no-repeat right -200px; padding-right: 6px; }
+.z-tabpanel-overflow { background: url("../images/bar.gif") repeat-x 0px -120px; height: 33px; overflow: hidden; font-size: 1px; }
+.z-tabpanel-nowrap { overflow: hidden; white-space: nowrap; _width: 100%; }
+.z-tabpanel-more { float: right; }
+.z-tab { height: 25px; color: rgb(97, 102, 61); line-height: 25px; font-size: 12px; font-weight: normal; display: inline-block; cursor: pointer; -moz-user-select: none; }
+.z-tab b { height: 25px; color: rgb(97, 102, 61); line-height: 25px; font-size: 12px; font-weight: normal; display: inline-block; cursor: pointer; -moz-user-select: none; }
+.z-tab { background: url("../images/buttons.png") no-repeat 0px -140px; margin: 5px 0px 0px 3px; padding: 0px 0px 0px 18px; text-decoration: none; vertical-align: top; position: relative; }
+.z-tab img { margin: 4px 5px 0px -3px; float: left; filter: Alpha(Opacity = 70); opacity: 0.7; _display: inline; }
+.z-tab b { background: url("../images/buttons.png") no-repeat right -140px; padding: 0px 18px 0px 0px; }
+.z-tab:hover { background: url("../images/buttons.png") no-repeat 0px -100px; text-decoration: none; }
+.z-tab:hover b { background: url("../images/buttons.png") no-repeat right -100px; color: rgb(255, 255, 255); }
+.z-tab-current { background: url("../images/buttons.png") no-repeat 0px -180px; height: 27px; margin-bottom: -1px; position: relative; _height: 26px; }
+.z-tab-current:hover { background: url("../images/buttons.png") no-repeat 0px -180px; height: 27px; margin-bottom: -1px; position: relative; _height: 26px; }
+.z-tab-current b { background: url("../images/buttons.png") no-repeat right -180px; height: 27px; color: rgb(255, 255, 255); _height: 26px; }
+.z-tab-current:hover b { background: url("../images/buttons.png") no-repeat right -180px; height: 27px; color: rgb(255, 255, 255); _height: 26px; }
+.z-tab-disabled { background: url("../images/buttons.png") no-repeat 0px -220px; cursor: not-allowed; }
+.z-tab-disabled:hover { background: url("../images/buttons.png") no-repeat 0px -220px; cursor: not-allowed; }
+.z-tab-disabled img { filter: gray Alpha(Opacity = 30); opacity: 0.3; }
+.z-tab-disabled b { background: url("../images/buttons.png") no-repeat right -220px; color: rgb(187, 187, 187); }
+.z-toolbar-flat { background: url("../images/bar.gif") no-repeat 0px -540px; }
+.z-tab-disabled:hover b { background: url("../images/buttons.png") no-repeat right -220px; color: rgb(187, 187, 187); }
+.z-toolbar-flat .z-toolbar-ct { background: url("../images/bar.gif") no-repeat right -500px; padding-right: 6px; }
+.z-toolbar-flat .z-toolbar-overflow { background: url("../images/bar.gif") repeat-x 0px -500px; }
+.z-toolbar-flat .z-toolbar-nowrap { margin-top: 2px; }
+
+/**子窗体*/
+#child_form { background: none;background-color: rgb(249, 249, 249);  }
+.autool_buttons {
+	border-top-color: rgb(235, 238, 242); border-top-width: 1px; border-top-style: solid; background-color: rgb(246, 246, 246);
+}
+.autool_buttons {
+	padding: 8px; text-align: right; white-space: nowrap;margin-top: 30px;
+}
+.autool_buttons .msgshow
+{
+    color:Red;
+    margin-right:20px;
+    }
+.autool_buttons input {
+	background: rgb(221, 221, 221); padding: 5px 8px; border-radius: 4px; border: 1px solid rgb(153, 153, 153); width: auto; height: auto; text-align: center; color: rgb(51, 51, 51); line-height: 1; letter-spacing: 2px; overflow: visible; margin-left: 15px; display: inline-block; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD'); cursor: pointer; min-width: 50px; box-shadow: 0px 1px 0px rgba(255,255,255,0.7), 0px -1px 0px rgba(0,0,0,0.09); text-shadow: 0px 1px 1px rgba(255, 255, 255, 1); -moz-transition: -moz-box-shadow linear .2s; -webkit-transition: -webkit-box-shadow linear .2s; transition: box-shadow linear .2s;
+}
+.autool_buttons input:focus {
+	border-color: rgb(51, 136, 204); outline: 0px;
+}
+.autool_buttons input:hover {
+	border-color: rgb(102, 102, 102); color: rgb(0, 0, 0); box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.autool_buttons input:active {
+	border-color: rgb(102, 102, 102); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#FFFFFF'); box-shadow: inset 0px 1px 5px rgba(66,109,201,0.9), inset 0px 1px 1em rgba(0,0,0,0.3);
+}
+.autool_buttons input[disabled] {
+	background: rgb(221, 221, 221); border: 1px solid rgb(153, 153, 153); color: rgb(102, 102, 102); filter: alpha(opacity=50); cursor: default; opacity: 0.5; box-shadow: none;
+}
+
+.z-legend {
+	background: url("../images/legend_bg.png") no-repeat left; margin: 3px 0px; height: 30px; line-height: 25px; padding-left: 10px; _background: url(./images/legend_bg.gif) no-repeat left center;
+}

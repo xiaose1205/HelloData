@@ -1,0 +1,234 @@
+﻿ 
+html {
+	border: 0px currentColor; height: 100%;
+}
+body {
+	margin: 0px; padding: 0px; border: 0px currentColor; height: 100%; color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);
+}
+    body {
+	background: rgb(249, 249, 249);
+}
+.loginPageBody {
+	background: url("../images/default/loginbodybg.gif") repeat-x left rgb(214, 222, 223);
+}
+.LoginWrapbg {
+	background: url("../images/default/loginimgbg.jpg") no-repeat center; height: 100%;
+}
+.dialogBody {
+	background-color: rgb(249, 249, 249);
+}
+.LoginWrapbg{ background:url('../images/default/loginimgbg.jpg') no-repeat center; height:100%; }
+
+.loginLogo {
+	width: 266px;
+	height: 45px;
+	margin: 0 auto;
+	background: url('../images/default/logo_login.png');
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='Product/Images/logo_login.png', sizingMethod = 'scale' );
+	_background: none;
+}
+
+.welcome {
+	color: #2477b3;
+	font-family: "微软雅黑", Tahoma, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 6px 0;
+	padding-top: 10px;
+	padding-left: 20px;
+	letter-spacing: 2px;
+	text-align:center;
+}
+
+.loginBar {
+	width: 345px;
+	padding-top: 60px;
+	padding-left: 50px;
+	font-size:14px;
+}
+
+.fieldWrap {
+	text-align: left;
+	width: 300px;
+	height: 30px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+.lable {
+	padding-top: 3px;
+	width: 90px;
+	float: left;
+	color: #333333;
+	font-size: 14px;
+	text-align: right;
+}
+
+.inputWrap {
+	    border-style: none; border-color: inherit; border-width: medium; background: url('../images/default/loginInputWrapbg.gif') no-repeat left top; height: 28px;
+	    line-height: 16px;
+	    width: 200px;
+	    float: left;
+}
+
+input.inputText {
+	background: transparent none;
+	border: none;
+	margin-top: 3px;
+	_margin-top: 1px;
+}
+
+input[type="text"],
+input[type="password"] { border-left: 1px solid #9ab; border-right: 1px solid #bcd; border-top: 1px solid #89a; border-bottom: 1px solid #bcd; color: #336699; background: #F7FAFC url('../images/default/text_bg.gif') repeat-x left top; padding:3px 2px 2px;
+        vertical-align:middle; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+input.inputText { border-left: 1px solid #9ab; border-right: 1px solid #bcd; border-top: 1px solid #89a; border-bottom: 1px solid #bcd; color: #336699; background: #F7FAFC url('../images/default/text_bg.gif') repeat-x left top; padding:2px; vertical-align:middle; }
+input { margin: 0; vertical-align: middle; color: #114477; }
+body,
+input,
+textarea,
+select,
+button { margin: 0; font-size: 12px; font-family: Tahoma, SimSun, sans-serif; -webkit-text-size-adjust:none;}
+
+.verifyCodeWrap {
+	display: none;
+}
+
+.selectWrap {
+	background: url('../images/default/loginSelectWrapbg.gif') no-repeat left top; }
+
+.zSelect { display:inline-block; *zoom: 1; *display: inline;
+vertical-align:middle; position:relative; white-space: nowrap; padding:0; margin:0;}
+.zSelect {font-size: 0px; -moz-border-radius: 2px; -webkit-border-radius: 2px; background-color:transparent; border:none 0;height:21px;line-height:19px;}
+
+#Language .inputText {
+	background: transparent none;
+	color: #369;
+	border: 0;
+}
+
+#Language .arrowimg {
+	background: url('../images/default/arrow_inCell.gif') no-repeat 0 0; }
+
+.optgroup { position: absolute; z-index: 666; left: 0; top: 0; color: #336699; }
+.optgroup {
+	position: absolute;
+	z-index: 666;
+	left: 0;
+	top: 0;
+	color: #336699;
+}
+a { color: #08d; text-decoration: none; border: 0; background-color: transparent; }
+
+#skin .inputText {
+	background: transparent none;
+	color: #369;
+	border: 0;
+}
+
+#skin .arrowimg {
+	background: url('../images/default/arrow_inCell.gif') no-repeat 0 0; }
+
+#loginBtnWrap {
+	padding: 12px 0px 10px 130px;
+	width: 100px;
+}
+
+#loginBtn {
+	background: url('../images/default/loginbtn.gif') no-repeat 0 0;
+	width: 100px;
+	height: 34px;
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 32px;
+	text-align: center;
+	word-spacing: 1px;
+	letter-spacing: 6px;
+}
+
+.inline-block { display:inline-block; *zoom: 1; *display: inline;
+vertical-align:middle; overflow:hidden; }
+
+.copyright {
+	padding-top: 10px;
+	text-align: center;
+}
+
+iframe { overflow-x:hidden;}
+
+iframe { border-style: solid; border-color: #778899; border-width: 0; }
+        .style1 { font-size: 1em; font-family: inherit; line-height: inherit; margin: 0; padding: 0; }
+        .style2 { width: auto; height: auto; vertical-align: middle; display: inline-block; white-space: nowrap; position: relative; font-size: 1em; font-family: inherit; line-height: inherit; margin: 0; padding: 0; }
+        .style3 { left: -18px; width: 18px; height: 20px; vertical-align: middle; position: relative; cursor: pointer; margin-right: -19px; }
+        .style4 { text-align: left; display: none; font-size: 1em; font-family: inherit; line-height: inherit; margin: 0; padding: 0; }
+        .style5 { display: inline; margin: 0; padding: 0; }
+        input.inputText {
+	background: transparent none;
+	border: none;
+	margin-top: 3px;
+	_margin-top: 1px;
+}
+
+.inputWrap .inputText {
+	width: 192px;
+	height: 20px;
+	font-size: 14px;
+	padding-left: 6px;
+	margin-top: 0px;
+	padding-top: 4px;
+}
+
+input.inputTextHover {
+	background: transparent none;
+	border: none;
+}
+
+input.inputTextFocus {
+	background: transparent none;
+	border: none;
+}
+
+input[type="text"]:hover,input[type="password"]:hover {
+	background: transparent none;
+	border: none;
+}
+
+input[type="text"]:focus,input[type="password"]:focus {
+	background: transparent none;
+	border: none;
+}
+
+#loginBtnWrap {
+	padding: 12px 0px 10px 130px;
+	width: 100px;
+}
+
+#Language .inputText,#skin .inputText {
+	background: transparent none;
+	color: #369;
+	border: 0;
+}
+
+#Language .arrowimg,#skin .arrowimg {
+	background: url(../images/default/arrow_inCell.gif) no-repeat 0 0;
+}
+
+#loginBtn {
+	background: url(../images/default/loginbtn.gif) no-repeat 0 0;
+	width: 100px;
+	height: 34px;
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 32px;
+	text-align: center;
+	word-spacing: 1px;
+	letter-spacing: 6px;
+}
+
+.loginLogo {
+	width: 266px;
+	height: 45px;
+	margin: 0 auto;
+	background: url(../images/default/logo_login.png);
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/default/logo_login.png', sizingMethod = 'scale' );
+	_background: none;
+}

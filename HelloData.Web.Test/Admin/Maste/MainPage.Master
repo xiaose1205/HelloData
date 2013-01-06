@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainPage.master.cs" Inherits="HelloData.Web.Test.Admin.MainPage"
+    EnableViewState="false" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="../Style/common.css" rel="stylesheet" type="text/css" />
+    <link href="../Style/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../Style/flexigrid.css" rel="stylesheet" type="text/css" />
+    <link href="../Style/flexigrid.css" rel="stylesheet" type="text/css" />
+    <script src="../js/menu.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="../js/flexigrid-1.1A.js" type="text/javascript"></script>
+    <script src="../../Scripts/artDialog.js?skin=blue" type="text/javascript"></script>
+    <script src="../../Scripts/plugins/iframeTools.source.js" type="text/javascript"></script>
+    <script src="../js/jquery.actions.js" type="text/javascript"></script> 
+    <link href="../Style/theme/hello-cerulean.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+
+        $().ready(function () {
+            $(".myapptrigger").mousemove(function () {
+                $("#menu_appdock").removeClass();
+                $("#menu_appdock").addClass("expandmneu");
+                $(".myapptrigger-button").find("span").css("background-position", "0 -24px");
+            });
+            $(".myapptrigger").mouseleave(function () {
+                $("#menu_appdock").removeClass();
+                $("#menu_appdock").addClass("disexpandmneu");
+                $(".myapptrigger-button").find("span").css("background-position", "0 0");
+            });
+        });
+        function exit() {
+            Dialog.confirm("确认要退出当前系统吗?", function () {
+                $.post("/AjaxHandler.ashx", { handler: 'user', type: 'exit' }, function (data) {
+                    if (data.Result == 1) {
+                        window.location.href = "index.aspx";
+                    } else {
+                        Dialog.alert(data.Message);
+                    }
+                }, "json");
+            });
+        }
+        function repwd1() {
+            $.DiagShow(400, 220, '修改密码', "Users/ChangePwd.aspx");
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="head">
+        <div class="head_top">
+            <div class="idx_logo">
+                <img src="../Images/logo.gif" /></div>
+            <div class="idx_tool">
+                <div class="tool_A">
+                    欢迎 <a href="#"></a>| <a href="javascript:exit();void(0);">注销</a></div>
+                <div class="tool_B">
+                </div>
+            </div>
+        </div>
+        <div class="site_info" id="site_info">
+            <table width="100%">
+                <tr>
+                    <td valign="middle">
+                        <div id="box_styleA">
+                        </div>
+                        <img src="../images/map_ico.gif" style="vertical-align: middle; padding-right: 3px;" />
+                        <span style="width: 400px; overflow: hidden; height: 30px;">当前位置：
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </span>
+                    </td>
+                    <td valign="middle" align="right">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="nav_title" id="nav_title">
+        <table style="border: none; margin-top: 18px; margin-left: 30px;">
+            <tr>
+                <td width="20" class="title_img">
+                    <img src="../images/LeftNav/1.png" />
+                </td>
+                <td style="font-size: 18px; width: 120px; font-weight: bold; color: #FFF;">
+                    功能菜单列表
+                </td>
+                <td>
+                    <div class='nav_bt' title="收缩菜单列表" onmousemove="this.className='nav_bt_over'" onmouseout="this.className='nav_bt'"
+                        onclick="OpenShutManager()">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="nav_samll" id="nav_samll" title="展开菜单列表" onmousemove="this.className='nav_samll_over'"
+        onmouseout="this.className='nav_samll'" onclick="OpenShutManager()">
+    </div>
+    <div class="idx_nav" id="idx_nav">
+        <div id="side">
+            <h3>
+                <a href="javascript:void(0)" onclick="shutoropen(1)">
+                    <img src="../images/LeftNav/2.png" border="0" class="side_icon" />系统管理<img class="side_bt"
+                        id="menuimg_1" src="../images/LeftNav/bt_show.png" border="0" /></a></h3>
+            <ul id="menu_1">
+                <li><a href="Sysinfo/sysinfo.aspx">系统基本信息</a></li>
+                <li><a href="Sysinfo/Applicationsys.aspx">系统设置</a></li>
+            </ul>
+            <h3>
+                <a href="javascript:void(0)" onclick="shutoropen(1)">
+                    <img src="../Images/LeftNav/2.png" border="0" class="side_icon" />数据管理<img class="side_bt"
+                        id="Img1" src="../images/LeftNav/bt_show.png" border="0" /></a></h3>
+            <ul id="menu_2">
+                <li><a href="Category/index.aspx">导航管理</a></li>
+                <li><a href="Acticles/Index.aspx">文章管理</a></li>
+                <li><a href="ImageGroups/Index.aspx">图文管理</a></li>
+                <li><a href="QandA/Index.aspx">问答管理</a></li>
+                <li><a href="Manager/Index.aspx">经理管理</a></li>
+                <li><a href="Comments/index.aspx">留言管理</a></li>
+                <li><a href="Suports/index.aspx">加盟管理</a></li>
+            </ul>
+            <h3>
+                <a href="javascript:void(0)" onclick="shutoropen(1)">
+                    <img src="../images/LeftNav/2.png" border="0" class="side_icon" />用户管理<img class="side_bt"
+                        id="Img2" src="../images/LeftNav/bt_show.png" border="0" /></a></h3>
+            <ul id="menu_3">
+                <li><a href="users/index.aspx">用户设置</a></li>
+                <li><a href="javascript:repwd1();void(0);">修改密码</a></li>
+                <li><a href="javascript:exit();void(0);">退出系统</a></li>
+            </ul>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    <div class="idx_content" id="idx_content">
+        <div class="page_content">
+            <%-- 列表界面--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</body>
+</html>

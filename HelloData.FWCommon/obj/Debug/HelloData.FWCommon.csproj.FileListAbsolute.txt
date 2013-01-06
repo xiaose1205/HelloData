@@ -1,0 +1,5 @@
+D:\自己的产品\HelloData\HelloData.FWCommon\bin\Debug\HelloData.FWCommon.dll
+D:\自己的产品\HelloData\HelloData.FWCommon\bin\Debug\HelloData.FWCommon.pdb
+D:\自己的产品\HelloData\HelloData.FWCommon\bin\Debug\Aspose.Cells.dll
+D:\自己的产品\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.dll
+D:\自己的产品\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.pdb

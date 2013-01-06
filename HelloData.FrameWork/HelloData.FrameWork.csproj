@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5EBB695E-D6E4-4E48-B4E5-B6A674679019}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelloData.FrameWork</RootNamespace>
+    <AssemblyName>HelloData.FrameWork</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\..\玄武\UMP&amp;MOS\整理代码1\web\BackendSolution\Backend\bin\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\35xcun\35ToGroup\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net20">
+      <HintPath>..\..\..\兼职项目\客户端项目\二次开发接口\msgp\bin\Debug\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\兼职项目\客户端项目\WPF客户端\Src\Output\Debug\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AOP\AopEnum.cs" />
+    <Compile Include="AOP\AopTimer.cs" />
+    <Compile Include="AppCons.cs" />
+    <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\WebCache.cs" />
+    <Compile Include="Data\BaseEntity.cs" />
+    <Compile Include="Data\BaseManager.cs" />
+    <Compile Include="Data\BaseVEntity.cs" />
+    <Compile Include="Data\DataParameter.cs" />
+    <Compile Include="Data\DataPools.cs" />
+    <Compile Include="Data\DbAction\MultiAction.cs" />
+    <Compile Include="Data\DbAction\DeleteAction.cs" />
+    <Compile Include="Data\DbAction\InserAction.cs" />
+    <Compile Include="Data\DbAction\SelectAction.cs" />
+    <Compile Include="Data\DbAction\TradAction.cs" />
+    <Compile Include="Data\DbAction\UpdateAction.cs" />
+    <Compile Include="Data\Enum\AdornsEnum.cs" />
+    <Compile Include="Data\Enum\ConditionEnum.cs" />
+    <Compile Include="Data\AppDatabase.cs" />
+    <Compile Include="Data\DataBase.cs" />
+    <Compile Include="Data\Enum\DatabaseTypeEnum.cs" />
+    <Compile Include="Data\DataBaseAction.cs" />
+    <Compile Include="Data\Enum\TableTyleEnum.cs" />
+    <Compile Include="Data\Enum\ViewJoinEnum.cs" />
+    <Compile Include="Data\FilterField.cs" />
+    <Compile Include="Data\ViewHelper.cs" />
+    <Compile Include="Helpers\HandlerResult.cs" />
+    <Compile Include="Data\Helper\MySqlHelper.cs" />
+    <Compile Include="Data\BaseLogic.cs" />
+    <Compile Include="Data\Helper\MsSqlHelper.cs" />
+    <Compile Include="Data\Enum\OperateEnum.cs" />
+    <Compile Include="Data\Enum\OrderByEnum.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\PageList.cs" />
+    <Compile Include="Data\Enum\RelationEnum.cs" />
+    <Compile Include="Data\SqlCompilation.cs" />
+    <Compile Include="Data\Helper\SQLliteHelper.cs" />
+    <Compile Include="Helpers\IOHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="Helpers\WebUtils.cs" />
+    <Compile Include="Logging\ConsoleLog.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogNet.cs" />
+    <Compile Include="Logging\NLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+D:\玄武\利润管理系统\开发\玄武集团短信业务提成系统\HelloData.FrameWork\bin\Debug\HelloData.FrameWork.dll
+D:\玄武\利润管理系统\开发\玄武集团短信业务提成系统\HelloData.FrameWork\bin\Debug\HelloData.FrameWork.pdb
+D:\玄武\利润管理系统\开发\玄武集团短信业务提成系统\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.dll
+D:\玄武\利润管理系统\开发\玄武集团短信业务提成系统\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.pdb
+D:\玄武\利润管理系统\开发\玄武集团短信业务提成系统\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\HelloData.FrameWork.dll
+D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\HelloData.FrameWork.pdb
+D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\Aspose.Cells.dll
+D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\log4net.dll
+D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\Newtonsoft.Json.Net20.dll
+D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\NLog.dll
+D:\自己的产品\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.dll
+D:\自己的产品\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.pdb
+D:\自己的产品\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.csprojResolveAssemblyReference.cache

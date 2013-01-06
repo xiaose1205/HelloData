@@ -1,0 +1,41 @@
+H:\自己的产品\DiougensSys\HelloData.Web\bin\Debug\HelloData.Web.dll
+H:\自己的产品\DiougensSys\HelloData.Web\bin\Debug\HelloData.Web.pdb
+H:\自己的产品\DiougensSys\HelloData.Web\bin\Debug\HelloData.FrameWork.dll
+H:\自己的产品\DiougensSys\HelloData.Web\bin\Debug\Newtonsoft.Json.Net20.dll
+H:\自己的产品\DiougensSys\HelloData.Web\bin\Debug\log4net.dll
+H:\自己的产品\DiougensSys\HelloData.Web\bin\Debug\HelloData.FrameWork.pdb
+H:\自己的产品\DiougensSys\HelloData.Web\obj\Debug\HelloData.Web.csprojResolveAssemblyReference.cache
+H:\自己的产品\DiougensSys\HelloData.Web\obj\Debug\HelloData.Web.dll
+H:\自己的产品\DiougensSys\HelloData.Web\obj\Debug\HelloData.Web.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\HelloData.Web.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\HelloData.Web.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\HelloData.FrameWork.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\Newtonsoft.Json.Net20.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\log4net.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\HelloData.FrameWork.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\obj\Debug\HelloData.Web.csprojResolveAssemblyReference.cache
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\obj\Debug\HelloData.Web.dll
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\obj\Debug\HelloData.Web.pdb
+H:\自己的产品\DiougensSys -升级版\HelloData.Web\bin\Debug\Aspose.Cells.dll
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.Web.dll
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.Web.pdb
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FrameWork.dll
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\Newtonsoft.Json.Net20.dll
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\Aspose.Cells.dll
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\log4net.dll
+H:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FrameWork.pdb
+H:\自己的产品\HelloData\HelloData.Web\obj\Debug\HelloData.Web.csprojResolveAssemblyReference.cache
+H:\自己的产品\HelloData\HelloData.Web\obj\Debug\HelloData.Web.dll
+H:\自己的产品\HelloData\HelloData.Web\obj\Debug\HelloData.Web.pdb
+D:\自己的产品\HelloData\HelloData.Web\obj\Debug\HelloData.Web.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData\HelloData.Web\obj\Debug\HelloData.Web.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.Web.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.Web.pdb
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FrameWork.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\Newtonsoft.Json.Net20.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\log4net.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\Aspose.Cells.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FrameWork.pdb
+D:\自己的产品\HelloData\HelloData.Web\obj\Debug\HelloData.Web.pdb
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FWCommon.dll
+D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FWCommon.pdb

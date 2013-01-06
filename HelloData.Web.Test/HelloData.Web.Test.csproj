@@ -1,0 +1,969 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8710EF72-BAEE-4DF5-BEE3-089EA769C1CC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelloData.Web.Test</RootNamespace>
+    <AssemblyName>HelloData.Web.Test</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Images\51x22_blue.gif" />
+    <Content Include="Admin\Images\bar.gif" />
+    <Content Include="Admin\Images\bg.gif" />
+    <Content Include="Admin\Images\btn-sprite.gif" />
+    <Content Include="Admin\Images\buttonBg.png" />
+    <Content Include="Admin\Images\buttons.png" />
+    <Content Include="Admin\Images\ddn.png" />
+    <Content Include="Admin\Images\default\addpicture.jpg" />
+    <Content Include="Admin\Images\default\apptrigger_button.png" />
+    <Content Include="Admin\Images\default\app_hover.png" />
+    <Content Include="Admin\Images\default\arrow_inCell.gif" />
+    <Content Include="Admin\Images\default\bianjiico.gif" />
+    <Content Include="Admin\Images\default\btnDsb_bg_left.gif" />
+    <Content Include="Admin\Images\default\btnDsb_bg_right.gif" />
+    <Content Include="Admin\Images\default\btnout_bg_left.gif" />
+    <Content Include="Admin\Images\default\btnout_bg_right.gif" />
+    <Content Include="Admin\Images\default\btnover_bg_left.gif" />
+    <Content Include="Admin\Images\default\btnover_bg_right.gif" />
+    <Content Include="Admin\Images\default\btn_hover.gif" />
+    <Content Include="Admin\Images\default\btn_nomal.gif" />
+    <Content Include="Admin\Images\default\buttonBg.gif" />
+    <Content Include="Admin\Images\default\button_3.png" />
+    <Content Include="Admin\Images\default\close.gif" />
+    <Content Include="Admin\Images\glyphicons-halflings-white.png" />
+    <Content Include="Admin\Images\default\hover2_1.jpg" />
+    <Content Include="Admin\Images\default\index_arrow.gif" />
+    <Content Include="Admin\Images\default\line2_1.jpg" />
+    <Content Include="Admin\Images\default\link2_1.jpg" />
+    <Content Include="Admin\Images\default\Loading.gif" />
+    <Content Include="Admin\Images\default\loginbodybg.gif" />
+    <Content Include="Admin\Images\default\loginbtn.gif" />
+    <Content Include="Admin\Images\default\loginimgbg.jpg" />
+    <Content Include="Admin\Images\default\loginInputWrapbg.gif" />
+    <Content Include="Admin\Images\default\loginSelectWrapbg.gif" />
+    <Content Include="Admin\Images\default\logo_login.png" />
+    <Content Include="Admin\Images\default\logo_login副本.png" />
+    <Content Include="Admin\Images\default\menubg2_1.jpg" />
+    <Content Include="Admin\Images\default\navline.gif" />
+    <Content Include="Admin\Images\glyphicons-halflings.png" />
+    <Content Include="Admin\Images\opa-icons-gray16.png" />
+    <Content Include="Admin\Images\default\open.gif" />
+    <Content Include="Admin\Images\default\plugin.png" />
+    <Content Include="Admin\Images\default\textarea_bg.gif" />
+    <Content Include="Admin\Images\default\text_bg.gif" />
+    <Content Include="Admin\Images\default\th.gif" />
+    <Content Include="Admin\Images\default\thbg.gif" />
+    <Content Include="Admin\Images\default\thbg_over.gif" />
+    <Content Include="Admin\Images\default\toolbar_menu_bg.png" />
+    <Content Include="Admin\Images\default\toolbar_menu_bg副本.png" />
+    <Content Include="Admin\Images\default\zButtonBg.gif" />
+    <Content Include="Admin\Images\dialog\dialog_bg.jpg" />
+    <Content Include="Admin\Images\dialog\dialog_cb.gif" />
+    <Content Include="Admin\Images\dialog\dialog_cb.png" />
+    <Content Include="Admin\Images\dialog\dialog_closebtn.gif" />
+    <Content Include="Admin\Images\dialog\dialog_closebtn_over.gif" />
+    <Content Include="Admin\Images\dialog\dialog_ct.gif" />
+    <Content Include="Admin\Images\dialog\dialog_ct.png" />
+    <Content Include="Admin\Images\dialog\dialog_lb.gif" />
+    <Content Include="Admin\Images\dialog\dialog_lb.png" />
+    <Content Include="Admin\Images\dialog\dialog_lt.gif" />
+    <Content Include="Admin\Images\dialog\dialog_lt.png" />
+    <Content Include="Admin\Images\dialog\dialog_mlm.gif" />
+    <Content Include="Admin\Images\dialog\dialog_mlm.png" />
+    <Content Include="Admin\Images\dialog\dialog_mrm.gif" />
+    <Content Include="Admin\Images\dialog\dialog_mrm.png" />
+    <Content Include="Admin\Images\dialog\dialog_rb.gif" />
+    <Content Include="Admin\Images\dialog\dialog_rb.png" />
+    <Content Include="Admin\Images\dialog\dialog_rt.gif" />
+    <Content Include="Admin\Images\dialog\dialog_rt.png" />
+    <Content Include="Admin\Images\dialog\icon_alert.gif" />
+    <Content Include="Admin\Images\dialog\icon_dialog.gif" />
+    <Content Include="Admin\Images\dialog\icon_query.gif" />
+    <Content Include="Admin\Images\dialog\window.gif" />
+    <Content Include="Admin\Images\dn.png" />
+    <Content Include="Admin\Images\fhbg.gif" />
+    <Content Include="Admin\Images\first.gif" />
+    <Content Include="Admin\Images\head_bg.png" />
+    <Content Include="Admin\Images\head_tool_left_bg.png" />
+    <Content Include="Admin\Images\head_tool_right_bg.png" />
+    <Content Include="Admin\Images\head_top.png" />
+    <Content Include="Admin\Images\hl.png" />
+    <Content Include="Admin\Images\icons\accept.gif" />
+    <Content Include="Admin\Images\icons\ad.gif" />
+    <Content Include="Admin\Images\icons\add.gif" />
+    <Content Include="Admin\Images\icons\add.png" />
+    <Content Include="Admin\Images\icons\addStep.gif" />
+    <Content Include="Admin\Images\icons\addStep_dsbl.gif" />
+    <Content Include="Admin\Images\icons\against.gif" />
+    <Content Include="Admin\Images\icons\agree.gif" />
+    <Content Include="Admin\Images\icons\alarmclock.gif" />
+    <Content Include="Admin\Images\icons\album.gif" />
+    <Content Include="Admin\Images\icons\album_add.gif" />
+    <Content Include="Admin\Images\icons\album_del.gif" />
+    <Content Include="Admin\Images\icons\album_edit.gif" />
+    <Content Include="Admin\Images\icons\album_option.gif" />
+    <Content Include="Admin\Images\icons\album_search.gif" />
+    <Content Include="Admin\Images\icons\alert.gif" />
+    <Content Include="Admin\Images\icons\alert_48.png" />
+    <Content Include="Admin\Images\icons\anti_clockwise.gif" />
+    <Content Include="Admin\Images\icons\app.gif" />
+    <Content Include="Admin\Images\icons\app_add.gif" />
+    <Content Include="Admin\Images\icons\app_del.gif" />
+    <Content Include="Admin\Images\icons\app_option.gif" />
+    <Content Include="Admin\Images\icons\app_search.gif" />
+    <Content Include="Admin\Images\icons\ask.gif" />
+    <Content Include="Admin\Images\icons\ask_bestanswer.gif" />
+    <Content Include="Admin\Images\icons\ask_solved.gif" />
+    <Content Include="Admin\Images\icons\ask_unsolved.gif" />
+    <Content Include="Admin\Images\icons\attachment.gif" />
+    <Content Include="Admin\Images\icons\auction.gif" />
+    <Content Include="Admin\Images\icons\avatar_edit.gif" />
+    <Content Include="Admin\Images\icons\back.gif" />
+    <Content Include="Admin\Images\icons\blog.gif" />
+    <Content Include="Admin\Images\icons\blog_add.gif" />
+    <Content Include="Admin\Images\icons\blog_del.gif" />
+    <Content Include="Admin\Images\icons\blog_edit.gif" />
+    <Content Include="Admin\Images\icons\blog_option.gif" />
+    <Content Include="Admin\Images\icons\blog_search.gif" />
+    <Content Include="Admin\Images\icons\book.gif" />
+    <Content Include="Admin\Images\icons\box.gif" />
+    <Content Include="Admin\Images\icons\box_add.gif" />
+    <Content Include="Admin\Images\icons\box_del.gif" />
+    <Content Include="Admin\Images\icons\box_edit.gif" />
+    <Content Include="Admin\Images\icons\box_option.gif" />
+    <Content Include="Admin\Images\icons\broken.gif" />
+    <Content Include="Admin\Images\icons\btn-arrow.gif" />
+    <Content Include="Admin\Images\icons\Btn.Close.gif" />
+    <Content Include="Admin\Images\icons\Btn.Refresh.gif" />
+    <Content Include="Admin\Images\icons\cal.gif" />
+    <Content Include="Admin\Images\icons\calendar.gif" />
+    <Content Include="Admin\Images\icons\camera.gif" />
+    <Content Include="Admin\Images\icons\chart.gif" />
+    <Content Include="Admin\Images\icons\chat.gif" />
+    <Content Include="Admin\Images\icons\chat_offline.gif" />
+    <Content Include="Admin\Images\icons\chat_online.gif" />
+    <Content Include="Admin\Images\icons\checkbox_0.gif" />
+    <Content Include="Admin\Images\icons\checkbox_1.gif" />
+    <Content Include="Admin\Images\icons\checkbox_2.gif" />
+    <Content Include="Admin\Images\icons\clear.gif" />
+    <Content Include="Admin\Images\icons\clear_time.gif" />
+    <Content Include="Admin\Images\icons\clockwise.gif" />
+    <Content Include="Admin\Images\icons\coin_cuprum.gif" />
+    <Content Include="Admin\Images\icons\coin_gold.gif" />
+    <Content Include="Admin\Images\icons\coin_silver.gif" />
+    <Content Include="Admin\Images\icons\color.gif" />
+    <Content Include="Admin\Images\icons\command.gif" />
+    <Content Include="Admin\Images\icons\comment.gif" />
+    <Content Include="Admin\Images\icons\comment_add.gif" />
+    <Content Include="Admin\Images\icons\comment_del.gif" />
+    <Content Include="Admin\Images\icons\comment_edit.gif" />
+    <Content Include="Admin\Images\icons\crossout.gif" />
+    <Content Include="Admin\Images\icons\database.gif" />
+    <Content Include="Admin\Images\icons\database_add.gif" />
+    <Content Include="Admin\Images\icons\database_backup.gif" />
+    <Content Include="Admin\Images\icons\database_del.gif" />
+    <Content Include="Admin\Images\icons\database_edit.gif" />
+    <Content Include="Admin\Images\icons\database_export.gif" />
+    <Content Include="Admin\Images\icons\database_import.gif" />
+    <Content Include="Admin\Images\icons\database_info.gif" />
+    <Content Include="Admin\Images\icons\database_option.gif" />
+    <Content Include="Admin\Images\icons\database_run.gif" />
+    <Content Include="Admin\Images\icons\database_search.gif" />
+    <Content Include="Admin\Images\icons\date.png" />
+    <Content Include="Admin\Images\icons\del.gif" />
+    <Content Include="Admin\Images\icons\delete.png" />
+    <Content Include="Admin\Images\icons\delItem.gif" />
+    <Content Include="Admin\Images\icons\delItem_dsbl.gif" />
+    <Content Include="Admin\Images\icons\diamond_blue.gif" />
+    <Content Include="Admin\Images\icons\diamond_gold.gif" />
+    <Content Include="Admin\Images\icons\diamond_green.gif" />
+    <Content Include="Admin\Images\icons\diskicon_folder.png" />
+    <Content Include="Admin\Images\icons\doing.gif" />
+    <Content Include="Admin\Images\icons\down.gif" />
+    <Content Include="Admin\Images\icons\earth.gif" />
+    <Content Include="Admin\Images\icons\edit.gif" />
+    <Content Include="Admin\Images\icons\edit.png" />
+    <Content Include="Admin\Images\icons\email.gif" />
+    <Content Include="Admin\Images\icons\email_contact.gif" />
+    <Content Include="Admin\Images\icons\email_inbox.gif" />
+    <Content Include="Admin\Images\icons\email_invalid.gif" />
+    <Content Include="Admin\Images\icons\email_outbox.gif" />
+    <Content Include="Admin\Images\icons\email_postcard.gif" />
+    <Content Include="Admin\Images\icons\email_read.gif" />
+    <Content Include="Admin\Images\icons\email_send.gif" />
+    <Content Include="Admin\Images\icons\email_valid.gif" />
+    <Content Include="Admin\Images\icons\emoticons.gif" />
+    <Content Include="Admin\Images\icons\emoticons_edit.gif" />
+    <Content Include="Admin\Images\icons\emoticons_export.gif" />
+    <Content Include="Admin\Images\icons\emoticons_import.gif" />
+    <Content Include="Admin\Images\icons\emoticons_upload.gif" />
+    <Content Include="Admin\Images\icons\error.gif" />
+    <Content Include="Admin\Images\icons\error_48.png" />
+    <Content Include="Admin\Images\icons\event.gif" />
+    <Content Include="Admin\Images\icons\event_time.gif" />
+    <Content Include="Admin\Images\icons\extra_gained.gif" />
+    <Content Include="Admin\Images\icons\extra_tip.gif" />
+    <Content Include="Admin\Images\icons\fav.gif" />
+    <Content Include="Admin\Images\icons\feeds.gif" />
+    <Content Include="Admin\Images\icons\female.gif" />
+    <Content Include="Admin\Images\icons\file.gif" />
+    <Content Include="Admin\Images\icons\file_add.gif" />
+    <Content Include="Admin\Images\icons\file_del.gif" />
+    <Content Include="Admin\Images\icons\file_down.gif" />
+    <Content Include="Admin\Images\icons\file_edit.gif" />
+    <Content Include="Admin\Images\icons\file_export.gif" />
+    <Content Include="Admin\Images\icons\file_import.gif" />
+    <Content Include="Admin\Images\icons\file_lock.gif" />
+    <Content Include="Admin\Images\icons\file_option.gif" />
+    <Content Include="Admin\Images\icons\file_search.gif" />
+    <Content Include="Admin\Images\icons\file_unlock.gif" />
+    <Content Include="Admin\Images\icons\file_up.gif" />
+    <Content Include="Admin\Images\icons\filter.gif" />
+    <Content Include="Admin\Images\icons\flag_b.gif" />
+    <Content Include="Admin\Images\icons\flag_blue.gif" />
+    <Content Include="Admin\Images\icons\flag_g.gif" />
+    <Content Include="Admin\Images\icons\flag_green.gif" />
+    <Content Include="Admin\Images\icons\flag_r.gif" />
+    <Content Include="Admin\Images\icons\flag_red.gif" />
+    <Content Include="Admin\Images\icons\flag_y.gif" />
+    <Content Include="Admin\Images\icons\folder.gif" />
+    <Content Include="Admin\Images\icons\folder_add.gif" />
+    <Content Include="Admin\Images\icons\folder_close.gif" />
+    <Content Include="Admin\Images\icons\folder_del.gif" />
+    <Content Include="Admin\Images\icons\folder_edit.gif" />
+    <Content Include="Admin\Images\icons\folder_open.gif" />
+    <Content Include="Admin\Images\icons\folder_option.gif" />
+    <Content Include="Admin\Images\icons\folder_up.gif" />
+    <Content Include="Admin\Images\icons\folder_web.gif" />
+    <Content Include="Admin\Images\icons\fortune_1.gif" />
+    <Content Include="Admin\Images\icons\fortune_2.gif" />
+    <Content Include="Admin\Images\icons\fortune_3.gif" />
+    <Content Include="Admin\Images\icons\forum.gif" />
+    <Content Include="Admin\Images\icons\forum_add.gif" />
+    <Content Include="Admin\Images\icons\forum_del.gif" />
+    <Content Include="Admin\Images\icons\forum_edit.gif" />
+    <Content Include="Admin\Images\icons\forum_option.gif" />
+    <Content Include="Admin\Images\icons\forward.gif" />
+    <Content Include="Admin\Images\icons\friend.gif" />
+    <Content Include="Admin\Images\icons\friend_add.gif" />
+    <Content Include="Admin\Images\icons\friend_ban.gif" />
+    <Content Include="Admin\Images\icons\friend_del.gif" />
+    <Content Include="Admin\Images\icons\friend_exchange.gif" />
+    <Content Include="Admin\Images\icons\friend_find.gif" />
+    <Content Include="Admin\Images\icons\game_card.gif" />
+    <Content Include="Admin\Images\icons\gift.gif" />
+    <Content Include="Admin\Images\icons\group.gif" />
+    <Content Include="Admin\Images\icons\group_add.gif" />
+    <Content Include="Admin\Images\icons\group_del.gif" />
+    <Content Include="Admin\Images\icons\group_search.gif" />
+    <Content Include="Admin\Images\icons\g_date.gif" />
+    <Content Include="Admin\Images\icons\help.gif" />
+    <Content Include="Admin\Images\icons\hi.gif" />
+    <Content Include="Admin\Images\icons\highlight.gif" />
+    <Content Include="Admin\Images\icons\home.gif" />
+    <Content Include="Admin\Images\icons\ico1.gif" />
+    <Content Include="Admin\Images\icons\ico2.gif" />
+    <Content Include="Admin\Images\icons\ico3.gif" />
+    <Content Include="Admin\Images\icons\ico4-1-1.gif" />
+    <Content Include="Admin\Images\icons\ico4-1.gif" />
+    <Content Include="Admin\Images\icons\ico4-2.gif" />
+    <Content Include="Admin\Images\icons\ico4-3.gif" />
+    <Content Include="Admin\Images\icons\ico4-4.gif" />
+    <Content Include="Admin\Images\icons\ico4.gif" />
+    <Content Include="Admin\Images\icons\ico5.gif" />
+    <Content Include="Admin\Images\icons\ico6-1.gif" />
+    <Content Include="Admin\Images\icons\ico6-2.gif" />
+    <Content Include="Admin\Images\icons\ico6.gif" />
+    <Content Include="Admin\Images\icons\icon_1.gif" />
+    <Content Include="Admin\Images\icons\icon_2.gif" />
+    <Content Include="Admin\Images\icons\icon_add.gif" />
+    <Content Include="Admin\Images\icons\icon_add15.gif" />
+    <Content Include="Admin\Images\icons\icon_adown.gif" />
+    <Content Include="Admin\Images\icons\icon_delete.gif" />
+    <Content Include="Admin\Images\icons\icon_delete15.gif" />
+    <Content Include="Admin\Images\icons\icon_edit15.gif" />
+    <Content Include="Admin\Images\icons\icon_upwards.gif" />
+    <Content Include="Admin\Images\icons\icon_zoomout.gif" />
+    <Content Include="Admin\Images\icons\important.gif" />
+    <Content Include="Admin\Images\icons\indicator.gif" />
+    <Content Include="Admin\Images\icons\info.gif" />
+    <Content Include="Admin\Images\icons\information.png" />
+    <Content Include="Admin\Images\icons\inhibit.gif" />
+    <Content Include="Admin\Images\icons\Item.Add.gif" />
+    <Content Include="Admin\Images\icons\Item.Delete.gif" />
+    <Content Include="Admin\Images\icons\Item.Edit.gif" />
+    <Content Include="Admin\Images\icons\Item.Input.gif" />
+    <Content Include="Admin\Images\icons\Item.Save.gif" />
+    <Content Include="Admin\Images\icons\Item.Search.gif" />
+    <Content Include="Admin\Images\icons\key.gif" />
+    <Content Include="Admin\Images\icons\labs.gif" />
+    <Content Include="Admin\Images\icons\leavemsg.gif" />
+    <Content Include="Admin\Images\icons\left.gif" />
+    <Content Include="Admin\Images\icons\link.gif" />
+    <Content Include="Admin\Images\icons\link_add.gif" />
+    <Content Include="Admin\Images\icons\link_borken.gif" />
+    <Content Include="Admin\Images\icons\link_del.gif" />
+    <Content Include="Admin\Images\icons\lock.gif" />
+    <Content Include="Admin\Images\icons\magic.gif" />
+    <Content Include="Admin\Images\icons\male.gif" />
+    <Content Include="Admin\Images\icons\megaphone.gif" />
+    <Content Include="Admin\Images\icons\mobile.gif" />
+    <Content Include="Admin\Images\icons\mobile_alt.gif" />
+    <Content Include="Admin\Images\icons\mobile_invalid.gif" />
+    <Content Include="Admin\Images\icons\mobile_valid.gif" />
+    <Content Include="Admin\Images\icons\module.gif" />
+    <Content Include="Admin\Images\icons\movie.gif" />
+    <Content Include="Admin\Images\icons\music.gif" />
+    <Content Include="Admin\Images\icons\news.gif" />
+    <Content Include="Admin\Images\icons\none.gif" />
+    <Content Include="Admin\Images\icons\note.gif" />
+    <Content Include="Admin\Images\icons\notes.gif" />
+    <Content Include="Admin\Images\icons\offline.gif" />
+    <Content Include="Admin\Images\icons\offline_mini.gif" />
+    <Content Include="Admin\Images\icons\online.gif" />
+    <Content Include="Admin\Images\icons\online_mini.gif" />
+    <Content Include="Admin\Images\icons\order_asc.gif" />
+    <Content Include="Admin\Images\icons\order_desc.gif" />
+    <Content Include="Admin\Images\icons\overlay_accessible.png" />
+    <Content Include="Admin\Images\icons\overlay_ban.png" />
+    <Content Include="Admin\Images\icons\overlay_link.png" />
+    <Content Include="Admin\Images\icons\overlay_lock.png" />
+    <Content Include="Admin\Images\icons\pages.gif" />
+    <Content Include="Admin\Images\icons\pensil.gif" />
+    <Content Include="Admin\Images\icons\people.gif" />
+    <Content Include="Admin\Images\icons\people_add.gif" />
+    <Content Include="Admin\Images\icons\people_ban.gif" />
+    <Content Include="Admin\Images\icons\people_del.gif" />
+    <Content Include="Admin\Images\icons\people_famale.gif" />
+    <Content Include="Admin\Images\icons\people_fav.gif" />
+    <Content Include="Admin\Images\icons\permission.gif" />
+    <Content Include="Admin\Images\icons\photo.gif" />
+    <Content Include="Admin\Images\icons\photo_add.gif" />
+    <Content Include="Admin\Images\icons\photo_del.gif" />
+    <Content Include="Admin\Images\icons\photo_edit.gif" />
+    <Content Include="Admin\Images\icons\photo_option.gif" />
+    <Content Include="Admin\Images\icons\photo_search.gif" />
+    <Content Include="Admin\Images\icons\plugin.gif" />
+    <Content Include="Admin\Images\icons\polemize.gif" />
+    <Content Include="Admin\Images\icons\poll.gif" />
+    <Content Include="Admin\Images\icons\posticon_magic.gif" />
+    <Content Include="Admin\Images\icons\posticon_mark.gif" />
+    <Content Include="Admin\Images\icons\posticon_quote.gif" />
+    <Content Include="Admin\Images\icons\posticon_reply.gif" />
+    <Content Include="Admin\Images\icons\posticon_undomark.gif" />
+    <Content Include="Admin\Images\icons\postrank_1.gif" />
+    <Content Include="Admin\Images\icons\postrank_2.gif" />
+    <Content Include="Admin\Images\icons\postrank_3.gif" />
+    <Content Include="Admin\Images\icons\postrank_4.gif" />
+    <Content Include="Admin\Images\icons\postrank_5.gif" />
+    <Content Include="Admin\Images\icons\printer.gif" />
+    <Content Include="Admin\Images\icons\quote.gif" />
+    <Content Include="Admin\Images\icons\refresh.gif" />
+    <Content Include="Admin\Images\icons\report.gif" />
+    <Content Include="Admin\Images\icons\right.gif" />
+    <Content Include="Admin\Images\icons\role.gif" />
+    <Content Include="Admin\Images\icons\role_add.gif" />
+    <Content Include="Admin\Images\icons\role_del.gif" />
+    <Content Include="Admin\Images\icons\role_edit.gif" />
+    <Content Include="Admin\Images\icons\rowdelete.png" />
+    <Content Include="Admin\Images\icons\rss.gif" />
+    <Content Include="Admin\Images\icons\ruby.gif" />
+    <Content Include="Admin\Images\icons\sad.gif" />
+    <Content Include="Admin\Images\icons\save.gif" />
+    <Content Include="Admin\Images\icons\save_blue.gif" />
+    <Content Include="Admin\Images\icons\search.gif" />
+    <Content Include="Admin\Images\icons\select.gif" />
+    <Content Include="Admin\Images\icons\setting.gif" />
+    <Content Include="Admin\Images\icons\share.gif" />
+    <Content Include="Admin\Images\icons\shop.gif" />
+    <Content Include="Admin\Images\icons\smile.gif" />
+    <Content Include="Admin\Images\icons\space.gif" />
+    <Content Include="Admin\Images\icons\stamp.gif" />
+    <Content Include="Admin\Images\icons\star.gif" />
+    <Content Include="Admin\Images\icons\star_half.gif" />
+    <Content Include="Admin\Images\icons\star_none.gif" />
+    <Content Include="Admin\Images\icons\store.gif" />
+    <Content Include="Admin\Images\icons\success_48.png" />
+    <Content Include="Admin\Images\icons\s_add.gif" />
+    <Content Include="Admin\Images\icons\s_newalbum.gif" />
+    <Content Include="Admin\Images\icons\s_up.gif" />
+    <Content Include="Admin\Images\icons\s_uploadfile.gif" />
+    <Content Include="Admin\Images\icons\s_uploadphoto.gif" />
+    <Content Include="Admin\Images\icons\table.gif" />
+    <Content Include="Admin\Images\icons\table_add.gif" />
+    <Content Include="Admin\Images\icons\table_del.gif" />
+    <Content Include="Admin\Images\icons\table_edit.gif" />
+    <Content Include="Admin\Images\icons\table_refresh.png" />
+    <Content Include="Admin\Images\icons\task.gif" />
+    <Content Include="Admin\Images\icons\theme.gif" />
+    <Content Include="Admin\Images\icons\tip_alert.gif" />
+    <Content Include="Admin\Images\icons\tip_error.gif" />
+    <Content Include="Admin\Images\icons\tip_success.gif" />
+    <Content Include="Admin\Images\icons\topic.gif" />
+    <Content Include="Admin\Images\icons\topicicon_default.png" />
+    <Content Include="Admin\Images\icons\topic_add.gif" />
+    <Content Include="Admin\Images\icons\topic_del.gif" />
+    <Content Include="Admin\Images\icons\topic_edit.gif" />
+    <Content Include="Admin\Images\icons\topic_hot.gif" />
+    <Content Include="Admin\Images\icons\topic_lock.gif" />
+    <Content Include="Admin\Images\icons\topic_new.gif" />
+    <Content Include="Admin\Images\icons\topic_normal.gif" />
+    <Content Include="Admin\Images\icons\topic_option.gif" />
+    <Content Include="Admin\Images\icons\topic_pinned.gif" />
+    <Content Include="Admin\Images\icons\topic_search.gif" />
+    <Content Include="Admin\Images\icons\topic_sticky.gif" />
+    <Content Include="Admin\Images\icons\track.gif" />
+    <Content Include="Admin\Images\icons\trade.gif" />
+    <Content Include="Admin\Images\icons\trash.gif" />
+    <Content Include="Admin\Images\icons\trash_full.gif" />
+    <Content Include="Admin\Images\icons\unlock.gif" />
+    <Content Include="Admin\Images\icons\up.gif" />
+    <Content Include="Admin\Images\icons\user.gif" />
+    <Content Include="Admin\Images\icons\usergroup.gif" />
+    <Content Include="Admin\Images\icons\usergroup_add.gif" />
+    <Content Include="Admin\Images\icons\usergroup_del.gif" />
+    <Content Include="Admin\Images\icons\userprofile.gif" />
+    <Content Include="Admin\Images\icons\user_add.gif" />
+    <Content Include="Admin\Images\icons\user_ban.gif" />
+    <Content Include="Admin\Images\icons\user_del.gif" />
+    <Content Include="Admin\Images\icons\user_down.gif" />
+    <Content Include="Admin\Images\icons\user_edit %282%29.gif" />
+    <Content Include="Admin\Images\icons\user_edit.gif" />
+    <Content Include="Admin\Images\icons\user_search.gif" />
+    <Content Include="Admin\Images\icons\user_up.gif" />
+    <Content Include="Admin\Images\icons\user_valid.gif" />
+    <Content Include="Admin\Images\icons\user_vip.gif" />
+    <Content Include="Admin\Images\icons\valid.gif" />
+    <Content Include="Admin\Images\icons\vcard.gif" />
+    <Content Include="Admin\Images\icons\video.gif" />
+    <Content Include="Admin\Images\icons\view.png" />
+    <Content Include="Admin\Images\icons\view_list.gif" />
+    <Content Include="Admin\Images\icons\view_thumb.gif" />
+    <Content Include="Admin\Images\icons\wordwrap.gif" />
+    <Content Include="Admin\Images\icons\work.gif" />
+    <Content Include="Admin\Images\icons\zoom_in.gif" />
+    <Content Include="Admin\Images\icons\zoom_out.gif" />
+    <Content Include="Admin\Images\icon_add15.gif" />
+    <Content Include="Admin\Images\index_bg.gif" />
+    <Content Include="Admin\Images\last.gif" />
+    <Content Include="Admin\Images\LeftNav\1.png" />
+    <Content Include="Admin\Images\LeftNav\2.png" />
+    <Content Include="Admin\Images\LeftNav\3.png" />
+    <Content Include="Admin\Images\LeftNav\4.png" />
+    <Content Include="Admin\Images\LeftNav\5.png" />
+    <Content Include="Admin\Images\LeftNav\6.png" />
+    <Content Include="Admin\Images\LeftNav\7.png" />
+    <Content Include="Admin\Images\LeftNav\bt_block.png" />
+    <Content Include="Admin\Images\LeftNav\bt_show.png" />
+    <Content Include="Admin\Images\LeftNav\nav_bt.png" />
+    <Content Include="Admin\Images\LeftNav\nav_bt_over.png" />
+    <Content Include="Admin\Images\LeftNav\nav_list_bg.gif" />
+    <Content Include="Admin\Images\LeftNav\nav_list_clk.gif" />
+    <Content Include="Admin\Images\LeftNav\nav_samll.gif" />
+    <Content Include="Admin\Images\LeftNav\nav_samll_over.gif" />
+    <Content Include="Admin\Images\LeftNav\nav_title_out.gif" />
+    <Content Include="Admin\Images\LeftNav\nav_title_over.gif" />
+    <Content Include="Admin\Images\LeftNav\title_bg.png" />
+    <Content Include="Admin\Images\LeftNav\web_map_box_bg.png" />
+    <Content Include="Admin\Images\LeftNav\web_map_list.gif" />
+    <Content Include="Admin\Images\legend_bg.png" />
+    <Content Include="Admin\Images\line.gif" />
+    <Content Include="Admin\Images\load.gif" />
+    <Content Include="Admin\Images\load.png" />
+    <Content Include="Admin\Images\loading.gif" />
+    <Content Include="Admin\Images\logo.gif" />
+    <Content Include="Admin\Images\magnifier.png" />
+    <Content Include="Admin\Images\map_ico.gif" />
+    <Content Include="Admin\Images\next.gif" />
+    <Content Include="Admin\Images\Pop_up\75x54_blue.gif" />
+    <Content Include="Admin\Images\Pop_up\75x54_gray.gif" />
+    <Content Include="Admin\Images\Pop_up\add_role_bt.gif" />
+    <Content Include="Admin\Images\Pop_up\box_title_line_styleA.gif" />
+    <Content Include="Admin\Images\Pop_up\box_title_styleA.gif" />
+    <Content Include="Admin\Images\Pop_up\close_bt.gif" />
+    <Content Include="Admin\Images\Pop_up\close_bt_role.gif" />
+    <Content Include="Admin\Images\Pop_up\line_style_A.gif" />
+    <Content Include="Admin\Images\prev.gif" />
+    <Content Include="Admin\Images\textarea_bg.gif" />
+    <Content Include="Admin\Images\text_bg.gif" />
+    <Content Include="Admin\Images\title_A_bg.gif" />
+    <Content Include="Admin\Images\title_B_bg.gif" />
+    <Content Include="Admin\Images\title_C_bg.gif" />
+    <Content Include="Admin\Images\toolB\box.png" />
+    <Content Include="Admin\Images\toolB\contacts.png" />
+    <Content Include="Admin\Images\toolB\mose_over_A.png" />
+    <Content Include="Admin\Images\toolB\sms.png" />
+    <Content Include="Admin\Images\toolB\task.png" />
+    <Content Include="Admin\Images\up.png" />
+    <Content Include="Admin\Images\uup.png" />
+    <Content Include="Admin\Images\wbg.gif" />
+    <Content Include="Admin\Images\web\404.gif" />
+    <Content Include="Admin\Images\web\90_0_0.gif" />
+    <Content Include="Admin\Images\web\actions.png" />
+    <Content Include="Admin\Images\web\ajaxloading.gif" />
+    <Content Include="Admin\Images\web\ajax_loading_bar.gif" />
+    <Content Include="Admin\Images\web\appsidebar.png" />
+    <Content Include="Admin\Images\web\arrow_error_bottom.png" />
+    <Content Include="Admin\Images\web\arrow_icon.png" />
+    <Content Include="Admin\Images\web\avatar_bg.gif" />
+    <Content Include="Admin\Images\web\avatar_edit.gif" />
+    <Content Include="Admin\Images\web\avatar_medium_bg.gif" />
+    <Content Include="Admin\Images\web\bd.png" />
+    <Content Include="Admin\Images\web\bg-benefits.png" />
+    <Content Include="Admin\Images\web\bg-header-banner.png" />
+    <Content Include="Admin\Images\web\bg-home.png" />
+    <Content Include="Admin\Images\web\bg-item-bd.png" />
+    <Content Include="Admin\Images\web\bg-num1.png" />
+    <Content Include="Admin\Images\web\bg-pic-des.png" />
+    <Content Include="Admin\Images\web\bg_gradient.png" />
+    <Content Include="Admin\Images\web\bg_input.png" />
+    <Content Include="Admin\Images\web\bg_line2.png" />
+    <Content Include="Admin\Images\web\bg_line5.png" />
+    <Content Include="Admin\Images\web\bg_login.jpg" />
+    <Content Include="Admin\Images\web\bg_nav_shadow.jpg" />
+    <Content Include="Admin\Images\web\bg_popup.png" />
+    <Content Include="Admin\Images\web\bg_pub_form-2.jpg" />
+    <Content Include="Admin\Images\web\bjblock-feed.png" />
+    <Content Include="Admin\Images\web\bubble.png" />
+    <Content Include="Admin\Images\web\bubble_bg.gif" />
+    <Content Include="Admin\Images\web\bubble_u.png" />
+    <Content Include="Admin\Images\web\comment_top.gif" />
+    <Content Include="Admin\Images\web\corner-number.png" />
+    <Content Include="Admin\Images\web\corner_rank.png" />
+    <Content Include="Admin\Images\web\creategroup.gif" />
+    <Content Include="Admin\Images\web\globe-big.png" />
+    <Content Include="Admin\Images\web\globe-point-active.png" />
+    <Content Include="Admin\Images\web\globe-point-bubble.png" />
+    <Content Include="Admin\Images\web\group.gif" />
+    <Content Include="Admin\Images\web\highlight_1.gif" />
+    <Content Include="Admin\Images\web\htmore.png" />
+    <Content Include="Admin\Images\web\icon_common.png" />
+    <Content Include="Admin\Images\web\icon_topics.png" />
+    <Content Include="Admin\Images\web\ico_love.png" />
+    <Content Include="Admin\Images\web\item_banned.gif" />
+    <Content Include="Admin\Images\web\item_delete.gif" />
+    <Content Include="Admin\Images\web\link.gif" />
+    <Content Include="Admin\Images\web\loading.gif" />
+    <Content Include="Admin\Images\web\loading_pic.gif" />
+    <Content Include="Admin\Images\web\login_bg.gif" />
+    <Content Include="Admin\Images\web\login_edge.gif" />
+    <Content Include="Admin\Images\web\logo.png" />
+    <Content Include="Admin\Images\web\o_bg.png" />
+    <Content Include="Admin\Images\web\pagetab.png" />
+    <Content Include="Admin\Images\web\pub_at.png" />
+    <Content Include="Admin\Images\web\pub_face.png" />
+    <Content Include="Admin\Images\web\pub_submit.png" />
+    <Content Include="Admin\Images\web\pub_video.png" />
+    <Content Include="Admin\Images\web\quote_left.gif" />
+    <Content Include="Admin\Images\web\quote_right.gif" />
+    <Content Include="Admin\Images\web\reg_icon.png" />
+    <Content Include="Admin\Images\web\share_count.png" />
+    <Content Include="Admin\Images\web\share_lovehate.png" />
+    <Content Include="Admin\Images\web\sprite-globe-nav.png" />
+    <Content Include="Admin\Images\web\sprite-globe-points-small.png" />
+    <Content Include="Admin\Images\web\sprite_group_homepage.png" />
+    <Content Include="Admin\Images\web\sprite_nonmember.png" />
+    <Content Include="Admin\Images\web\thought_balloon_arrow.png" />
+    <Content Include="Admin\Images\web\thought_balloon_arrow_lime.png" />
+    <Content Include="Admin\Images\web\tools.png" />
+    <Content Include="Admin\Images\web\top.png" />
+    <Content Include="Admin\Images\web\vedio_play.png" />
+    <Content Include="Admin\js\flexigrid-1.1A.js" />
+    <Content Include="Admin\js\jquery.actions.js" />
+    <Content Include="Admin\js\jquery.noty.js" />
+    <Content Include="Admin\Roles\index.aspx" />
+    <Content Include="Admin\Style\theme\hello-cerulean.css" />
+    <Content Include="Admin\Style\theme\hello-classic.css" />
+    <Content Include="Admin\Style\theme\hello-redy.css" />
+    <Content Include="Admin\Style\theme\hello-simplex.css" />
+    <Content Include="Admin\Style\theme\hello-spacelab.css" />
+    <Content Include="Admin\Style\theme\hello-united.css" />
+    <Content Include="Admin\Style\common.css" />
+    <Content Include="Admin\Style\default.css" />
+    <Content Include="Admin\Style\flexigrid.css" />
+    <Content Include="Admin\Style\flexigrid.pack.css" />
+    <Content Include="Admin\Style\flexigrid\bg.gif" />
+    <Content Include="Admin\Style\flexigrid\btn-sprite.gif" />
+    <Content Include="Admin\Style\flexigrid\ch.gif" />
+    <Content Include="Admin\Style\flexigrid\chtd-bg.gif" />
+    <Content Include="Admin\Style\flexigrid\ddn.png" />
+    <Content Include="Admin\Style\flexigrid\dn.png" />
+    <Content Include="Admin\Style\flexigrid\fhbg.gif" />
+    <Content Include="Admin\Style\flexigrid\fhbg.png" />
+    <Content Include="Admin\Style\flexigrid\grid.png" />
+    <Content Include="Admin\Style\flexigrid\grid3-special-col-bg.gif" />
+    <Content Include="Admin\Style\flexigrid\grid3-special-col-sel-bg.gif" />
+    <Content Include="Admin\Style\flexigrid\gridth.gif" />
+    <Content Include="Admin\Style\flexigrid\headbg.gif" />
+    <Content Include="Admin\Style\flexigrid\hl.png" />
+    <Content Include="Admin\Style\flexigrid\indicator_waitanim.gif" />
+    <Content Include="Admin\Style\flexigrid\indicator_web20_working.gif" />
+    <Content Include="Admin\Style\flexigrid\line.gif" />
+    <Content Include="Admin\Style\flexigrid\load-bg.png" />
+    <Content Include="Admin\Style\flexigrid\load.gif" />
+    <Content Include="Admin\Style\flexigrid\load.png" />
+    <Content Include="Admin\Style\flexigrid\magnifier.png" />
+    <Content Include="Admin\Style\flexigrid\page-bg.gif" />
+    <Content Include="Admin\Style\flexigrid\page-bg2.gif" />
+    <Content Include="Admin\Style\flexigrid\page-first.gif" />
+    <Content Include="Admin\Style\flexigrid\page-last.gif" />
+    <Content Include="Admin\Style\flexigrid\page-next.gif" />
+    <Content Include="Admin\Style\flexigrid\page-prev.gif" />
+    <Content Include="Admin\Style\flexigrid\sort_asc.gif" />
+    <Content Include="Admin\Style\flexigrid\sort_desc.gif" />
+    <Content Include="Admin\Style\flexigrid\tbg.gif" />
+    <Content Include="Admin\Style\flexigrid\up.png" />
+    <Content Include="Admin\Style\flexigrid\uup.png" />
+    <Content Include="Admin\Style\flexigrid\wbg.gif" />
+    <Content Include="Admin\Style\images\bg.gif" />
+    <Content Include="Admin\Style\images\btn-sprite.gif" />
+    <Content Include="Admin\Style\images\ddn.png" />
+    <Content Include="Admin\Style\images\dn.png" />
+    <Content Include="Admin\Style\images\fhbg.gif" />
+    <Content Include="Admin\Style\images\first.gif" />
+    <Content Include="Admin\Style\images\hl.png" />
+    <Content Include="Admin\Style\images\last.gif" />
+    <Content Include="Admin\Style\images\line.gif" />
+    <Content Include="Admin\Style\images\load.gif" />
+    <Content Include="Admin\Style\images\load.png" />
+    <Content Include="Admin\Style\images\magnifier.png" />
+    <Content Include="Admin\Style\images\next.gif" />
+    <Content Include="Admin\Style\images\prev.gif" />
+    <Content Include="Admin\Style\images\up.png" />
+    <Content Include="Admin\Style\images\uup.png" />
+    <Content Include="Admin\Style\images\wbg.gif" />
+    <Content Include="Admin\Style\menu.css" />
+    <Content Include="Admin\Style\opa-icons.css" />
+    <Content Include="Admin\Maste\UI.aspx" />
+    <Content Include="Admin\Users\Add.aspx" />
+    <Content Include="Admin\Users\index.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\artDialog.js" />
+    <Content Include="Scripts\artDialog.source.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery-cookie.js" />
+    <Content Include="Scripts\jquery.artDialog.js" />
+    <Content Include="Scripts\jquery.artDialog.source.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\kindeditor-min.js" />
+    <Content Include="Scripts\kindeditor.js" />
+    <Content Include="Admin\js\jquery.common.js" />
+    <Content Include="Admin\js\menu.js" />
+    <Content Include="Admin\js\zDialog.js" />
+    <Content Include="Admin\js\zDrag.js" />
+    <Content Include="Scripts\plugins\iframeTools.js" />
+    <Content Include="Scripts\plugins\iframeTools.source.js" />
+    <Content Include="Scripts\skins\aero.css" />
+    <Content Include="Scripts\skins\aero\aero_s.png" />
+    <Content Include="Scripts\skins\aero\aero_s2.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_close.hover.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_close.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_e.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_n.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_ne.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_nw.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_s.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_se.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_sw.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_title_icon.png" />
+    <Content Include="Scripts\skins\aero\ie6\aui_w.png" />
+    <Content Include="Scripts\skins\black.css" />
+    <Content Include="Scripts\skins\black\bg.png" />
+    <Content Include="Scripts\skins\black\bg2.png" />
+    <Content Include="Scripts\skins\black\bg_css3.png" />
+    <Content Include="Scripts\skins\black\bg_css3_2.png" />
+    <Content Include="Scripts\skins\black\ie6\close.hover.png" />
+    <Content Include="Scripts\skins\black\ie6\close.png" />
+    <Content Include="Scripts\skins\black\ie6\e.png" />
+    <Content Include="Scripts\skins\black\ie6\n.png" />
+    <Content Include="Scripts\skins\black\ie6\ne.png" />
+    <Content Include="Scripts\skins\black\ie6\nw.png" />
+    <Content Include="Scripts\skins\black\ie6\s.png" />
+    <Content Include="Scripts\skins\black\ie6\se.png" />
+    <Content Include="Scripts\skins\black\ie6\sw.png" />
+    <Content Include="Scripts\skins\black\ie6\w.png" />
+    <Content Include="Scripts\skins\blue.css" />
+    <Content Include="Scripts\skins\blue\bg.png" />
+    <Content Include="Scripts\skins\blue\bg2.png" />
+    <Content Include="Scripts\skins\blue\bg_css3.png" />
+    <Content Include="Scripts\skins\blue\bg_css3_2.png" />
+    <Content Include="Scripts\skins\blue\ie6\close.hover.png" />
+    <Content Include="Scripts\skins\blue\ie6\close.png" />
+    <Content Include="Scripts\skins\blue\ie6\e.png" />
+    <Content Include="Scripts\skins\blue\ie6\n.png" />
+    <Content Include="Scripts\skins\blue\ie6\ne.png" />
+    <Content Include="Scripts\skins\blue\ie6\nw.png" />
+    <Content Include="Scripts\skins\blue\ie6\s.png" />
+    <Content Include="Scripts\skins\blue\ie6\se.png" />
+    <Content Include="Scripts\skins\blue\ie6\sw.png" />
+    <Content Include="Scripts\skins\blue\ie6\w.png" />
+    <Content Include="Scripts\skins\chrome.css" />
+    <Content Include="Scripts\skins\chrome\border.png" />
+    <Content Include="Scripts\skins\chrome\chrome_s.png" />
+    <Content Include="Scripts\skins\default.css" />
+    <Content Include="Scripts\skins\green.css" />
+    <Content Include="Scripts\skins\green\bg.png" />
+    <Content Include="Scripts\skins\green\bg2.png" />
+    <Content Include="Scripts\skins\green\bg_css3.png" />
+    <Content Include="Scripts\skins\green\bg_css3_2.png" />
+    <Content Include="Scripts\skins\green\color_bg.png" />
+    <Content Include="Scripts\skins\green\ie6\close.hover.png" />
+    <Content Include="Scripts\skins\green\ie6\close.png" />
+    <Content Include="Scripts\skins\green\ie6\e.png" />
+    <Content Include="Scripts\skins\green\ie6\n.png" />
+    <Content Include="Scripts\skins\green\ie6\ne.png" />
+    <Content Include="Scripts\skins\green\ie6\nw.png" />
+    <Content Include="Scripts\skins\green\ie6\s.png" />
+    <Content Include="Scripts\skins\green\ie6\se.png" />
+    <Content Include="Scripts\skins\green\ie6\sw.png" />
+    <Content Include="Scripts\skins\green\ie6\w.png" />
+    <Content Include="Scripts\skins\icons\error.png" />
+    <Content Include="Scripts\skins\icons\face-sad.png" />
+    <Content Include="Scripts\skins\icons\face-smile.png" />
+    <Content Include="Scripts\skins\icons\loading.gif" />
+    <Content Include="Scripts\skins\icons\question.png" />
+    <Content Include="Scripts\skins\icons\succeed.png" />
+    <Content Include="Scripts\skins\icons\warning.png" />
+    <Content Include="Scripts\skins\idialog.css" />
+    <Content Include="Scripts\skins\idialog\idialog_s.png" />
+    <Content Include="Scripts\skins\idialog\idialog_s2.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_close.hover.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_close.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_e.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_n.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_ne.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_nw.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_s.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_se.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_sw.png" />
+    <Content Include="Scripts\skins\idialog\ie6\aui_w.png" />
+    <Content Include="Scripts\skins\opera.css" />
+    <Content Include="Scripts\skins\opera\ie6\aui_close.hover.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_close.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_e.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_n.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_ne.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_nw.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_s.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_se.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_sw.png" />
+    <Content Include="Scripts\skins\opera\ie6\aui_w.png" />
+    <Content Include="Scripts\skins\opera\s1.png" />
+    <Content Include="Scripts\skins\opera\s2.png" />
+    <Content Include="Scripts\skins\simple.css" />
+    <Content Include="Scripts\skins\twitter.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Maste\child.Master.cs">
+      <DependentUpon>child.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Maste\child.Master.designer.cs">
+      <DependentUpon>child.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Maste\MainPage.Master.cs">
+      <DependentUpon>MainPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Maste\MainPage.Master.designer.cs">
+      <DependentUpon>MainPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Maste\UI.aspx.cs">
+      <DependentUpon>UI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Maste\UI.aspx.designer.cs">
+      <DependentUpon>UI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Default.aspx.en-us.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Default.aspx.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_LocalResources\Default.aspx.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Default.aspx.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\urls.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloData.Web\HelloData.Web.csproj">
+      <Project>{2E597779-C89D-4FF1-A4DD-367FB8C4F877}</Project>
+      <Name>HelloData.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Maste\MainPage.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Maste\child.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Default.aspx.en-us.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Default.aspx.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Default.aspx.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\WebForm1.aspx.en-us.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\WebForm1.aspx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57238</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
