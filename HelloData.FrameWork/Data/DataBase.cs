@@ -4,8 +4,6 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using HelloData.FrameWork.AOP;
-using HelloData.FrameWork.Logging;
-
 namespace HelloData.FrameWork.Data
 {
     public class DataBase : IDisposable
@@ -467,12 +465,15 @@ namespace HelloData.FrameWork.Data
                     {
                         using (DbCommand command = SetCommandText(commandText, currentConnet))
                         {
+                            _watch.BeginWithMessage(string.Format("sql语句：{0}", commandText));
+
                             if (command != null)
-                            {
+                            { 
                                 int res=command.ExecuteNonQuery();
                                 num += res;
-                                Logger.CurrentLog.Info("ExeDataTable Is Success!Result(int));" + res + "");
+                                Logging.Logger.CurrentLog.Info("ExeDataTable Is Success!Result(int));" + res + "");
                             }
+                          
                         }
                     }
 
@@ -629,7 +630,7 @@ namespace HelloData.FrameWork.Data
         /// <param name="pagesize"></param>
         /// <param name="selcountstr"></param>
         /// <returns></returns>
-        public virtual string CreatePageString(string tablename, string coloums, string where, string orderby, int pageindex, int pagesize, out string selcountstr)
+        public virtual string CreatePageString(string tablename, string coloums, string where, string groupby, string orderby, int pageindex, int pagesize, out string selcountstr)
         {
             selcountstr = string.Empty;
             return string.Empty;

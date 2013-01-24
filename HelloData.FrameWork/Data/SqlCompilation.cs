@@ -261,7 +261,14 @@ namespace HelloData.FrameWork.Data
                     {
                         value = Convert.ChangeType(value, type);
                     }
-                    else if (type.Equals(typeof(string)))
+                    else if (valueType.FullName.Contains("DateTime") &&
+                             (type.Equals(typeof (DateTime)) || type.Equals(typeof (DateTime?))))
+                    {
+                        DateTime dateTime = DateTime.Now;
+                        DateTime.TryParse(value.ToString(),out dateTime);
+                        value = dateTime;
+                    }
+                    else if (type.Equals(typeof (string)))
                     {
                         value = value.ToString().Trim().Replace("\0", "");
                     }

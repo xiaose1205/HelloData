@@ -23,7 +23,7 @@ namespace HelloData.FrameWork.Data
                 return "MySql.Data.MySqlClient";
             }
         }
-        public override string CreatePageString(string tablename, string colums, string where, string order, int pageindex, int pagesize, out string selcountstr)
+        public override string CreatePageString(string tablename, string colums, string where, string groupby, string order, int pageindex, int pagesize, out string selcountstr)
         {
             if (string.IsNullOrEmpty(colums))
                 colums = "*";
@@ -31,7 +31,9 @@ namespace HelloData.FrameWork.Data
                 where = string.Empty;
             else
                 where = " where " + where.Trim().Substring(3);
-
+            string groupbystr = string.Empty;
+            if (!string.IsNullOrEmpty(groupby))
+                groupbystr = "group by " + groupby;
             if (pageindex == 0)
             {
                 selcountstr = string.Empty;
@@ -40,9 +42,9 @@ namespace HelloData.FrameWork.Data
                     top = " limit  " + pagesize + " ";
                 //直接查询指定的数目的数据
                 if (string.IsNullOrEmpty(order))
-                    return (string.Format("SELECT  {0} from {1}   {2}   " + top + " ;",
+                    return (string.Format("SELECT  {0} from {1}  " + groupbystr + " {2}   " + top + " ;",
                         colums, tablename, where));
-                return (string.Format("SELECT {0} from {1}   {2} ORDER BY {3} " + top + "  ;",
+                return (string.Format("SELECT {0} from {1}   {2} " + groupbystr + " ORDER BY {3} " + top + "  ;",
                                        colums, tablename, @where, order));
             }
             else
@@ -57,10 +59,10 @@ namespace HelloData.FrameWork.Data
                 }
                 skip = pagesize * skip;
                 if (string.IsNullOrEmpty(order))
-                    return (string.Format("select {0} from {1}   {4}   limit {2}, {3}",
+                    return (string.Format("select {0} from {1}   {4}  " + groupbystr + " limit {2}, {3}",
                   colums, tablename, skip, pagesize, where));
                 else
-                    return (string.Format("select {1} from {2}   {5} order by {0}  limit {3} ,{4}",
+                    return (string.Format("select {1} from {2}   {5} " + groupbystr + " order by {0}  limit {3} ,{4}",
                     order, colums, tablename, skip, pagesize, where));
 
             }
@@ -97,6 +99,6 @@ namespace HelloData.FrameWork.Data
         {
             get { return " SELECT LAST_INSERT_ID(); "; }
             set { }
-        } 
+        }
     }
 }

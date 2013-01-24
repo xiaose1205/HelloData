@@ -72,7 +72,8 @@ namespace HelloData.FrameWork.Data
 
         public int ExecuteSqlTran(List<string> cmdlist)
         {
-            return DbHelper.ExecuteTransaction(cmdlist);
+            ReturnCode = DbHelper.ExecuteTransaction(cmdlist);
+            return ReturnCode;
         }
         #region ²Ù×÷´æ´¢¹ý³Ì
         /// <summary>

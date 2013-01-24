@@ -579,6 +579,7 @@ namespace HelloData.FrameWork.Data
                                 jointable.AppendLine(string.Format("{0}  as _{0} ", item.TableName1));
                             }
                             jointable.AppendLine(SqlCompilation.GetJoinEnum(item.Join));
+
                             jointable.AppendLine(string.Format("{0}  as _{0} ", item.TableName2));
                             for (int i = 0; i < item.Joinfields.Count; i++)
                             {
@@ -611,34 +612,48 @@ namespace HelloData.FrameWork.Data
                         if (ViewList == null || ViewList.Count == 0)
                         {
                             _selcountstr = string.Format("select count(1) from {0}  where  1=1  {1} ", TbName, where);
-                            return string.Format(SqlCompilation.SelectStr, SqlClomns,
-                                                 TbName,
-                                                 where,
-                                                 string.IsNullOrEmpty(order)
-                                                     ? string.Empty
-                                                     : string.Format("order by {0}", order),
-                                                 string.IsNullOrEmpty(_groupByValue)
-                                                     ? string.Empty
-                                                     : string.Format(" group by {0} ", _groupByValue.Trim(',')));
+                            //return string.Format(SqlCompilation.SelectStr, SqlClomns,
+                            //                     TbName,
+                            //                     where,
+                            //                     string.IsNullOrEmpty(order)
+                            //                         ? string.Empty
+                            //                         : string.Format("order by {0}", order),
+                            //                     string.IsNullOrEmpty(_groupByValue)
+                            //                         ? string.Empty
+                            //                         : string.Format(" group by {0} ", _groupByValue.Trim(',')));
+                            return DbHelper.CreatePageString(TbName, SqlClomns,
+                                             where, _groupByValue.Trim(','),
+                                             string.IsNullOrEmpty(order) ? string.Empty : order
+                                        , pageindex, pagesize, out _selcountstr);
                         }
                         //视图的处理
                         StringBuilder jointable = new StringBuilder();
                         List<string> tables = new List<string>();
                         foreach (var item in ViewList)
                         {
+                            string table1 = string.Empty;
+                            string table2 = string.Empty;
+                            table1 = string.Format("_{0} ", item.TableName1);
                             if (!tables.Contains(item.TableName1))
                             {
                                 tables.Add(item.TableName1);
-                                jointable.AppendLine(string.Format("{0}  as _{0} ", item.TableName1));
+                                jointable.AppendLine(string.Format("{0}  as {1} ", item.TableName1, table1));
                             }
                             jointable.AppendLine(SqlCompilation.GetJoinEnum(item.Join));
-                            jointable.AppendLine(string.Format("{0}  as _{0} ", item.TableName2));
+                            if (!tables.Contains(item.TableName2))
+                                table2 = string.Format("_{0} ", item.TableName2);
+                            else
+                            {
+                                table2 = string.Format("_{0}{1} ", item.TableName2, tables.FindAll(p => p.Equals(item.TableName2)).Count);
+                            }
+                            jointable.AppendLine(string.Format("{0}  as {1} ", item.TableName2, table2));
+                            tables.Add(item.TableName2);
                             for (int i = 0; i < item.Joinfields.Count; i++)
                             {
                                 WhereField field = new WhereField();
-                                field.FiledName = string.Format("_{0}.{1}", item.TableName1,
+                                field.FiledName = string.Format("{0}.{1}", table1,
                                                                              item.Joinfields[i].FiledName);
-                                field.Value = string.Format("_{0}.{1}", item.TableName2, item.Joinfields[i].Value);
+                                field.Value = string.Format("{0}.{1}", table2, item.Joinfields[i].Value);
 
                                 if (i == 0)
                                 {
@@ -650,8 +665,8 @@ namespace HelloData.FrameWork.Data
                             }
                         }
                         return DbHelper.CreatePageString(jointable.ToString(), SqlClomns,
-                                             where,
-                                             string.IsNullOrEmpty(order) ? string.Empty : string.Format("order by {0}", order)
+                                             where, _groupByValue.Trim(','),
+                                             string.IsNullOrEmpty(order) ? string.Empty : order
                                         , pageindex, pagesize, out _selcountstr);
 
                     }

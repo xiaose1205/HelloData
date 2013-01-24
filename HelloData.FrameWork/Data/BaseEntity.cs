@@ -31,7 +31,15 @@ namespace HelloData.FrameWork.Data
             }
 
         }
-
+        /// <summary>
+        /// 当前model的错误信息值（可以用导出或者在线数据纠正）
+        /// </summary>
+        [Column(NoSqlProperty = true)]
+        public string ErrorMsg
+        {
+            get;
+            set;
+        }
         [Column(NoSqlProperty = true)]
         public string TableName
         {
