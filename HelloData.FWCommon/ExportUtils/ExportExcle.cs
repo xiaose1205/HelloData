@@ -21,14 +21,14 @@ namespace HelloData.FWCommon.ExportUtils
             FileExtension = ".xls";
           
         }
-        public void WriteRow(List<string> cellvalue)
+        public void WriteRow(List<object> cellvalue)
         {
             workbook.Open(GetFullPath(), FileFormatType.Excel97To2003);
             var worksheet = workbook.Worksheets[0];
-            string[] itemValues = new string[cellvalue.Count];
+            object[] itemValues = new object[cellvalue.Count];
             for (int i = 0; i < cellvalue.Count; i++)
             {
-                itemValues[i] = cellvalue[i];
+                itemValues[i] = cellvalue[i].ToString();
             }
             if (itemValues != null)
             {
@@ -36,7 +36,7 @@ namespace HelloData.FWCommon.ExportUtils
             }
             workbook.Save(GetFullPath(), FileFormatType.Excel97To2003);
         }
-        public void WriteRow(string[] itemValues)
+        public void WriteRow(object[] itemValues)
         {
             workbook.Open(GetFullPath(), FileFormatType.Excel97To2003);
             var worksheet = workbook.Worksheets[0];
@@ -46,7 +46,7 @@ namespace HelloData.FWCommon.ExportUtils
             }
             workbook.Save(GetFullPath(), FileFormatType.Excel97To2003);
         }
-        public void WriteContent(List<string[]> itemValues)
+        public void WriteContent(List<object[]> itemValues)
         {
             workbook.Open(GetFullPath(), FileFormatType.Excel97To2003);
             var worksheet = workbook.Worksheets[0];

@@ -43,7 +43,7 @@ namespace HelloData.FrameWork.Data.Helper
             if (myConnection.State == ConnectionState.Open)
                 return;
         }
-        public override string CreatePageString(string tablename, string colums, string where, string order, int pageindex, int pagesize, out string selcountstr)
+        public override string CreatePageString(string tablename, string colums, string where, string groupby, string order, int pageindex, int pagesize, out string selcountstr)
         {
             if (string.IsNullOrEmpty(colums))
                 colums = "*";

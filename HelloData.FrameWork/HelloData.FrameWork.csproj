@@ -81,6 +81,7 @@
     <Compile Include="Data\Enum\TableTyleEnum.cs" />
     <Compile Include="Data\Enum\ViewJoinEnum.cs" />
     <Compile Include="Data\FilterField.cs" />
+    <Compile Include="Data\Helper\OracleHelper.cs" />
     <Compile Include="Data\ViewHelper.cs" />
     <Compile Include="Helpers\HandlerResult.cs" />
     <Compile Include="Data\Helper\MySqlHelper.cs" />

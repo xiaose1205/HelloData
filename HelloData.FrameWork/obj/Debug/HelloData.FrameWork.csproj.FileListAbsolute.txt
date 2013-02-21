@@ -12,3 +12,8 @@ D:\自己的产品\HelloData\HelloData.FrameWork\bin\Debug\NLog.dll
 D:\自己的产品\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.dll
 D:\自己的产品\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.pdb
 D:\自己的产品\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FrameWork\bin\Debug\HelloData.FrameWork.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FrameWork\bin\Debug\HelloData.FrameWork.pdb
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FrameWork\obj\Debug\HelloData.FrameWork.pdb

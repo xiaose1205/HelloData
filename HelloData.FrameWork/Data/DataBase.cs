@@ -598,12 +598,12 @@ namespace HelloData.FrameWork.Data
         }
 
 
-        public virtual string ReturnDBValue(DbType DataType, object value)
+        public virtual string ReturnDBValue(DbType dataType, object value)
         {
             string revalue;
-            if (DataType == DbType.Boolean)
+            if (dataType == DbType.Boolean)
                 revalue = (bool)value ? "1" : "0";
-            else if (DataType == DbType.Int16 || DataType == DbType.Int32 || DataType == DbType.Int64)
+            else if (dataType == DbType.Int16 || dataType == DbType.Int32 || dataType == DbType.Int64)
                 revalue = value.ToString();
             else
                 revalue = string.Format("'{0}'", value);

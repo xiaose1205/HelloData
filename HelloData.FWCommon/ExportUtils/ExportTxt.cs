@@ -15,57 +15,34 @@ namespace HelloData.FWCommon.ExportUtils
         public ExportTxt(string fileName)
             : base(fileName)
         {
-
+            FileName = fileName;
             ExportFileType = ExportFileType.Txt;
             FileExtension = ".txt";
             Separator = ",";
 
         }
-        public void WriteRow(List<string> cellvalue)
+        public void WriteRow(List<object> cellvalue)
         {
-            using (TextWriter writer = new StreamWriter(GetFullPath(), true, Encoding.Default))
+            using (TextWriter writer = new StreamWriter(GetFullPath(), true, Encoding))
             {
                 string[] strs = new string[cellvalue.Count];
                 for (int i = 0; i < cellvalue.Count; i++)
                 {
-                    strs[i] = cellvalue[i];
+                    strs[i] = cellvalue[i].ToString();
                 }
                 writer.WriteLine(string.Join(Separator, strs));
             }
         }
-        public void WriteRow(List<string> cellvalue, Encoding encoding)
+     
+        public void WriteContent(List<object> rowValue)
         {
-            Encoding = encoding;
-            using (TextWriter writer = new StreamWriter(GetFullPath(), true, encoding))
-            {
-                string[] strs = new string[cellvalue.Count];
-                for (int i = 0; i < cellvalue.Count; i++)
-                {
-                    strs[i] = cellvalue[i];
-                }
-                writer.WriteLine(string.Join(Separator, strs));
-            }
-        }
-        public void WriteContent(List<string> rowValue)
-        {
-            using (TextWriter writer = new StreamWriter(GetFullPath(), true, Encoding.Default))
+            using (TextWriter writer = new StreamWriter(GetFullPath(), true, Encoding))
             {
                 foreach (string str in rowValue)
                 {
                     writer.WriteLine(str);
                 }
             }
-        }
-        public void WriteContent(List<string> rowValue, Encoding encoding)
-        {
-            Encoding = encoding;
-            using (TextWriter writer = new StreamWriter(GetFullPath(), true, encoding))
-            {
-                foreach (string str in rowValue)
-                {
-                    writer.WriteLine(str);
-                }
-            }
-        }
+        } 
     }
 }
