@@ -55,90 +55,93 @@ namespace HelloData.FWCommon.Utils
             {
                 #region 得到请求的response
 
-                using (response = (HttpWebResponse)request.GetResponse())
-                {
-                    try
+                if (request != null)
+                    using (response = (HttpWebResponse)request.GetResponse())
                     {
-                        objhttpitem.CookieCollection = response.Cookies;
-                        objhttpitem.Cookie = response.Headers["set-cookie"].Trim();
-                    }
-                    catch { }
-                    objhttpitem.Response = response;
-                    objhttpitem.Request = request;
-                    //从这里开始我们要无视编码了
-                    if (encoding == null)
-                    {
+                        try
+                        {
+                            objhttpitem.CookieCollection = response.Cookies;
+                            if (response.Headers["set-cookie"] != null)
+                                objhttpitem.Cookie = response.Headers["set-cookie"].Trim();
+                        }
+                        catch (Exception ex) { }
+                        objhttpitem.Response = response;
+                        objhttpitem.Request = request;
+                        
+                        //从这里开始我们要无视编码了
+                        if (encoding == null)
+                        {
 
-                        MemoryStream _stream = new MemoryStream();
-                        if (response.ContentEncoding != null && response.ContentEncoding.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            objhttpitem.Reader = reader;
-                            //开始读取流并设置编码方式
-                            //new GZipStream(response.GetResponseStream(), CompressionMode.Decompress).CopyTo(_stream, 10240);
-                            //.net4.0以下写法
-                            _stream = GetMemoryStream(response.GetResponseStream());
-                        }
-                        else
-                        {
-                            objhttpitem.Reader = reader;
-                            //response.GetResponseStream().CopyTo(_stream, 10240);
-                            // .net4.0以下写法
-                            _stream = GetMemoryStream(response.GetResponseStream());
-                        }
-                        byte[] RawResponse = _stream.ToArray();
-                        string temp = Encoding.Default.GetString(RawResponse, 0, RawResponse.Length);
-                        //<meta(.*?)charset([\s]?)=[^>](.*?)>
-                        Match meta = Regex.Match(temp, "<meta([^<]*)charset=([^<]*)[\"']", RegexOptions.IgnoreCase | RegexOptions.Multiline);
-                        string charter = (meta.Groups.Count > 2) ? meta.Groups[2].Value : string.Empty;
-                        charter = charter.Replace("\"", string.Empty).Replace("'", string.Empty).Replace(";", string.Empty);
-                        if (charter.Length > 0)
-                        {
-                            charter = charter.ToLower().Replace("iso-8859-1", "gbk");
-                            encoding = Encoding.GetEncoding(charter);
-                        }
-                        else
-                        {
-                            if (response.CharacterSet.ToLower().Trim() == "iso-8859-1")
+                            MemoryStream _stream = new MemoryStream();
+                            if (response.ContentEncoding != null && response.ContentEncoding.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
                             {
-                                encoding = Encoding.GetEncoding("gbk");
+                                objhttpitem.Reader = reader;
+                                //开始读取流并设置编码方式
+                                //new GZipStream(response.GetResponseStream(), CompressionMode.Decompress).CopyTo(_stream, 10240);
+                                //.net4.0以下写法
+                                _stream = GetMemoryStream(response.GetResponseStream());
                             }
                             else
                             {
-                                if (string.IsNullOrEmpty(response.CharacterSet.Trim()))
+                                objhttpitem.Reader = reader;
+                                //response.GetResponseStream().CopyTo(_stream, 10240);
+                                // .net4.0以下写法
+                                _stream = GetMemoryStream(response.GetResponseStream());
+                            }
+                            byte[] RawResponse = _stream.ToArray();
+                            string temp = Encoding.Default.GetString(RawResponse, 0, RawResponse.Length);
+                            //<meta(.*?)charset([\s]?)=[^>](.*?)>
+                            Match meta = Regex.Match(temp, "<meta([^<]*)charset=([^<]*)[\"']", RegexOptions.IgnoreCase | RegexOptions.Multiline);
+                            string charter = (meta.Groups.Count > 2) ? meta.Groups[2].Value : string.Empty;
+                            charter = charter.Replace("\"", string.Empty).Replace("'", string.Empty).Replace(";", string.Empty);
+                            if (charter.Length > 0)
+                            {
+                                charter = charter.ToLower().Replace("iso-8859-1", "gbk");
+                                encoding = Encoding.GetEncoding(charter);
+                            }
+                            else
+                            {
+                                if (response.CharacterSet.ToLower().Trim() == "iso-8859-1")
                                 {
-                                    encoding = Encoding.UTF8;
+                                    encoding = Encoding.GetEncoding("gbk");
                                 }
                                 else
                                 {
-                                    encoding = Encoding.GetEncoding(response.CharacterSet);
+                                    if (string.IsNullOrEmpty(response.CharacterSet.Trim()))
+                                    {
+                                        encoding = Encoding.UTF8;
+                                    }
+                                    else
+                                    {
+                                        encoding = Encoding.GetEncoding(response.CharacterSet);
+                                    }
                                 }
                             }
-                        }
-                        returnData = encoding.GetString(RawResponse);
-                    }
-                    else
-                    {
-                        if (response.ContentEncoding != null && response.ContentEncoding.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
-                        {
-                            //开始读取流并设置编码方式
-                            using (reader = new StreamReader(new GZipStream(response.GetResponseStream(), CompressionMode.Decompress), encoding))
-                            {
-                                objhttpitem.Reader = reader;
-                                returnData = reader.ReadToEnd();
-
-                            }
+                            returnData = encoding.GetString(RawResponse);
                         }
                         else
                         {
-                            //开始读取流并设置编码方式
-                            using (reader = new StreamReader(response.GetResponseStream(), encoding))
+                            if (response.ContentEncoding != null && response.ContentEncoding.Equals("gzip", StringComparison.InvariantCultureIgnoreCase))
                             {
-                                objhttpitem.Reader = reader;
-                                returnData = reader.ReadToEnd();
+                                //开始读取流并设置编码方式
+                                using (reader = new StreamReader(new GZipStream(response.GetResponseStream(), CompressionMode.Decompress), encoding))
+                                {
+                                    objhttpitem.Reader = reader;
+                                    returnData = reader.ReadToEnd();
+
+                                }
+                            }
+                            else
+                            {
+                                //开始读取流并设置编码方式
+                                using (reader = new StreamReader(response.GetResponseStream(), encoding))
+                                {
+                                   // objhttpitem.Reader = reader;
+                                    returnData = reader.ReadToEnd();
+                                }
                             }
                         }
                     }
-                }
 
                 #endregion
             }
@@ -199,8 +202,16 @@ namespace HelloData.FWCommon.Utils
             }
             else
             {
-                //初始化对像，并设置请求的URL地址
-                request = (HttpWebRequest)WebRequest.Create(GetUrl(objhttpItem.URL));
+                try
+                {
+                    //初始化对像，并设置请求的URL地址
+                    request = (HttpWebRequest)WebRequest.Create(GetUrl(objhttpItem.URL));
+
+                }
+                catch (Exception)
+                {
+                    return;
+                }
             }
             #endregion
 
