@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace HelloData.FWCommon.Utils
 {
@@ -46,41 +47,34 @@ namespace HelloData.FWCommon.Utils
             return StripHtml(HTMLStr);
             //  return System.Text.RegularExpressions.Regex.Replace(HTMLStr, "<[^>]*>", "");
         }
-        public static string StripHtml(string Html)
+        public static string StripHtml(string Htmlstring)
         {
-            //从Html中录入 <script> 标签<script[^>]*>[sS]*?</script>
-            string scriptregex = @"<script[^>]*>(.*?)</script>";
-            System.Text.RegularExpressions.Regex scripts = new System.Text.RegularExpressions.Regex(scriptregex, RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.ExplicitCapture);
-            string scriptless = scripts.Replace(Html, " ");
+            //删除脚本   
+            Htmlstring = Regex.Replace(Htmlstring, @"<script[^>]*?>.*?</script>", "", RegexOptions.IgnoreCase);
+            //删除HTML   
+            Htmlstring = Regex.Replace(Htmlstring, @"<(.[^>]*)>", "", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"([\r\n])[\s]+", "", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"-->", "", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"<!--.*", "", RegexOptions.IgnoreCase);
 
-            //从Html中录入 <style> 标签<style[^>]*>(.*?)</style>
-            string styleregex = @"<style[^>]*>(.*?)</style>";
-            System.Text.RegularExpressions.Regex styles = new System.Text.RegularExpressions.Regex(styleregex, RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.Singleline | RegexOptions.ExplicitCapture);
-            string styleless = styles.Replace(scriptless, " ");
+            Htmlstring = Regex.Replace(Htmlstring, @"&(quot|#34);", "\"", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(amp|#38);", "&", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(lt|#60);", "<", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(gt|#62);", ">", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(nbsp|#160);", "   ", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(iexcl|#161);", "\xa1", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(cent|#162);", "\xa2", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(pound|#163);", "\xa3", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&(copy|#169);", "\xa9", RegexOptions.IgnoreCase);
+            Htmlstring = Regex.Replace(Htmlstring, @"&#(\d+);", "", RegexOptions.IgnoreCase);
 
-            //从Html中录入 <NOSEARCH> 标签(当 NOSEARCH 在 web.config/Preferences 类中<Preferences 类是项目里面,专门用于获取web.config/app.config>)
-            //TODO: NOTE: this only applies to INDEXING the text - links are parsed before now, so they aren't "excluded" by the region!! (yet)
-            string ignoreless = styleless;
+            Htmlstring.Replace("<", "");
+            Htmlstring.Replace(">", "");
+            Htmlstring.Replace("\r\n", "");
 
-            //从Html中录入 <!--comment--> 标签 
-            //string commentregex = @"<!--.*?-->";  
-            string commentregex = @"<!(?:--[sS]*?--s*)?>";
-            System.Text.RegularExpressions.Regex comments = new System.Text.RegularExpressions.Regex(commentregex, RegexOptions.IgnoreCase | RegexOptions.Multiline | RegexOptions.ExplicitCapture);
-            string commentless = comments.Replace(ignoreless, " ");
-
-            //从Html中录入 Html 标签
-            System.Text.RegularExpressions.Regex objRegExp = new System.Text.RegularExpressions.Regex("<(.| )+?>", RegexOptions.IgnoreCase);
-
-            //替换所有HTML标签以匹配空格字符串
-            string output = objRegExp.Replace(commentless, " ");
-
-            //替换所有  < 和 > 为 &lt; 和 &gt;
-            output = output.Replace("<", "&lt;");
-            output = output.Replace(">", "&gt;");
-
-            objRegExp = null;
-            return ReplaceSpace(output);
+            return Htmlstring;
         }
+
 
         /// <summary>
         /// 转到JS用的string
@@ -204,14 +198,15 @@ namespace HelloData.FWCommon.Utils
                                                 isRight = true;
                                             if (!isnowithparms)
                                                 isRight = true;
-                                       
-                                        //if (GetUrlDeep(url) <= spliderdeep)
-                                        //    isRight = true;
-                                        if (isRight)
-                                        {
-                                            ht.Add(index, url);
-                                            linkurl = url;
-                                        } }
+
+                                            //if (GetUrlDeep(url) <= spliderdeep)
+                                            //    isRight = true;
+                                            if (isRight)
+                                            {
+                                                ht.Add(index, url);
+                                                linkurl = url;
+                                            }
+                                        }
                                     }
                                 }
                                 index++;

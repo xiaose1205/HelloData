@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.FWExtend", "Hello
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.FWCommon", "HelloData.FWCommon\HelloData.FWCommon.csproj", "{F5EC683A-CB1A-4F7F-B779-E3D4F2A9843F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{28705C1C-D9EE-4DF3-A8EC-BA16A42948E4}"
+	ProjectSection(SolutionItems) = preProject
+		HelloData.Test\EntityBulider.tt = HelloData.Test\EntityBulider.tt
+		..\..\..\玄武\利润管理系统\开发\玄武集团短信业务提成系统_外网\WebSite.Model\EntityBuliderMySql.tt = ..\..\..\玄武\利润管理系统\开发\玄武集团短信业务提成系统_外网\WebSite.Model\EntityBuliderMySql.tt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

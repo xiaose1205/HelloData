@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
+using HelloData.FrameWork;
 
 namespace HelloData.AppHandlers
 {
@@ -22,11 +23,11 @@ namespace HelloData.AppHandlers
         /// 获取的请求处理
         /// </summary>
         /// <param name="context"></param>
-        void ProcessRequest(HttpContext context);
+        HandlerResult ProcessRequest(HttpContext context);
 
         /// <summary>
         /// 当前方法支持的所在的页面，防止恶意操作
-        /// </summary>
+        /// </summary> 
         List<string> HomePageList { get; set; }
 
     }

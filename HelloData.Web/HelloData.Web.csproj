@@ -47,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppHandlers\Ajax.ashx.cs" />
     <Compile Include="AppHandlers\AppHandlerManager.cs" />
+    <Compile Include="AppHandlers\BaseHandler.cs" />
     <Compile Include="AppHandlers\IAppHandler.cs" />
+    <Compile Include="AppHandlers\TestHandler.cs" />
     <Compile Include="Cache\CacheHelper.cs" />
     <Compile Include="HttpModules\MultiHttpModule.cs" />
     <Compile Include="HttpModules\UrlRewriterModule.cs" />
