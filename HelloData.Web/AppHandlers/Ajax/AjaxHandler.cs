@@ -28,7 +28,7 @@ namespace HelloData.Web.AppHandlers
     /// <summary>
     /// Ajax 的摘要说明
     /// </summary>
-    public class Ajax : IHttpHandler, IRequiresSessionState
+    public class AjaxHandler : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -40,20 +40,21 @@ namespace HelloData.Web.AppHandlers
                 HttpResponse Response = context.Response;
 
                 //防止数据泄露，以后可以去掉
-                if (Request.RequestType.Trim().ToLower() == "get" && Request.QueryString["handler"] != "gloab" && Request.QueryString["handler"] != "checkcode")
+                if (Request.RequestType.Trim().ToLower() == "get" && Request.QueryString["controller"] != "gloab" && Request.QueryString["controller"] != "checkcode")
                 {
                     HandlerResult hresult = new HandlerResult { Result = -1, Message = "不支持GET请求" };
                     Response.Write(hresult.ToString());
                 }
                 else
                 {
-                    string handlerName = Request.Params["handler"];
+                    string handlerName = Request.Params["controller"];
 
-                    if (string.IsNullOrEmpty(handlerName) && string.IsNullOrEmpty(Request.QueryString["handler"]))
+                    if (string.IsNullOrEmpty(handlerName) && string.IsNullOrEmpty(Request.QueryString["controller"]))
                         return;
-                    AppHandlerManager.ExecuteHandler(handlerName, HttpContext.Current);
+                    AppHandlerManager.ExecuteHandler(handlerName, HttpContext.Current, Request.QueryString["action"]);
                 }
                 context.ApplicationInstance.CompleteRequest();
+
             }
             catch (Exception ex)
             {

@@ -23,25 +23,24 @@ using HelloData.FrameWork;
 
 namespace HelloData.Web.AppHandlers
 {
-    public abstract class BaseHandler: IAppHandler
+    public abstract class BaseHandler : IAppHandler
     {
         public abstract IAppHandler CreateInstance();
 
         public abstract string HandlerName { get; }
 
 
-        public HandlerResult ProcessRequest(HttpContext context)
+        HttpResponse Response
         {
-            Response = context.Response;
-            Request = context.Request;
-            return HandlerRequest();
+            get { return HttpContext.Response; }
         }
 
-        public HttpResponse Response { get; set; }
+        private HttpRequest Request
+        {
+            get { return HttpContext.Request; }
+        }
 
-        public HttpRequest Request { get; set; }
 
-        public abstract HandlerResult HandlerRequest();
 
         public List<string> HomePageList { get; set; }
 
@@ -55,5 +54,13 @@ namespace HelloData.Web.AppHandlers
         {
             return new HandlerResult() { Result = result, Message = message };
         }
+
+
+        public List<System.Reflection.MethodInfo> ActionMethods { get; set; }
+
+
+
+        public HttpContext HttpContext { get; set; }
+
     }
-} 
+}

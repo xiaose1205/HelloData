@@ -29,16 +29,6 @@ namespace HelloData.Web.AppHandlers
             return new TestHandler();
         }
 
-        public override HandlerResult HandlerRequest()
-        {
-            switch (Request.Params["type"].ToString())
-            {
-                case "do":
-                    return Do();
-            }
-            return new HandlerResult().DefaultResult();
-        }
-
         public HandlerResult Do()
         {
             return new HandlerResult().DefaultResult();
