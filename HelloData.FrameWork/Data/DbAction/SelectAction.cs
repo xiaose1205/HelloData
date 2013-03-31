@@ -69,5 +69,7 @@ namespace HelloData.FrameWork.Data
         {
             return base.QueryPage<T>(pageindex, pagesize);
         }
+
+    
     }
 }

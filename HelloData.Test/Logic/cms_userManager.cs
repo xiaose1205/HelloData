@@ -19,7 +19,8 @@ namespace HelloData.Test.Logic
             foreach (var item in str)
             {
                 DeleteAction delete = new DeleteAction(Entity);
-                delete.SqlWhere(cms_user.Columns.id, item);
+                /// delete.SqlWhere(cms_user.Columns.id, item);
+                delete.Cast<cms_user>().Where(user => user.isactive == 1);
                 mulut.AddAction(delete);
                 action = delete;
             }
@@ -33,12 +34,6 @@ namespace HelloData.Test.Logic
             {
                 mulut.Rollback();
             }
-
-            using (TradAction trd = new TradAction())
-            {
-
-            }
-
         }
         /// <summary>
         /// 自定义视图
@@ -54,10 +49,13 @@ namespace HelloData.Test.Logic
                     field.Add(new WhereField() { FiledName = "mangerid", Condition = ConditionEnum.And, Value = "id" });
                     action.AddJoin(ViewJoinEnum.leftjoin, "cms_user", "cms_manager", field);
                 }
-
+                action.SqlWhere(
+                new WhereField { FiledName = "", Value = "" },
+                new WhereField { FiledName = "", Value = "" }
+            );
                 action.SqlWhere(cms_user.Columns.username, "admin");
                 action.SqlWhere(cms_user.Columns.password, "123456");
-                PageList<cms_user> lists= action.QueryPage<cms_user>(1);
+                PageList<cms_user> lists = action.QueryPage<cms_user>(1);
                 return null;
             }
         }
@@ -96,7 +94,9 @@ namespace HelloData.Test.Logic
             {
                 update.SqlKeyValue(cms_user.Columns.createtime, null);
                 update.SqlKeyValue(cms_user.Columns.password, "123456123");
-                update.Excute();
+                update.Cast<cms_user>().
+                    SqlValue(user => user.isactive == 1 && user.isadmin == true)
+                    .Where(user1 => user1.isadmin);
                 return update.ReturnCode;
             }
         }
@@ -112,8 +112,7 @@ namespace HelloData.Test.Logic
             {
                 update.SqlKeyValue(cms_user.Columns.username, model.username);
                 update.SqlKeyValue(cms_user.Columns.password, model.password);
-                update.Excute();
-                return update.ReturnCode;
+                return update.Excute().ReturnCode;
             }
         }
 
@@ -125,10 +124,10 @@ namespace HelloData.Test.Logic
             using (SelectAction select = new SelectAction(Entity))
             {
 
-                 select.SqlWhere(cms_user.Columns.username, "1", "2", ConditionEnum.And, RelationEnum.Between)
-                        .SqlWhere(cms_user.Columns.password, password)
-                        .SqlWhere(cms_user.Columns.isactive, true)
-                        .SqlPageParms(1);
+                select.SqlWhere(cms_user.Columns.username, "1", "2", ConditionEnum.And, RelationEnum.Between)
+                       .SqlWhere(cms_user.Columns.password, password)
+                       .SqlWhere(cms_user.Columns.isactive, true)
+                       .SqlPageParms(1);
                 return select.QueryEntity<cms_user>();
             }
         }
@@ -140,6 +139,12 @@ namespace HelloData.Test.Logic
                 select.SqlWhere(cms_user.Columns.id, id, RelationEnum.LikeRight);
                 select.SqlWhere(cms_user.Columns.isactive, true);
                 select.SqlPageParms(1);
+                select.Cast<cms_user>().
+                    OrderBy(user => user.logintime, OrderByEnum.Asc)
+                    .OrderBy(ui => ui.phone, OrderByEnum.Asc)
+                    .GroupBy(u => new object[] { u.isadmin, u.logintime })
+                    .Where(o => o.password == "12321" && o.logintime == DateTime.Now);
+
                 return select.QueryEntity<cms_user>();
             }
         }

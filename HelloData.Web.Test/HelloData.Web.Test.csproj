@@ -81,6 +81,7 @@
     <Content Include="Admin\Images\default\buttonBg.gif" />
     <Content Include="Admin\Images\default\button_3.png" />
     <Content Include="Admin\Images\default\close.gif" />
+    <Content Include="Admin\Images\glyphicons-halflings-8.png" />
     <Content Include="Admin\Images\glyphicons-halflings-white.png" />
     <Content Include="Admin\Images\default\hover2_1.jpg" />
     <Content Include="Admin\Images\default\index_arrow.gif" />
@@ -619,10 +620,13 @@
     <Content Include="Admin\Images\web\tools.png" />
     <Content Include="Admin\Images\web\top.png" />
     <Content Include="Admin\Images\web\vedio_play.png" />
+    <Content Include="Admin\js\bootstrap-ie.js" />
     <Content Include="Admin\js\flexigrid-1.1A.js" />
     <Content Include="Admin\js\jquery.actions.js" />
     <Content Include="Admin\js\jquery.noty.js" />
     <Content Include="Admin\Roles\index.aspx" />
+    <Content Include="Admin\Style\bootstrap-ie6.css" />
+    <Content Include="Admin\Style\ie.css" />
     <Content Include="Admin\Style\theme\hello-cerulean.css" />
     <Content Include="Admin\Style\theme\hello-classic.css" />
     <Content Include="Admin\Style\theme\hello-redy.css" />

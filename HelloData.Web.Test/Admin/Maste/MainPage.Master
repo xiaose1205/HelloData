@@ -10,12 +10,13 @@
     <link href="../Style/flexigrid.css" rel="stylesheet" type="text/css" />
     <link href="../Style/flexigrid.css" rel="stylesheet" type="text/css" />
     <script src="../js/menu.js" type="text/javascript"></script>
-    <script src="../../Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/lib/jquery-1.8.0.min.js" type="text/javascript"></script>
     <script src="../js/flexigrid-1.1A.js" type="text/javascript"></script>
     <script src="../../Scripts/artDialog.js?skin=blue" type="text/javascript"></script>
     <script src="../../Scripts/plugins/iframeTools.source.js" type="text/javascript"></script>
     <script src="../js/jquery.actions.js" type="text/javascript"></script> 
     <link href="../Style/theme/hello-cerulean.css" rel="stylesheet" type="text/css" />
+   
     <script type="text/javascript">
 
         $().ready(function () {
@@ -28,6 +29,22 @@
                 $("#menu_appdock").removeClass();
                 $("#menu_appdock").addClass("disexpandmneu");
                 $(".myapptrigger-button").find("span").css("background-position", "0 0");
+            });
+
+            $(".ajaxload").each(function() {
+                $(this).click(function() {
+                    $.ajax({
+                        url: $(this).attr("data_href"),
+                        type: 'post',
+                        dataType: 'html', 
+                        error: function () { alert('error'); },
+                        success: function (data) {
+                            $(".page_content").html(data);
+                        }
+                    }); 
+                    void(0);
+                });
+
             });
         });
         function exit() {
@@ -44,6 +61,7 @@
         function repwd1() {
             $.DiagShow(400, 220, '修改密码', "Users/ChangePwd.aspx");
         }
+        
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -113,13 +131,13 @@
                     <img src="../Images/LeftNav/2.png" border="0" class="side_icon" />数据管理<img class="side_bt"
                         id="Img1" src="../images/LeftNav/bt_show.png" border="0" /></a></h3>
             <ul id="menu_2">
-                <li><a href="Category/index.aspx">导航管理</a></li>
-                <li><a href="Acticles/Index.aspx">文章管理</a></li>
-                <li><a href="ImageGroups/Index.aspx">图文管理</a></li>
-                <li><a href="QandA/Index.aspx">问答管理</a></li>
-                <li><a href="Manager/Index.aspx">经理管理</a></li>
-                <li><a href="Comments/index.aspx">留言管理</a></li>
-                <li><a href="Suports/index.aspx">加盟管理</a></li>
+                <li><a data_href="../roles/index.aspx" class="ajaxload">导航管理</a></li>
+                <li><a data_href="Acticles/Index.aspx">文章管理</a></li>
+                <li><a data_href="ImageGroups/Index.aspx">图文管理</a></li>
+                <li><a data_href="QandA/Index.aspx">问答管理</a></li>
+                <li><a data_href="Manager/Index.aspx">经理管理</a></li>
+                <li><a data_href="Comments/index.aspx">留言管理</a></li>
+                <li><a data_href="Suports/index.aspx">加盟管理</a></li>
             </ul>
             <h3>
                 <a href="javascript:void(0)" onclick="shutoropen(1)">
@@ -139,6 +157,7 @@
             <%-- 列表界面--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+            
         </div>
     </div>
 </body>

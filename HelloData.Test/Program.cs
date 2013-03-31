@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using HelloData.FrameWork;
 using HelloData.FrameWork.Logging;
 using HelloData.FrameWork.Data;
@@ -14,6 +16,20 @@ namespace HelloData.Test
     {
         static void Main(string[] args)
         {
+
+            var myList = new List<String>() { "a", "ab", "cd", "bd" }.AsQueryable<String>();
+
+            IQueryable<String> query = from s in myList
+                                       where s.StartsWith("a")
+                                       select s;
+
+            foreach (String s in query)
+            {
+                Console.WriteLine(s);
+            }
+
+            Console.Read();
+
             //启动日志模块
             Logger.Current.SetLogger = new ConsoleLog();
             Logger.Current.IsOpenLog = true;
@@ -29,7 +45,7 @@ namespace HelloData.Test
             //AppCons.SetMoreConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString2"]);
             //是否需要数据库全局参数化
             AppCons.IsParmes = false;
-           //是否数据库操作的缓存
+            //是否数据库操作的缓存
             AppCons.IsOpenCache = false;
             //使用第三方的分布式缓存
             //AppCons.CurrentCache =new  RedisCache();
@@ -44,15 +60,15 @@ namespace HelloData.Test
 
 
             //事务处理多个操作 
-            // cms_userManager.Instance.MulitTest("1,2,3,4,5");
-            //新增demo
-            //cms_userManager.Instance.Save(new cms_user()
-            //{
-            //    username = "test" + DateTime.Now.Millisecond,
-            //    password = "123456",
-            //    phone = "",
-            //    isadmin = true
-            //});
+            cms_userManager.Instance.MulitTest("1,2,3,4,5");
+            // 新增demo
+            cms_userManager.Instance.Save(new cms_user()
+            {
+                username = "test" + DateTime.Now.Millisecond,
+                password = "123456",
+                phone = "",
+                isadmin = true
+            });
 
 
             //if (cms_userManager.Instance.UpdatePwd("1,2,3,4,5") > 0)

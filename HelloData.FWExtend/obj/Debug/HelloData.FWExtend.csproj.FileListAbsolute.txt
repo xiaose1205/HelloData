@@ -22,9 +22,8 @@ D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\HelloDat
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\HelloData.FWExtend.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\HelloData.FrameWork.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\log4net.dll
-D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\Newtonsoft.Json.Net20.dll
-D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\ServiceStack.Messaging.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\HelloData.FrameWork.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\obj\Debug\HelloData.FWExtend.csprojResolveAssemblyReference.cache
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\obj\Debug\HelloData.FWExtend.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\obj\Debug\HelloData.FWExtend.pdb
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\Newtonsoft.Json.dll

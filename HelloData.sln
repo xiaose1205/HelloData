@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.Web", "HelloData.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.Test", "HelloData.Test\HelloData.Test.csproj", "{496D096F-7F7F-4CEB-88CF-6A2D0B3BB366}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.AOP", "HelloData.AOP\HelloData.AOP.csproj", "{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.Web.Test", "HelloData.Web.Test\HelloData.Web.Test.csproj", "{8710EF72-BAEE-4DF5-BEE3-089EA769C1CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.FWExtend", "HelloData.FWExtend\HelloData.FWExtend.csproj", "{CB0F7681-05BE-4E5C-B656-41157D4B9656}"
@@ -17,8 +15,30 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.FWCommon", "Hello
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{28705C1C-D9EE-4DF3-A8EC-BA16A42948E4}"
 	ProjectSection(SolutionItems) = preProject
-		HelloData.Test\EntityBulider.tt = HelloData.Test\EntityBulider.tt
-		..\..\..\玄武\利润管理系统\开发\玄武集团短信业务提成系统_外网\WebSite.Model\EntityBuliderMySql.tt = ..\..\..\玄武\利润管理系统\开发\玄武集团短信业务提成系统_外网\WebSite.Model\EntityBuliderMySql.tt
+		Doc\EntityBulider.tt = Doc\EntityBulider.tt
+		Doc\EntityBuliderMySql.tt = Doc\EntityBuliderMySql.tt
+		Doc\Instruction .txt = Doc\Instruction .txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{45ACA312-536C-4D7A-B79A-526D51901A2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5DFBA9EA-4550-4DAC-80B1-3A0598D6596F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{A6D26153-9753-4B51-A0CB-9219B08713FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloData.Security", "HelloData.Security\HelloData.Security.csproj", "{F697B37D-3689-4A16-B454-01069BD1C564}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{FB68203F-7187-4BEC-8BD7-481413F2FBC7}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\AspNetPager.dll = Lib\AspNetPager.dll
+		Lib\Aspose.Cells.dll = Lib\Aspose.Cells.dll
+		Lib\LitJSON.dll = Lib\LitJSON.dll
+		Lib\log4net.dll = Lib\log4net.dll
+		Lib\MySql.Data.dll = Lib\MySql.Data.dll
+		Lib\MySql.Data.Entity.dll = Lib\MySql.Data.Entity.dll
+		Lib\Newtonsoft.Json.Net20.dll = Lib\Newtonsoft.Json.Net20.dll
+		Lib\NLog.dll = Lib\NLog.dll
+		Lib\System.Data.SQLite.DLL = Lib\System.Data.SQLite.DLL
 	EndProjectSection
 EndProject
 Global
@@ -61,16 +81,6 @@ Global
 		{496D096F-7F7F-4CEB-88CF-6A2D0B3BB366}.Release|Mixed Platforms.Build.0 = Release|x86
 		{496D096F-7F7F-4CEB-88CF-6A2D0B3BB366}.Release|x86.ActiveCfg = Release|x86
 		{496D096F-7F7F-4CEB-88CF-6A2D0B3BB366}.Release|x86.Build.0 = Release|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Debug|x86.ActiveCfg = Debug|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Debug|x86.Build.0 = Debug|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Release|Any CPU.ActiveCfg = Release|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Release|Mixed Platforms.Build.0 = Release|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Release|x86.ActiveCfg = Release|x86
-		{4D8E0A28-90EF-4981-8DE6-67E1EE0775DD}.Release|x86.Build.0 = Release|x86
 		{8710EF72-BAEE-4DF5-BEE3-089EA769C1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8710EF72-BAEE-4DF5-BEE3-089EA769C1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8710EF72-BAEE-4DF5-BEE3-089EA769C1CC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -101,8 +111,27 @@ Global
 		{F5EC683A-CB1A-4F7F-B779-E3D4F2A9843F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F5EC683A-CB1A-4F7F-B779-E3D4F2A9843F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F5EC683A-CB1A-4F7F-B779-E3D4F2A9843F}.Release|x86.ActiveCfg = Release|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F697B37D-3689-4A16-B454-01069BD1C564}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F697B37D-3689-4A16-B454-01069BD1C564} = {45ACA312-536C-4D7A-B79A-526D51901A2B}
+		{5EBB695E-D6E4-4E48-B4E5-B6A674679019} = {5DFBA9EA-4550-4DAC-80B1-3A0598D6596F}
+		{F5EC683A-CB1A-4F7F-B779-E3D4F2A9843F} = {5DFBA9EA-4550-4DAC-80B1-3A0598D6596F}
+		{CB0F7681-05BE-4E5C-B656-41157D4B9656} = {5DFBA9EA-4550-4DAC-80B1-3A0598D6596F}
+		{2E597779-C89D-4FF1-A4DD-367FB8C4F877} = {5DFBA9EA-4550-4DAC-80B1-3A0598D6596F}
+		{496D096F-7F7F-4CEB-88CF-6A2D0B3BB366} = {A6D26153-9753-4B51-A0CB-9219B08713FF}
+		{8710EF72-BAEE-4DF5-BEE3-089EA769C1CC} = {A6D26153-9753-4B51-A0CB-9219B08713FF}
 	EndGlobalSection
 EndGlobal

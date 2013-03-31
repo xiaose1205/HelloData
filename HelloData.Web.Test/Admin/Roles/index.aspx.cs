@@ -11,7 +11,7 @@ namespace HelloData.Web.Test.Admin.Roles
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Write(DateTime.Now);
         }
     }
 }

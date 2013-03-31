@@ -10,7 +10,7 @@ namespace HelloData.Test.Entity
     ///	
     /// </summary>
     [Serializable]
-    public class cms_user : BaseEntity
+    public partial class cms_user : BaseEntity
     {
         public cms_user()
         {

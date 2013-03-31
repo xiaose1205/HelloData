@@ -11,6 +11,12 @@
     /// </summary>
     public class WhereField
     {
+        public WhereField()
+        {
+            Relation = RelationEnum.Equal;
+            Condition = ConditionEnum.And;
+        }
+
         public string FiledName { get; set; }
         public object Value { get; set; }
         public object Value2 { get; set; }

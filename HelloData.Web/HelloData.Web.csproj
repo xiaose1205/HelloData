@@ -41,18 +41,22 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppHandlers\Ajax.ashx.cs" />
-    <Compile Include="AppHandlers\AppHandlerManager.cs" />
-    <Compile Include="AppHandlers\BaseHandler.cs" />
-    <Compile Include="AppHandlers\IAppHandler.cs" />
-    <Compile Include="AppHandlers\TestHandler.cs" />
+    <Compile Include="AppHandlers\Ajax\ActionExcute.cs" />
+    <Compile Include="AppHandlers\Ajax\AjaxHandler.cs" />
+    <Compile Include="AppHandlers\Ajax\AppHandlerManager.cs" />
+    <Compile Include="AppHandlers\Ajax\BaseHandler.cs" />
+    <Compile Include="AppHandlers\Ajax\IAppHandler.cs" />
+    <Compile Include="AppHandlers\Ajax\ReflectedController.cs" />
+    <Compile Include="AppHandlers\Ajax\TestHandler.cs" />
     <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="HttpModules\AjaxHttpModule.cs" />
     <Compile Include="HttpModules\MultiHttpModule.cs" />
     <Compile Include="HttpModules\UrlRewriterModule.cs" />
     <Compile Include="JsonFlexiGridData.cs" />

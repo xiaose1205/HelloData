@@ -1,17 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Data;
 using System.Reflection;
 using HelloData.FrameWork.Data.Enum;
 namespace HelloData.FrameWork.Data
 {
+
+    public class LinqQueryAction<T>
+    {
+
+        internal DataBaseAction CAction { get; set; }
+ 
+    }
     /// <summary>
     /// 具体的命令操作 ，反射实体类的具体表名及字段名
     /// </summary> 
     public class DataBaseAction : IDisposable
     {
+        public LinqQueryAction<T> Cast<T>()
+        {
+            return new LinqQueryAction<T>() { CAction = this };
+        }
         private int _appindex;
         public DataBaseAction()
         {
@@ -166,6 +178,16 @@ namespace HelloData.FrameWork.Data
         /// 主键是否自动生成，fasle表示需要动态创建，默认为自增或者系统自给
         /// </summary>
         public bool IsKeyAuto = true;
+
+        public DataBaseAction SqlKeyValue(params ValueField[] valueFields)
+        {
+            foreach (ValueField valueField in valueFields)
+            {
+                SqlKeyValue(valueField.FiledName, valueField.Value);
+            }
+            return this;
+        }
+
         /// <summary>
         /// 用户insert ,update的设置值(例如："name"    "wangjun")
         /// </summary>
@@ -254,6 +276,15 @@ namespace HelloData.FrameWork.Data
         /// </summary>
         internal string Cachekeyvalue = string.Empty;
 
+        public DataBaseAction SqlWhere(params WhereField[] whereFields)
+        {
+            foreach (WhereField whereField in whereFields)
+            {
+                SqlWhere(whereField.FiledName, whereField.Value, whereField.Value2, whereField.Condition, whereField.Relation);
+            }
+            return this;
+        }
+
         /// <summary>
         /// 增加条件 
         /// </summary>
@@ -301,6 +332,9 @@ namespace HelloData.FrameWork.Data
 
             return this;
         }
+
+
+
         public void AddParmarms(string parmeterName, DbType dbtype, object value)
         {
             foreach (DataParameter dp in Parameters)
@@ -366,9 +400,20 @@ namespace HelloData.FrameWork.Data
         /// </summary>
         /// <param name="wherestr"></param>
         /// <returns></returns>
-        public DataBaseAction SqlWhere(string wherestr)
+        public DataBaseAction SqlWhere(string wherestr, params object[] objects)
         {
-            _whereStr.AppendLine(wherestr);
+            if (objects.Length == 0)
+                _whereStr.AppendLine(wherestr);
+            else
+            {
+                object[] values = new object[objects.Length];
+                for (int i = 0; i < objects.Length; i++)
+                {
+
+                    values[i] = DbHelper.ReturnDBValue(_dbHelper.ConvertToDbType(objects[i]), objects[i]);
+                }
+                _whereStr.AppendFormat(wherestr, values);
+            }
             return this;
         }
 
@@ -681,10 +726,14 @@ namespace HelloData.FrameWork.Data
         }
 
         public int PageSize = AppCons.PageCount;
+
         /// <summary>
         /// 此方法不支持dataaction单独执行
         /// </summary>
-        public virtual void Excute() { }
+        public virtual DataBaseAction Excute()
+        {
+            return this;
+        }
 
         public void Dispose()
         {

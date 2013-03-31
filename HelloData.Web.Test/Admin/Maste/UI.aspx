@@ -2,6 +2,9 @@
     CodeBehind="UI.aspx.cs" Inherits="HelloData.Web.Test.Admin.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <link href="../Style/bootstrap-ie6.css" rel="stylesheet" />
+    <link href="../Style/ie.css" rel="stylesheet" />
+    <script src="../js/bootstrap-ie.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
