@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aspose.Cells">
-      <HintPath>..\Lib\Aspose.Cells.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -51,7 +48,6 @@
     <Compile Include="DEncrypt\RSACryption.cs" />
     <Compile Include="ExportUtils\ExportBase.cs" />
     <Compile Include="ExportUtils\ExportCsv.cs" />
-    <Compile Include="ExportUtils\ExportExcle.cs" />
     <Compile Include="ExportUtils\ExportFileType.cs" />
     <Compile Include="ExportUtils\ExportTxt.cs" />
     <Compile Include="ExportUtils\IExport.cs" />

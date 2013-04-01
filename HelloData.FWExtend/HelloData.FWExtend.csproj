@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=5.3.1.0, Culture=neutral, PublicKeyToken=9ec0ff091d04b091, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\HelloData\Lib\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ServiceStack.Common.dll</HintPath>
@@ -56,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportExcle.cs" />
     <Compile Include="MemberSqliteHelper.cs" />
     <Compile Include="RedisCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +69,10 @@
     <ProjectReference Include="..\HelloData.FrameWork\HelloData.FrameWork.csproj">
       <Project>{5EBB695E-D6E4-4E48-B4E5-B6A674679019}</Project>
       <Name>HelloData.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelloData.FWCommon\HelloData.FWCommon.csproj">
+      <Project>{f5ec683a-cb1a-4f7f-b779-e3d4f2a9843f}</Project>
+      <Name>HelloData.FWCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
