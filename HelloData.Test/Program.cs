@@ -17,18 +17,7 @@ namespace HelloData.Test
         static void Main(string[] args)
         {
 
-            var myList = new List<String>() { "a", "ab", "cd", "bd" }.AsQueryable<String>();
-
-            IQueryable<String> query = from s in myList
-                                       where s.StartsWith("a")
-                                       select s;
-
-            foreach (String s in query)
-            {
-                Console.WriteLine(s);
-            }
-
-            Console.Read();
+         
 
             //启动日志模块
             Logger.Current.SetLogger = new ConsoleLog();
@@ -59,16 +48,17 @@ namespace HelloData.Test
 
 
 
-            //事务处理多个操作 
-            cms_userManager.Instance.MulitTest("1,2,3,4,5");
-            // 新增demo
-            cms_userManager.Instance.Save(new cms_user()
-            {
-                username = "test" + DateTime.Now.Millisecond,
-                password = "123456",
-                phone = "",
-                isadmin = true
-            });
+            ////事务处理多个操作 
+            //cms_userManager.Instance.MulitTest("1,2,3,4,5");
+            //// 新增demo
+            //cms_userManager.Instance.Save(new cms_user()
+            //{
+            //    username = "test" + DateTime.Now.Millisecond,
+            //    password = "123456",
+            //    phone = "",
+            //    isadmin = true
+            //});
+            cms_userManager.Instance.InsertNew(new cms_user() {phone = "123"});
 
 
             //if (cms_userManager.Instance.UpdatePwd("1,2,3,4,5") > 0)

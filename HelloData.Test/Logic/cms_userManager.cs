@@ -94,25 +94,40 @@ namespace HelloData.Test.Logic
             {
                 update.SqlKeyValue(cms_user.Columns.createtime, null);
                 update.SqlKeyValue(cms_user.Columns.password, "123456123");
-                update.Cast<cms_user>().
-                    SqlValue(user => user.isactive == 1 && user.isadmin == true)
-                    .Where(user1 => user1.isadmin);
+                update.Cast<cms_user>()
+                    .SqlValue(user => new cms_user { password = "123456", createtime = DateTime.Now })
+                    .Where(user1 => user1.isadmin)
+                    .UnCast().Excute();
                 return update.ReturnCode;
             }
         }
+
         /// <summary>
         /// 重置密码
         /// </summary>
-        /// <param name="ids"></param>
+        /// <param name="model"></param>
         /// <returns></returns>
         internal int InsertNew(cms_user model)
         {
 
-            using (InserAction update = new InserAction("cms_user"))
+            //using (InserAction update = new InserAction("cms_user"))
+            //{
+            //    update.SqlKeyValue(cms_user.Columns.username, model.username);
+            //    update.SqlKeyValue(cms_user.Columns.password, model.password);
+            //    return update.Excute().ReturnCode;
+            //}
+            //或者以下写法
+
+            using (InserAction action = new InserAction(model))
             {
-                update.SqlKeyValue(cms_user.Columns.username, model.username);
-                update.SqlKeyValue(cms_user.Columns.password, model.password);
-                return update.Excute().ReturnCode;
+                return action.Cast<cms_user>()
+                       .SqlInValues(user =>
+                                 new List<cms_user>()
+                                    {
+                                        new cms_user {password = "12345", phone = "123456"},
+                                        new cms_user {phone = "123242343"}
+                                    }
+                     ).UnCast().Excute().ReturnCode;
             }
         }
 
@@ -140,10 +155,11 @@ namespace HelloData.Test.Logic
                 select.SqlWhere(cms_user.Columns.isactive, true);
                 select.SqlPageParms(1);
                 select.Cast<cms_user>().
-                    OrderBy(user => user.logintime, OrderByEnum.Asc)
+                     OrderBy(user => user.logintime, OrderByEnum.Asc)
                     .OrderBy(ui => ui.phone, OrderByEnum.Asc)
                     .GroupBy(u => new object[] { u.isadmin, u.logintime })
-                    .Where(o => o.password == "12321" && o.logintime == DateTime.Now);
+                    .Where(o => o.password == "12321" && o.logintime == DateTime.Now)
+                   ;// .UnCast();
 
                 return select.QueryEntity<cms_user>();
             }

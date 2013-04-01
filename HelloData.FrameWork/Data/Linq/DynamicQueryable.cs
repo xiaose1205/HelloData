@@ -52,19 +52,56 @@ namespace HelloData.FrameWork.Data
         /// 新增，修改的条件的添加
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="Action"></param>
+        /// <param name="action"></param>
         /// <param name="iExpression"></param>
         /// <returns></returns>
-        public static LinqQueryAction<T> SqlValue<T>(this LinqQueryAction<T> Action,
+        public static LinqQueryAction<T> SqlValue<T>(this LinqQueryAction<T> action,
                                                        Expression<Func<T, bool>> iExpression)
         {
             ConditionBuilder conditionBuilder = new ConditionBuilder();
             conditionBuilder.Build(iExpression.Body);
             for (int i = 0; i < conditionBuilder.ConObjects.Count; i++)
             {
-                Action.CAction.SqlKeyValue(conditionBuilder.ConObjects[i].ToString(), conditionBuilder.Arguments[i]);
+                action.CAction.SqlKeyValue(conditionBuilder.ConObjects[i].ToString(), conditionBuilder.Arguments[i]);
             }
-            return Action;
+            return action;
+        }
+
+
+        /// <summary>
+        /// 新增，修改的条件的添加
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="action"></param>
+        /// <param name="iExpression">直接添加实体类</param>
+        /// <returns></returns>
+        public static LinqQueryAction<T> SqlValue<T>(this LinqQueryAction<T> action,
+                                                       Expression<Func<T, T>> iExpression)
+        {
+            ConditionBuilder conditionBuilder = new ConditionBuilder();
+            conditionBuilder.Build(iExpression.Body);
+            if (conditionBuilder.ConObjects.Count > 0)
+                action.CAction.SetDBEntity((BaseEntity)conditionBuilder.ConObjects[0]);
+            return action;
+        }
+        /// <summary>
+        /// 多个新增同时操作
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="action"></param>
+        /// <param name="iExpression">直接添加实体类</param>
+        /// <returns></returns>
+        public static LinqQueryAction<T> SqlInValues<T>(this LinqQueryAction<T> action,
+                                                       Expression<Func<T, List<T>>> iExpression)
+        {
+            ConditionBuilder conditionBuilder = new ConditionBuilder();
+            conditionBuilder.Build(iExpression.Body);
+            if (conditionBuilder.Arguments.Length > 0)
+            {
+                List<BaseEntity> entities = ((List<T>)conditionBuilder.Arguments[0]).Cast<BaseEntity>().ToList();
+                ((InserAction)action.CAction).InsertList(entities);
+            }
+            return action;
         }
 
 
@@ -93,8 +130,8 @@ namespace HelloData.FrameWork.Data
         /// <param name="iExpression"></param>
         /// <returns></returns>
         public static LinqQueryAction<T> GroupBy<T>(
-        this LinqQueryAction<T> selectAction,
-                                                           Expression<Func<T, object[]>> iExpression)
+                    this LinqQueryAction<T> selectAction,
+                    Expression<Func<T, object[]>> iExpression)
         {
             ConditionBuilder conditionBuilder = new ConditionBuilder();
             conditionBuilder.Build(iExpression.Body);

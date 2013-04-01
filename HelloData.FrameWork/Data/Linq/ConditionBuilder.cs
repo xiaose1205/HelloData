@@ -119,7 +119,11 @@ namespace HelloData.FrameWork.Data.Linq
         protected override Expression VisitConstant(ConstantExpression c)
         {
             if (c == null) return c;
-
+            if (c.Value.GetType() == typeof (BaseEntity))
+            {
+                this.ConObjects.Add(c.Value);
+                return c;
+            }
             this.m_arguments.Add(c.Value);
             this.m_conditionParts.Push(String.Format("{{{0}}}", this.m_arguments.Count - 1));
 

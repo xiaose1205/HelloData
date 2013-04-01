@@ -13,17 +13,33 @@ namespace HelloData.FrameWork.Data
     {
 
         internal DataBaseAction CAction { get; set; }
- 
+        /// <summary>
+        /// 回归至操作action
+        /// </summary>
+        /// <returns></returns>
+        public DataBaseAction UnCast()
+        {
+            return CAction;
+        }
+
     }
     /// <summary>
     /// 具体的命令操作 ，反射实体类的具体表名及字段名
     /// </summary> 
     public class DataBaseAction : IDisposable
     {
+        /// <summary>
+        /// 从action加入至linq操作
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public LinqQueryAction<T> Cast<T>()
         {
             return new LinqQueryAction<T>() { CAction = this };
         }
+
+
+
         private int _appindex;
         public DataBaseAction()
         {
@@ -125,6 +141,10 @@ namespace HelloData.FrameWork.Data
             }
         }
 
+        public void SetDBEntity(BaseEntity entity)
+        {
+            _entity = entity;
+        }
 
         private BaseEntity _entity = null;
         protected string TbName = string.Empty;
