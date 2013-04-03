@@ -6,14 +6,14 @@ using Newtonsoft.Json;
 
 namespace HelloData.FrameWork
 {
-    public class HandlerResult
+    public class HandlerResponse
     {
-        public HandlerResult()
+        public HandlerResponse()
         {
             PostTime = DateTime.Now;
         }
         /// <summary>
-        ///   结果
+        ///   结果 1表示成功，0表示失败，其余参数可以自定义
         /// </summary>
         public int Result { get; set; }
         /// <summary>
@@ -32,10 +32,13 @@ namespace HelloData.FrameWork
             get;
             set;
         }
-
-        public HandlerResult DefaultResult()
+        /// <summary>
+        /// 获取默认的请求
+        /// </summary>
+        /// <returns></returns>
+        public HandlerResponse GetDefaultResponse()
         {
-            return new HandlerResult() { Result = 0, Message = "当前请求处理失败" };
+            return new HandlerResponse() { Result = 0, Message = "当前请求处理失败" };
         }
     }
 }

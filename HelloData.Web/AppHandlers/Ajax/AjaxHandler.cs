@@ -42,7 +42,7 @@ namespace HelloData.Web.AppHandlers
                 //防止数据泄露，以后可以去掉
                 if (Request.RequestType.Trim().ToLower() == "get" && Request.QueryString["controller"] != "gloab" && Request.QueryString["controller"] != "checkcode")
                 {
-                    HandlerResult hresult = new HandlerResult { Result = -1, Message = "不支持GET请求" };
+                    HandlerResponse hresult = new HandlerResponse { Result = -1, Message = "不支持GET请求" };
                     Response.Write(hresult.ToString());
                 }
                 else

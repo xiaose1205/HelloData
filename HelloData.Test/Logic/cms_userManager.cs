@@ -45,13 +45,13 @@ namespace HelloData.Test.Logic
                 action.SqlClomns = "_cms_user.*,_cms_manager.name as  managername";
                 {
                     //添加视图的关联关系
-                    List<WhereField> field = new List<WhereField>();
-                    field.Add(new WhereField() { FiledName = "mangerid", Condition = ConditionEnum.And, Value = "id" });
+                    List<QueryField> field = new List<QueryField>();
+                    field.Add(new QueryField() { FiledName = "mangerid", Condition = ConditionEnum.And, Value = "id" });
                     action.AddJoin(ViewJoinEnum.leftjoin, "cms_user", "cms_manager", field);
                 }
                 action.SqlWhere(
-                new WhereField { FiledName = "", Value = "" },
-                new WhereField { FiledName = "", Value = "" }
+                new QueryField { FiledName = "", Value = "" },
+                new QueryField { FiledName = "", Value = "" }
             );
                 action.SqlWhere(cms_user.Columns.username, "admin");
                 action.SqlWhere(cms_user.Columns.password, "123456");
@@ -110,12 +110,12 @@ namespace HelloData.Test.Logic
         internal int InsertNew(cms_user model)
         {
 
-            //using (InserAction update = new InserAction("cms_user"))
-            //{
-            //    update.SqlKeyValue(cms_user.Columns.username, model.username);
-            //    update.SqlKeyValue(cms_user.Columns.password, model.password);
-            //    return update.Excute().ReturnCode;
-            //}
+            using (InserAction action = new InserAction("cms_user"))
+            {
+                action.SqlKeyValue(cms_user.Columns.username, model.username);
+                action.SqlKeyValue(cms_user.Columns.password, model.password);
+                return action.Excute().ReturnCode;
+            }
             //或者以下写法
 
             using (InserAction action = new InserAction(model))
@@ -142,6 +142,7 @@ namespace HelloData.Test.Logic
                 select.SqlWhere(cms_user.Columns.username, "1", "2", ConditionEnum.And, RelationEnum.Between)
                        .SqlWhere(cms_user.Columns.password, password)
                        .SqlWhere(cms_user.Columns.isactive, true)
+                       .SqlOrderBy(cms_user.Columns.createtime,OrderByEnum.Desc)
                        .SqlPageParms(1);
                 return select.QueryEntity<cms_user>();
             }
@@ -167,7 +168,7 @@ namespace HelloData.Test.Logic
 
         public int UpdateNewPwd(string p)
         {
-            cms_userManager.Instance.GetList(0, 2);
+            cms_userManager.Instance.FindList(0, 2);
 
             using (UpdateAction update = new UpdateAction(Entity))
             {

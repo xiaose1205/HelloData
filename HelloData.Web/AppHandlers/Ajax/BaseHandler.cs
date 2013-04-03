@@ -50,9 +50,9 @@ namespace HelloData.Web.AppHandlers
         /// <param name="result"></param>
         /// <param name="message"></param>
         /// <returns></returns>
-        public HandlerResult CreateHandler(int result, object message)
+        public HandlerResponse CreateHandler(int result, object message)
         {
-            return new HandlerResult() { Result = result, Message = message };
+            return new HandlerResponse() { Result = result, Message = message };
         }
 
 

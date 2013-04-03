@@ -10,11 +10,11 @@ namespace HelloData.FrameWork.Data
     {
         public ViewHelper()
         {
-            Joinfields = new List<WhereField>();
+            Joinfields = new List<QueryField>();
         }
         public ViewJoinEnum Join { get; set; }
         public string TableName1 { get; set; }
         public string TableName2 { get; set; }
-        public List<WhereField> Joinfields { get; set; }
+        public List<QueryField> Joinfields { get; set; }
     }
 }

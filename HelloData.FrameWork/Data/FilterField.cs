@@ -3,27 +3,44 @@
 
     public class OrderField
     {
+        /// <summary>
+        /// 操作的列名
+        /// </summary>
         public string FiledName { get; set; }
         public OrderByEnum Order { get; set; }
     }
     /// <summary>
     /// 查询或者更新或者删除的where条件
     /// </summary>
-    public class WhereField
+    public class QueryField
     {
-        public WhereField()
+        public QueryField()
         {
             Relation = RelationEnum.Equal;
             Condition = ConditionEnum.And;
         }
-
+        /// <summary>
+        /// 操作的列名
+        /// </summary>
         public string FiledName { get; set; }
+        /// <summary>
+        /// 第一个参数
+        /// </summary>
         public object Value { get; set; }
+        /// <summary>
+        /// 第二个参数，用于betweent
+        /// </summary>
         public object Value2 { get; set; }
+        /// <summary>
+        /// 常用的关系，〉〈 in != like  等
+        /// </summary>
         public RelationEnum Relation { get; set; }
+        /// <summary>
+        /// 语句链接关系and or 
+        /// </summary>
         public ConditionEnum Condition { get; set; }
         /// <summary>
-        /// 是否是where条件
+        /// 是否是where条件,否则value值为普通的sql语句，例如：and  username='wangjun'
         /// </summary>
         public bool IsWhereField = true;
     }

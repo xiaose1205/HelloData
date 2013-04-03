@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="Scripts/lib/jquery-1.8.0.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

@@ -87,9 +87,9 @@ namespace HelloData.Test.Logic
                 for (int i = 0; i < 1; i++)
                 {
                     user.firstName = "1223334s" + i.ToString();
-                    this.Save(user);
+                    this.Add(user);
                 }
-                PageList<TestUser> users = this.GetList(1, 10000);
+                PageList<TestUser> users = this.FindList(1, 10000);
                 foreach (TestUser testUser in users)
                 {
                     Console.WriteLine(testUser.firstName);

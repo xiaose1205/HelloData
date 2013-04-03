@@ -52,7 +52,7 @@ namespace HelloData.Web.HttpModules
                 if (Request.RequestType.Trim().ToLower() == "get" && controls[1] != "gloab" &&
                    controls[1] != "checkcode")
                 {
-                    HandlerResult hresult = new HandlerResult { Result = -1, Message = "不支持GET请求" };
+                    HandlerResponse hresult = new HandlerResponse { Result = -1, Message = "不支持GET请求" };
                     Response.Write(hresult.ToString());
                 }
                 else

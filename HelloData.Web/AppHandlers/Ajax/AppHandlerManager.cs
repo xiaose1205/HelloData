@@ -30,7 +30,7 @@ namespace HelloData.AppHandlers
         {
             if (!context.Request.ContentType.StartsWith("application/json", StringComparison.OrdinalIgnoreCase))
             {
-                context.Response.Write(new HandlerResult() { Message = "只支持json传输协议", Result = 0 }.ToString());
+                context.Response.Write(new HandlerResponse() { Message = "只支持json传输协议", Result = 0 }.ToString());
                 return;
             }
             IAppHandler handler;
@@ -53,13 +53,13 @@ namespace HelloData.AppHandlers
                 }
                 if (!hasAction)
                 {
-                    context.Response.Write(new HandlerResult() { Message = "不存在操作方法", Result = 0 }.ToString());
+                    context.Response.Write(new HandlerResponse() { Message = "不存在操作方法", Result = 0 }.ToString());
                     return;
                 }
             }
             else
             {
-                context.Response.Write(new HandlerResult() { Message = "不存在操作对象", Result = 0 }.ToString());
+                context.Response.Write(new HandlerResponse() { Message = "不存在操作对象", Result = 0 }.ToString());
 
             }
             //  context.Response.Write(handler.CreateInstance().ProcessRequest(context).ToString());

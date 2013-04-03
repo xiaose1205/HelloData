@@ -296,9 +296,9 @@ namespace HelloData.FrameWork.Data
         /// </summary>
         internal string Cachekeyvalue = string.Empty;
 
-        public DataBaseAction SqlWhere(params WhereField[] whereFields)
+        public DataBaseAction SqlWhere(params QueryField[] whereFields)
         {
-            foreach (WhereField whereField in whereFields)
+            foreach (QueryField whereField in whereFields)
             {
                 SqlWhere(whereField.FiledName, whereField.Value, whereField.Value2, whereField.Condition, whereField.Relation);
             }
@@ -317,7 +317,7 @@ namespace HelloData.FrameWork.Data
         {
             if (!AppCons.IsParmes || relation == RelationEnum.In)
             {
-                WhereField wherestr = new WhereField()
+                QueryField wherestr = new QueryField()
                 {
                     FiledName = filedName,
                     Value = value,
@@ -334,7 +334,7 @@ namespace HelloData.FrameWork.Data
                 string parmeterName1 = string.Empty;
                 if (value1 != null)
                     parmeterName1 = DbHelper.GetParameterName(filedName + "_1");
-                WhereField wherestr = new WhereField()
+                QueryField wherestr = new QueryField()
                 {
                     FiledName = filedName,
                     Value = parmeterName,
@@ -511,7 +511,7 @@ namespace HelloData.FrameWork.Data
             _keyValues = Sqlcom.GetKeyValues(_entity);
         }
 
-        public DataBaseAction AddJoin(ViewJoinEnum join, BaseEntity table1, BaseEntity table2, List<WhereField> joinfields)
+        public DataBaseAction AddJoin(ViewJoinEnum join, BaseEntity table1, BaseEntity table2, List<QueryField> joinfields)
         {
             return AddJoin(join, table1.TableName, table2.TableName, joinfields);
         }
@@ -522,7 +522,7 @@ namespace HelloData.FrameWork.Data
         /// <param name="table1"></param>
         /// <param name="table2"></param>
         /// <param name="joinfields"></param>
-        public DataBaseAction AddJoin(ViewJoinEnum join, string table1, string table2, List<WhereField> joinfields)
+        public DataBaseAction AddJoin(ViewJoinEnum join, string table1, string table2, List<QueryField> joinfields)
         {
             if (ViewList == null)
                 ViewList = new List<ViewHelper>();
@@ -715,7 +715,7 @@ namespace HelloData.FrameWork.Data
                             tables.Add(item.TableName2);
                             for (int i = 0; i < item.Joinfields.Count; i++)
                             {
-                                WhereField field = new WhereField();
+                                QueryField field = new QueryField();
                                 field.FiledName = string.Format("{0}.{1}", table1,
                                                                              item.Joinfields[i].FiledName);
                                 field.Value = string.Format("{0}.{1}", table2, item.Joinfields[i].Value);

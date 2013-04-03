@@ -16,6 +16,7 @@ namespace HelloData.Test.Entity
         {
             base.SetIni(this, "cms_user");
         }
+
         /// <summary>
         ///	
         /// </summary>
@@ -86,5 +87,7 @@ namespace HelloData.Test.Entity
             public const string isadmin = "isadmin";
             public const string mangerid = "mangerid";
         }
+
+        public int id { get; set; }
     }
 }

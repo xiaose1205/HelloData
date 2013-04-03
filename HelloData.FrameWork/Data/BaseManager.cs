@@ -36,7 +36,7 @@ namespace HelloData.FrameWork.Data
         /// <returns></returns>
         public string CreateResult(int resultCode, object message)
         {
-            HandlerResult result = new HandlerResult { Result = resultCode, Message = message };
+            HandlerResponse result = new HandlerResponse { Result = resultCode, Message = message };
             return result.ToString();
         }
 
@@ -70,7 +70,7 @@ namespace HelloData.FrameWork.Data
         /// <returns></returns>
         public string CreateResult(int resultCode, object message)
         {
-            HandlerResult result = new HandlerResult { Result = resultCode, Message = message };
+            HandlerResponse result = new HandlerResponse { Result = resultCode, Message = message };
             return result.ToString();
         }
 

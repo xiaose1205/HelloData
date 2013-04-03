@@ -28,7 +28,7 @@ namespace HelloData.Web.AppHandlers
 {
     public class ActionExcute
     {
-        public HandlerResult BindParamToAction(MethodInfo methodInfo, HttpContext context, IAppHandler instance)
+        public HandlerResponse BindParamToAction(MethodInfo methodInfo, HttpContext context, IAppHandler instance)
         {
             ParameterInfo[] parameterInfos = methodInfo.GetParameters();
             /*获取ajax请求的数据*/
@@ -37,7 +37,7 @@ namespace HelloData.Web.AppHandlers
             // string bodyText = "{  \"result\":{ \"Result\":-1,\"Message\":\"不支持GET请求\",\"PostTime\":\"2012-2-2\"},\"ido\":233}";
             // string bodyText = "{ \"Result\":-1,\"Message\":\"不支持GET请求\",\"PostTime\":\"2012-2-2\",\"ido\":236}";
             if (String.IsNullOrEmpty(bodyText))
-                return new HandlerResult().DefaultResult();
+                return new HandlerResponse().GetDefaultResponse();
             /*将数据转换到字典*/
             JavaScriptSerializer jss = new JavaScriptSerializer();
             Dictionary<string, object> dictionary = jss.Deserialize<Dictionary<string, object>>(bodyText);
@@ -51,7 +51,7 @@ namespace HelloData.Web.AppHandlers
             }
 
             object result = methodInfo.Invoke(instance, parameters);
-            return (HandlerResult)result;
+            return (HandlerResponse)result;
         }
 
         /// <summary>

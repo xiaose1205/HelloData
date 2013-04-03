@@ -60,11 +60,11 @@ namespace HelloData.FrameWork.Data
         /// </summary>
         /// <param name="keyValus"></param>
         /// <returns></returns>
-        internal string CreateWhere(WhereField keyValus)
+        internal string CreateWhere(QueryField keyValus)
         {
             return CreateWhere(keyValus, true);
         }
-        internal string CreateWhere(WhereField keyValus, bool withRelation)
+        internal string CreateWhere(QueryField keyValus, bool withRelation)
         {
             return CreateWhere(keyValus, withRelation, false);
         }
@@ -74,7 +74,7 @@ namespace HelloData.FrameWork.Data
         /// <param name="keyValus"></param>
         /// <param name="withRelation"> </param>
         /// <returns></returns>
-        internal string CreateWhere(WhereField keyValus, bool withRelation, bool isTablecolom)
+        internal string CreateWhere(QueryField keyValus, bool withRelation, bool isTablecolom)
         {
             if (null == keyValus)
                 return string.Empty;

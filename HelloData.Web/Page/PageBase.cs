@@ -430,7 +430,7 @@ namespace HelloData.Web.Page
         /// <returns></returns>
         public string CreateResult(int resultCode, object Message)
         {
-            HandlerResult result = new HandlerResult();
+            HandlerResponse result = new HandlerResponse();
             result.Result = resultCode;
             result.Message = Message;
             return result.ToString();

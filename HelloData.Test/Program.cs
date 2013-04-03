@@ -51,13 +51,16 @@ namespace HelloData.Test
             ////事务处理多个操作 
             //cms_userManager.Instance.MulitTest("1,2,3,4,5");
             //// 新增demo
-            //cms_userManager.Instance.Save(new cms_user()
-            //{
-            //    username = "test" + DateTime.Now.Millisecond,
-            //    password = "123456",
-            //    phone = "",
-            //    isadmin = true
-            //});
+            cms_userManager.Instance.Save(new cms_user()
+            {
+               
+                username = "test" + DateTime.Now.Millisecond,
+                password = "123456",
+                phone = "",
+                isadmin = true,
+                //主键一定要加入
+                id=12
+            });
             cms_userManager.Instance.InsertNew(new cms_user() {phone = "123"});
 
 

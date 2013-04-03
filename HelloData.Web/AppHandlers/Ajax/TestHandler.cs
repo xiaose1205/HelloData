@@ -29,9 +29,9 @@ namespace HelloData.Web.AppHandlers
             return new TestHandler();
         }
 
-        public HandlerResult Do()
+        public HandlerResponse Do()
         {
-            return new HandlerResult().DefaultResult();
+            return new HandlerResponse().GetDefaultResponse();
         }
 
         public override string HandlerName
