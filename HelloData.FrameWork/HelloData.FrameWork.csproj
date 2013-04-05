@@ -83,6 +83,7 @@
     <Compile Include="Data\Linq\DynamicQueryable.cs" />
     <Compile Include="Data\Linq\ExpressionVisitor.cs" />
     <Compile Include="Data\Linq\PartialEvaluator.cs" />
+    <Compile Include="Data\NullEntity.cs" />
     <Compile Include="Data\ViewHelper.cs" />
     <Compile Include="Helpers\HandlerResult.cs" />
     <Compile Include="Data\Helper\MySqlHelper.cs" />

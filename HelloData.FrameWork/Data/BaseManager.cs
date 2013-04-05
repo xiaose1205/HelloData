@@ -6,7 +6,7 @@ using System.Text;
 namespace HelloData.FrameWork.Data
 {
     /// <summary>
-    /// 全局唯一实例化，并自动创建部分代码，最主要是重写下BaseLogic里面的CreateOtherParms,如：CreateOtherParms(),后在调用base.save();
+    /// 全局唯一实例化，并自动创建部分代码 
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <typeparam name="TU"></typeparam>

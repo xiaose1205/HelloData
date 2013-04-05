@@ -74,7 +74,7 @@ namespace HelloData.Test
             //                                        id = 12,
             //                                        createtime = null
             //                                    });
-            ////自定义视图的操作
+            //自定义视图的操作
             //cms_user viewmodel = cms_userManager.Instance.viewtestModel();
             //if (viewmodel != null)
             //    Console.WriteLine("-->VIEWusername:" + viewmodel.username + "    VIEWid:" + viewmodel.id);

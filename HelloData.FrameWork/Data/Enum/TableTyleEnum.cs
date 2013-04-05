@@ -14,6 +14,10 @@ namespace HelloData.FrameWork.Data.Enum
         /// <summary>
         /// 视图
         /// </summary>
-        View = 1
+        View = 1,
+        /// <summary>
+        /// NULL表结构，为空
+        /// </summary>
+        None=2
     }
 }
