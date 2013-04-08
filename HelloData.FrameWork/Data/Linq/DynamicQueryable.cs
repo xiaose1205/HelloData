@@ -91,14 +91,14 @@ namespace HelloData.FrameWork.Data
         /// <param name="action"></param>
         /// <param name="iExpression">直接添加实体类</param>
         /// <returns></returns>
-        public static LinqQueryAction<T> SqlInValues<T>(this LinqQueryAction<T> action,
-                                                       Expression<Func<T, List<T>>> iExpression)
+        public static LinqQueryAction InsertList(this LinqQueryAction action,
+                                                       Expression<Func<List<BaseEntity>>> iExpression)
         {
             ConditionBuilder conditionBuilder = new ConditionBuilder();
             conditionBuilder.Build(iExpression.Body);
             if (conditionBuilder.Arguments.Length > 0)
             {
-                List<BaseEntity> entities = ((List<T>)conditionBuilder.Arguments[0]).Cast<BaseEntity>().ToList();
+                List<BaseEntity> entities = ((List<BaseEntity>)conditionBuilder.Arguments[0]).Cast<BaseEntity>().ToList();
                 ((InserAction)action.CAction).InsertList(entities);
             }
             return action;

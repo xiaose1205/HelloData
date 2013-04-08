@@ -29,9 +29,9 @@ namespace HelloData.Test
             //设置第一个数据库
             AppCons.SetDefaultConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString1"]);
             //设置第二个数据库
-            //AppCons.SetSecondConnect(new MySqlHelper(), ConfigurationManager.AppSettings["ConnectionString1"]);
+            AppCons.SetSecondConnect(new MySqlHelper(), ConfigurationManager.AppSettings["ConnectionString1"]);
             //设置更多个数据库
-            //AppCons.SetMoreConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString2"]);
+            AppCons.SetMoreConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString2"]);
             //是否需要数据库全局参数化
             AppCons.IsParmes = false;
             //是否数据库操作的缓存
@@ -60,9 +60,7 @@ namespace HelloData.Test
                 isadmin = true,
                 //主键一定要加入
                 id=12
-            });
-            cms_userManager.Instance.InsertNew(new cms_user() {phone = "123"});
-
+            }); 
 
             //if (cms_userManager.Instance.UpdatePwd("1,2,3,4,5") > 0)
             //    Console.WriteLine("success");

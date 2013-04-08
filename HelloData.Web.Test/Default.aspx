@@ -5,15 +5,23 @@
 <head runat="server">
     <title></title>
     <script src="Scripts/lib/jquery-1.8.0.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            text-decoration: underline;
+            color: #CC3300;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <span runat="server" id="spanid"></span>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        <a href="/en-us/default.aspx">english</a> <a href="/zh-cn/default.aspx">中文</a>
-        <a href="WebForm1.aspx">测试页面跳转</a>
-    </div>
+        <div>
+            <span runat="server" id="spanid"></span>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <a href="/en-us/default.aspx">english</a> <a href="/zh-cn/default.aspx">中文</a>
+            <a href="WebForm1.aspx">测试页面跳转</a>
+        </div>
     </form>
+    <span style="text-decoration: underline; color: #CC3300;"><strong>241532755
+    </strong></span>
 </body>
 </html>

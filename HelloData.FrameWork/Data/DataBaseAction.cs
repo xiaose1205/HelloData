@@ -22,7 +22,23 @@ namespace HelloData.FrameWork.Data
             return CAction;
         }
 
+
     }
+    public class LinqQueryAction
+    {
+        internal DataBaseAction CAction { get; set; }
+        /// <summary>
+        /// 回归至操作action
+        /// </summary>
+        /// <returns></returns>
+        public DataBaseAction UnCast()
+        {
+            return CAction;
+        }
+
+
+    }
+
     /// <summary>
     /// 具体的命令操作 ，反射实体类的具体表名及字段名
     /// </summary> 
@@ -37,7 +53,15 @@ namespace HelloData.FrameWork.Data
         {
             return new LinqQueryAction<T>() { CAction = this };
         }
-
+        /// <summary>
+        /// 从action加入至linq操作
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public LinqQueryAction Cast()
+        {
+            return new LinqQueryAction() { CAction = this };
+        }
 
 
         private int _appindex;
@@ -549,7 +573,7 @@ namespace HelloData.FrameWork.Data
 
 
         public OperateEnum CurrentOperate = OperateEnum.None;
-        public string CreateSql(OperateEnum operate, int pagesize, int pageindex)
+        internal string CreateSql(OperateEnum operate, int pagesize, int pageindex)
         {
             CurrentOperate = operate;
             string where = CreateWhereStr();
