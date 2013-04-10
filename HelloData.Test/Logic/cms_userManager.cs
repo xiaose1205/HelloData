@@ -69,17 +69,17 @@ namespace HelloData.Test.Logic
         {
             using (SelectAction action = new SelectAction(Entity))
             {
-                return action.SqlWhere(cms_user.Columns.username, "wang", RelationEnum.LikeLeft)
-                      .QueryEntity<cms_user>();
+                action.SqlWhere(cms_user.Columns.username, "wang", RelationEnum.LikeLeft);
+                return action.QueryEntity<cms_user>();
             }
         }
         public cms_user SelectDemo1()
         {
             using (SelectAction action = new SelectAction(Entity))
             {
-                return action.Cast<cms_user>()
-                      .Where(user1 => user1.username == "wangjun")
-                      .UnCast().QueryEntity<cms_user>();
+                action.Cast<cms_user>()
+                      .Where(user1 => user1.username == "wangjun");
+                return action.QueryEntity<cms_user>();
             }
         }
         /// <summary>
@@ -90,10 +90,9 @@ namespace HelloData.Test.Logic
         {
             using (SelectAction action = new SelectAction(Entity))
             {
-                action.SqlPageParms(30);
-                return action.Cast<cms_user>()
-                      .Where(user1 => user1.username == "wangjun")
-                      .UnCast().QueryPage<cms_user>(3);
+                action.SqlPageParms(30).Cast<cms_user>()
+                      .Where(user1 => user1.username == "wangjun");
+                return action.QueryPage<cms_user>(3);
             }
         }
         /// <summary>

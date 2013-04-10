@@ -32,10 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json.Net20, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\35ToGroup\35ToGroup\35ToGroup\bin\Newtonsoft.Json.Net20.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -55,7 +51,6 @@
     <Compile Include="AppHandlers\Ajax\IAppHandler.cs" />
     <Compile Include="AppHandlers\Ajax\ReflectedController.cs" />
     <Compile Include="AppHandlers\Ajax\TestHandler.cs" />
-    <Compile Include="Cache\CacheHelper.cs" />
     <Compile Include="HttpModules\AjaxHttpModule.cs" />
     <Compile Include="HttpModules\MultiHttpModule.cs" />
     <Compile Include="HttpModules\UrlRewriterModule.cs" />
@@ -86,10 +81,6 @@
     <Folder Include="Config\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HelloData.FrameWork\HelloData.FrameWork.csproj">
-      <Project>{5EBB695E-D6E4-4E48-B4E5-B6A674679019}</Project>
-      <Name>HelloData.FrameWork</Name>
-    </ProjectReference>
     <ProjectReference Include="..\HelloData.FWCommon\HelloData.FWCommon.csproj">
       <Project>{f5ec683a-cb1a-4f7f-b779-e3d4f2a9843f}</Project>
       <Name>HelloData.FWCommon</Name>

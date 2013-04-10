@@ -19,25 +19,25 @@ namespace HelloData.FrameWork.AOP
             if (!AppCons.LogSqlExcu) return;
             _watch.Reset();
             _watch.Start();
-            Logging.Logger.CurrentLog.Info(message);
+            HelloData.FWCommon.Logging.Logger.CurrentLog.Info(message);
         }
         public void LogMessage(string message)
         {
             if (!AppCons.LogSqlExcu) return;
-            Logging.Logger.CurrentLog.Info(message);
+            HelloData.FWCommon.Logging.Logger.CurrentLog.Info(message);
         }
 
         public void End()
         {
             if (!AppCons.LogSqlExcu) return;
-            Logging.Logger.CurrentLog.Info(string.Format("耗时: {0} ms\r\n******", _watch.ElapsedMilliseconds));
+            HelloData.FWCommon.Logging.Logger.CurrentLog.Info(string.Format("耗时: {0} ms\r\n******", _watch.ElapsedMilliseconds));
         }
 
         public void EndWithMeessage(string message)
         {
             if (!AppCons.LogSqlExcu) return;
             _watch.Stop();
-            Logging.Logger.CurrentLog.Info(message);
+            HelloData.FWCommon.Logging.Logger.CurrentLog.Info(message);
         }
     }
 }

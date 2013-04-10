@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Data;
 using System.Reflection;
+using HelloData.FWCommon.Cache;
 using HelloData.FrameWork.Data.Enum;
 namespace HelloData.FrameWork.Data
 {
@@ -21,7 +22,6 @@ namespace HelloData.FrameWork.Data
         {
             return CAction;
         }
-
 
     }
     public class LinqQueryAction
@@ -165,7 +165,7 @@ namespace HelloData.FrameWork.Data
             }
         }
 
-        public void SetDBEntity(BaseEntity entity)
+        public void SetDbEntity(BaseEntity entity)
         {
             _entity = entity;
         }
@@ -512,7 +512,7 @@ namespace HelloData.FrameWork.Data
         protected String CreateWhereStr()
         {
             string wherestr = _whereStr.ToString();
-            if (Cache.CacheHelper.IsOpenCache)
+            if (CacheHelper.IsOpenCache)
                 Cachekeyvalue = wherestr.ToLower().Replace(" ", "").Replace("and", "").Replace("or", "").Trim();
             return wherestr;
         }
@@ -804,15 +804,6 @@ namespace HelloData.FrameWork.Data
         public int ReturnCode = 0;
 
         /// <summary>
-        /// 查询数据
-        /// </summary>
-        /// <returns></returns>
-
-        public virtual object QuerySingle()
-        {
-            return DbHelper.GetSingle(CreateSql(OperateEnum.Select));
-        }
-        /// <summary>
         /// 是否需要当前的查询进入缓存
         /// </summary>
         public bool IsNeedCache = true;
@@ -821,7 +812,7 @@ namespace HelloData.FrameWork.Data
         /// 查询一个实体类
         /// </summary>
         /// <returns></returns> 
-        public virtual T QueryEntity<T>(string sqlStr) where T : new()
+        internal T QueryEntity<T>(string sqlStr) where T : new()
         {
             if (CurrentOperate == OperateEnum.None)
                 _tradstr = sqlStr;
@@ -835,24 +826,24 @@ namespace HelloData.FrameWork.Data
                 {
                     if (dr == null)
                         return default(T);
-                    if (Cache.CacheHelper.IsOpenCache)
+                    if (CacheHelper.IsOpenCache)
                     {
                         string cachekey = string.Format("entity_{2}_{0}_key_{1}",
                             TbName,
                             Cachekeyvalue, _appindex);
                         if (!IsNeedCache)
                         {
-                            Cache.CacheHelper.Remove(cachekey);
+                          CacheHelper.Remove(cachekey);
                             T entity = Sqlcom.GetFromReader<T>(dr, pInfos);
                             return entity;
                         }
                         else
                         {
-                            T entity = Cache.CacheHelper.Get<T>(cachekey);
+                            T entity = CacheHelper.Get<T>(cachekey);
                             if (entity == null)
                             {
                                 entity = Sqlcom.GetFromReader<T>(dr, pInfos);
-                                Cache.CacheHelper.Insert(cachekey, entity);
+                              CacheHelper.Insert(cachekey, entity);
                             }
                             return entity;
                         }
@@ -866,14 +857,14 @@ namespace HelloData.FrameWork.Data
         /// <summary>
         /// 查询一个实体类
         /// </summary>
-        /// <returns></returns> 
-        public virtual T QueryEntity<T>() where T : new()
+        /// <returns></returns>  
+        internal T QueryEntity<T>() where T : new()
         {
             return QueryEntity<T>(CreateSql(OperateEnum.Select));
         }
 
 
-        public virtual IDataReader QueryDataReader()
+        internal IDataReader QueryDataReader()
         {
             return DbHelper.ExecuteReader(CreateSql(OperateEnum.Select));
         }
@@ -884,7 +875,7 @@ namespace HelloData.FrameWork.Data
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
 
-        public virtual PageList<T> QueryPage<T>(int pageindex) where T : new()
+        internal PageList<T> QueryPage<T>(int pageindex) where T : new()
         {
             return QueryPage<T>(pageindex, PageSize);
         }
@@ -894,19 +885,19 @@ namespace HelloData.FrameWork.Data
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
 
-        public virtual PageList<T> QueryPage<T>(int pageindex, int pagesize) where T : new()
+        internal PageList<T> QueryPage<T>(int pageindex, int pagesize) where T : new()
         {
             PageList<T> lists = new PageList<T>();
             int totalcount = 0;
             DbHelper.Parameters = Parameters;
-            if (Cache.CacheHelper.IsOpenCache)
+            if (CacheHelper.IsOpenCache)
             {
                 string cachekey = string.Format("entity_{4}_{0}_key_{1}_{2}_{3}",
                     TbName,
                     Cachekeyvalue,
                     pageindex,
                     pagesize, _appindex);
-                PageList<T> entitys = Cache.CacheHelper.Get<PageList<T>>(cachekey);
+                PageList<T> entitys = CacheHelper.Get<PageList<T>>(cachekey);
                 if (entitys == null || entitys.Count == 0)
                 {
                     DataTable dt = DbHelper.CreatePage(CreateSql(OperateEnum.SelectPage, pagesize, pageindex), this._selcountstr, out totalcount);
@@ -916,7 +907,7 @@ namespace HelloData.FrameWork.Data
                         lists.AddRange(from DataRow dr in dt.Rows select Sqlcom.GetFromReader<T>(dr, pInfos));
                         lists.TotalCount = totalcount;
                         lists.TotalPage = totalcount / pagesize + (totalcount % pagesize > 0 ? 1 : 0);
-                        Cache.CacheHelper.Insert(cachekey, lists);
+                      CacheHelper.Insert(cachekey, lists);
                     }
                 }
                 else
@@ -937,16 +928,16 @@ namespace HelloData.FrameWork.Data
         }
 
 
-        public virtual List<T> QueryList<T>(string sqlStr) where T : new()
+        internal List<T> QueryList<T>(string sqlStr) where T : new()
         {
             _tradstr = sqlStr;
             List<T> lists = new List<T>();
             DbHelper.Parameters = Parameters;
             CreateWhereStr(sqlStr);
-            if (Cache.CacheHelper.IsOpenCache)
+            if (CacheHelper.IsOpenCache)
             {
                 string cachekey = string.Format("entity_{0}_key_{1}", TbName, Cachekeyvalue);
-                List<T> entitys = Cache.CacheHelper.Get<List<T>>(cachekey);
+                List<T> entitys = CacheHelper.Get<List<T>>(cachekey);
                 if (entitys == null || entitys.Count == 0)
                 {
                     DataTable dt = DbHelper.ExeDataTable(sqlStr);
@@ -954,7 +945,7 @@ namespace HelloData.FrameWork.Data
                     {
                         Dictionary<string, PropertyInfo> pInfos = Sqlcom.MappingToProperty<T>(dt);
                         lists.AddRange(from DataRow dr in dt.Rows select Sqlcom.GetFromReader<T>(dr, pInfos));
-                        Cache.CacheHelper.Insert(cachekey, lists);
+                      CacheHelper.Insert(cachekey, lists);
                     }
                 }
                 else
@@ -975,7 +966,7 @@ namespace HelloData.FrameWork.Data
         {
             if (sqlStr != null)
             {
-                if (Cache.CacheHelper.IsOpenCache)
+                if (CacheHelper.IsOpenCache)
                     Cachekeyvalue = sqlStr.ToLower().Replace(" ", "").Replace("and", "").Replace("or", "").Trim();
                 return sqlStr;
             }

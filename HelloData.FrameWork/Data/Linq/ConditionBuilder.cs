@@ -39,7 +39,7 @@ namespace HelloData.FrameWork.Data.Linq
 
             this.m_arguments = new List<object>();
             this.m_conditionParts = new Stack<string>();
-
+            ConObjects = new List<object>();
             this.Visit(evaluatedExpression);
 
             this.Arguments = this.m_arguments.ToArray();
@@ -47,7 +47,7 @@ namespace HelloData.FrameWork.Data.Linq
                 this.Condition = this.m_conditionParts.Count > 0 ? this.m_conditionParts.Pop() : null;
             else
             {
-                ConObjects = new List<object>();
+             
                 foreach (var mConditionPart in m_conditionParts)
                 {
                     this.Condition += mConditionPart + " ,";

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HelloData.FWCommon;
 
 namespace HelloData.FrameWork.Data
 {

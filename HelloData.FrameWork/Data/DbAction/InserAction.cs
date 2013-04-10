@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using HelloData.FWCommon.Cache;
 
 namespace HelloData.FrameWork.Data
 {
@@ -50,7 +51,7 @@ namespace HelloData.FrameWork.Data
                 return this;
             }
 
-            Cache.CacheHelper.RemoveByPreFix(string.Format("entity_{0}", this.TbName));
+          CacheHelper.RemoveByPreFix(string.Format("entity_{0}", this.TbName));
             DbHelper.Parameters = this.Parameters;
             ReturnCode = DbHelper.ExecuteSql(BuildSql());
             return this;
@@ -62,7 +63,7 @@ namespace HelloData.FrameWork.Data
         public void ExcuteIdentity()
         {
 
-            Cache.CacheHelper.RemoveByPreFix(string.Format("entity_{0}", this.TbName));
+          CacheHelper.RemoveByPreFix(string.Format("entity_{0}", this.TbName));
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(BuildSql());
             sb.AppendLine(DbHelper.SELECTIDENTITY);

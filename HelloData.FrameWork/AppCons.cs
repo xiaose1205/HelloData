@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Data.Common;
+using HelloData.FWCommon.Cache;
 using HelloData.FrameWork.Data;
-using HelloData.FrameWork.Cache;
+ 
 
 namespace HelloData.FrameWork
 {

@@ -81,7 +81,7 @@ namespace HelloData.FrameWork.Data
             ConditionBuilder conditionBuilder = new ConditionBuilder();
             conditionBuilder.Build(iExpression.Body);
             if (conditionBuilder.ConObjects.Count > 0)
-                action.CAction.SetDBEntity((BaseEntity)conditionBuilder.ConObjects[0]);
+                action.CAction.SetDbEntity((BaseEntity)conditionBuilder.ConObjects[0]);
             return action;
         }
         /// <summary>

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using HelloData.FWCommon.Cache;
+using HelloData.FWCommon.Logging;
 using HelloData.FrameWork;
 using HelloData.FrameWork.Logging;
 using HelloData.FrameWork.Data;
 using System.Configuration;
 using HelloData.Test.Logic;
-using HelloData.Test.Entity;
-using HelloData.FrameWork.Cache;
+using HelloData.Test.Entity; 
 using HelloData.FrameWork.Data.Helper;
 
 namespace HelloData.Test
@@ -28,10 +29,10 @@ namespace HelloData.Test
             AppCons.LogSqlExcu = true;
             //设置第一个数据库
             AppCons.SetDefaultConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString1"]);
-            //设置第二个数据库
-            AppCons.SetSecondConnect(new MySqlHelper(), ConfigurationManager.AppSettings["ConnectionString1"]);
-            //设置更多个数据库
-            AppCons.SetMoreConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString2"]);
+            ////设置第二个数据库
+            //AppCons.SetSecondConnect(new MySqlHelper(), ConfigurationManager.AppSettings["ConnectionString1"]);
+            ////设置更多个数据库
+            //AppCons.SetMoreConnect(new SQLliteHelper(), ConfigurationManager.AppSettings["ConnectionString2"]);
             //是否需要数据库全局参数化
             AppCons.IsParmes = false;
             //是否数据库操作的缓存
@@ -48,8 +49,7 @@ namespace HelloData.Test
 
 
 
-            ////事务处理多个操作 
-            //cms_userManager.Instance.MulitTest("1,2,3,4,5");
+            cms_userManager.Instance.SelectDemo();
             //// 新增demo
             cms_userManager.Instance.Save(new cms_user()
             {

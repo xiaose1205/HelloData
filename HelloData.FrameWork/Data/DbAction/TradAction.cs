@@ -22,7 +22,7 @@ namespace HelloData.FrameWork.Data
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlStr"></param>
         /// <returns></returns>
-        public override T QueryEntity<T>(string sqlStr)
+        public T QueryEntity<T>(string sqlStr) where T : new()
         {
             return base.QueryEntity<T>(sqlStr);
         }
@@ -32,7 +32,7 @@ namespace HelloData.FrameWork.Data
         /// <typeparam name="T"></typeparam>
         /// <param name="sqlStr"></param>
         /// <returns></returns>
-        public override List<T> QueryList<T>(string sqlStr)
+        public List<T> QueryList<T>(string sqlStr) where T : new()
         {
             return base.QueryList<T>(sqlStr);
         }
