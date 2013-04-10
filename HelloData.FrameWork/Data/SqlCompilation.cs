@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Reflection;
-using HelloData.FrameWork.Logging;
+using HelloData.FWCommon.Logging;
 using HelloData.FrameWork.Data.Enum;
 
 namespace HelloData.FrameWork.Data

@@ -21,7 +21,9 @@ using System.Threading;
 using System.Web;
 using System.Web.SessionState;
 using HelloData.AppHandlers;
-using HelloData.FrameWork;
+using HelloData.FWCommon;
+using HelloData.FWCommon.Logging;
+
 
 namespace HelloData.Web.AppHandlers
 {
@@ -61,7 +63,7 @@ namespace HelloData.Web.AppHandlers
                 if (ex is ThreadAbortException)
                 { }
 
-                //HelloData.FrameWork.Logging.Logger.CurrentLog.Error(ex.Message, ex);
+               Logger.CurrentLog.Error(ex.Message, ex);
             }
         }
 

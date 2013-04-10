@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections.Specialized;
 using System.Web;
 using System.Reflection;
-using HelloData.FrameWork.Logging;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Collections;
 using System.Web.UI.HtmlControls;
-using HelloData.FrameWork.Data;
-
+using HelloData.FWCommon.Logging;
+ 
 namespace HelloData.Web.Page
 {
     public enum Method
@@ -164,7 +159,7 @@ namespace HelloData.Web.Page
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T BindFormToObject<T>(string pre) where T : new()
+      /*  public T BindFormToObject<T>(string pre) where T : new()
         {
             T data = new T();
             Type tType = typeof(T);
@@ -189,7 +184,7 @@ namespace HelloData.Web.Page
                 Logger.CurrentLog.Error(ex.Message, ex);
             }
             return default(T);
-        }
+        }*/
         /// <summary>
         /// 自动创建postform值(name值要跟实体类的属性一致)
         /// </summary>

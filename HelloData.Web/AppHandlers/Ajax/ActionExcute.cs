@@ -16,13 +16,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
 using HelloData.AppHandlers;
-using HelloData.FrameWork;
+using HelloData.FWCommon;
+using HelloData.FWCommon.Reflection;
+
 
 namespace HelloData.Web.AppHandlers
 {
@@ -41,7 +41,6 @@ namespace HelloData.Web.AppHandlers
             /*将数据转换到字典*/
             JavaScriptSerializer jss = new JavaScriptSerializer();
             Dictionary<string, object> dictionary = jss.Deserialize<Dictionary<string, object>>(bodyText);
-            Dictionary<string, object> stores = new Dictionary<string, object>();
             object[] parameters = new object[parameterInfos.Length];
             int index = 0;
             foreach (ParameterInfo info in parameterInfos)
@@ -49,8 +48,8 @@ namespace HelloData.Web.AppHandlers
                 parameters[index] = AddValueToPamars(info.Name, info.ParameterType, dictionary);
                 index++;
             }
-
-            object result = methodInfo.Invoke(instance, parameters);
+            var invoker = FastReflectionCaches.MethodInvokerCache.Get(methodInfo);
+            object result = invoker.Invoke(instance, parameters);
             return (HandlerResponse)result;
         }
 

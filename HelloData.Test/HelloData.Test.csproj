@@ -68,6 +68,10 @@
       <Name>HelloData.FrameWork</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
+    <ProjectReference Include="..\HelloData.FWCommon\HelloData.FWCommon.csproj">
+      <Project>{f5ec683a-cb1a-4f7f-b779-e3d4f2a9843f}</Project>
+      <Name>HelloData.FWCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HelloData.FWExtend\HelloData.FWExtend.csproj">
       <Project>{CB0F7681-05BE-4E5C-B656-41157D4B9656}</Project>
       <Name>HelloData.FWExtend</Name>

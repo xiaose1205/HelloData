@@ -5,7 +5,7 @@ D:\自己的产品\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.dll
 D:\自己的产品\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\bin\Debug\HelloData.FWCommon.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\bin\Debug\HelloData.FWCommon.pdb
-D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\bin\Debug\Aspose.Cells.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.pdb
-D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\obj\Debug\HelloData.FWCommon.csprojResolveAssemblyReference.cache
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\bin\Debug\log4net.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FWCommon\bin\Debug\Newtonsoft.Json.dll

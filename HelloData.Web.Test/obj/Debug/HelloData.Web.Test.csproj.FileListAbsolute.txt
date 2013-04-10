@@ -43,8 +43,7 @@ D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\HelloData.Web.
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\HelloData.FrameWork.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\HelloData.FWCommon.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\log4net.dll
-D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\Newtonsoft.Json.Net20.dll
-D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\Aspose.Cells.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\HelloData.Web.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\HelloData.FrameWork.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\HelloData.FWCommon.pdb
+D:\自己的产品\HelloData_Git\HelloData\HelloData.Web.Test\bin\Newtonsoft.Json.dll

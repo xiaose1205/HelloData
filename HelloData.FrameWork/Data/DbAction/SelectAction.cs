@@ -55,7 +55,7 @@ namespace HelloData.FrameWork.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public override PageList<T> QueryPage<T>(int pageindex)
+        public PageList<T> QueryPage<T>(int pageindex) where T : new()
         {
             return base.QueryPage<T>(pageindex);
         }
@@ -65,7 +65,7 @@ namespace HelloData.FrameWork.Data
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public override PageList<T> QueryPage<T>(int pageindex, int pagesize)
+        public PageList<T> QueryPage<T>(int pageindex, int pagesize) where T : new()
         {
             return base.QueryPage<T>(pageindex, pagesize);
         }

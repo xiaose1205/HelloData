@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="ExportExcle.cs" />
     <Compile Include="MemberSqliteHelper.cs" />
+    <Compile Include="NLog.cs" />
     <Compile Include="RedisCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

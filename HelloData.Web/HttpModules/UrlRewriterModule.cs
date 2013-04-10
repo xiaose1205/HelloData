@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Xml;
+using HelloData.FrameWork.Cache;
 
 namespace HelloData.Web.HttpModules
 {
@@ -108,9 +109,9 @@ namespace HelloData.Web.HttpModules
 
         private SiteUrls()
         {
-            if (Web.Cache.CacheHelper.IsOpenCache)
+            if (  CacheHelper.IsOpenCache)
             {
-                Urls = Web.Cache.CacheHelper.Get<ArrayList>("rewrite");
+                Urls =  CacheHelper.Get<ArrayList>("rewrite");
                 if (Urls == null)
                 {
                     Urls = new ArrayList();
@@ -138,7 +139,7 @@ namespace HelloData.Web.HttpModules
                                 }
                             }
                         }
-                    Web.Cache.CacheHelper.Insert("rewrite", Urls);
+                     CacheHelper.Insert("rewrite", Urls);
                 }
             }
             else

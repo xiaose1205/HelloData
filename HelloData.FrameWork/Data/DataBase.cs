@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using HelloData.FWCommon.Logging;
 using HelloData.FrameWork.AOP;
 namespace HelloData.FrameWork.Data
 {
@@ -114,7 +115,7 @@ namespace HelloData.FrameWork.Data
                     foreach (DataParameter item in Parameters)
                     {
                         if (AppCons.LogSqlExcu)
-                            Logging.Logger.CurrentLog.Info(string.Format("parms:{0};value:{1}", item.ParameterName, item.Value));
+                           Logger.CurrentLog.Info(string.Format("parms:{0};value:{1}", item.ParameterName, item.Value));
                         DbParameter newParameter = GetNewParameter();
                         newParameter.ParameterName = item.ParameterName;
                         newParameter.Value = item.Value;
@@ -169,13 +170,13 @@ namespace HelloData.FrameWork.Data
 
 
 
-            if (Logging.Logger.Current.IsOpenLog)
+            if (Logger.Current.IsOpenLog)
             {
-                Logging.Logger.CurrentLog.Error(errMsg, ex);
+                Logger.CurrentLog.Error(errMsg, ex);
                 if (Parameters != null)
                     foreach (var item in Parameters)
                     {
-                        Logging.Logger.CurrentLog.Info(string.Format("parms:{0};value:{1}", item.ParameterName, item.Value));
+                        Logger.CurrentLog.Info(string.Format("parms:{0};value:{1}", item.ParameterName, item.Value));
                     }
             }
             _watch.LogMessage(string.Format("执行异常，计时器停止。"));
@@ -267,7 +268,7 @@ namespace HelloData.FrameWork.Data
                         OpenCon(currentConnet);
                         num = command.ExecuteNonQuery();
                         _watch.End();
-                        Logging.Logger.CurrentLog.Info("ExecuteSql Is Success!Result(int):" + num + "");
+                        Logger.CurrentLog.Info("ExecuteSql Is Success!Result(int):" + num + "");
                     }
                 }
             }
@@ -298,7 +299,7 @@ namespace HelloData.FrameWork.Data
                         command.CommandType = CommandType.StoredProcedure;
                         num = command.ExecuteNonQuery();
                         _watch.End();
-                        Logging.Logger.CurrentLog.Info("ExecuteStoredProcedure Is Success!Result(int):" + num + "");
+                        Logger.CurrentLog.Info("ExecuteStoredProcedure Is Success!Result(int):" + num + "");
                     }
                 }
             }
@@ -338,7 +339,7 @@ namespace HelloData.FrameWork.Data
                                                        Value = par.Value
                                                    });
                         _watch.End();
-                        Logging.Logger.CurrentLog.Info("ExecuteStoredProcedure Is Success!Result(int):" + num + "");
+                        Logger.CurrentLog.Info("ExecuteStoredProcedure Is Success!Result(int):" + num + "");
                     }
                 }
             }
@@ -367,7 +368,7 @@ namespace HelloData.FrameWork.Data
                         OpenCon(currentConnet);
                         obj = command.ExecuteScalar();
                         _watch.End();
-                        Logging.Logger.CurrentLog.Info("getSingle Is Success!Result(object):" + obj + "");
+                        Logger.CurrentLog.Info("getSingle Is Success!Result(object):" + obj + "");
                     }
                 }
             }
@@ -432,7 +433,7 @@ namespace HelloData.FrameWork.Data
 
                         adapter.Fill(dataTable);
                         _watch.End();
-                        Logging.Logger.CurrentLog.Info("ExeDataTable Is Success!Result(datatable):" + dataTable.Rows.Count + "");
+                        Logger.CurrentLog.Info("ExeDataTable Is Success!Result(datatable):" + dataTable.Rows.Count + "");
                     }
                 }
             }
@@ -471,14 +472,14 @@ namespace HelloData.FrameWork.Data
                             { 
                                 int res=command.ExecuteNonQuery();
                                 num += res;
-                                Logging.Logger.CurrentLog.Info("ExeDataTable Is Success!Result(int));" + res + "");
+                                Logger.CurrentLog.Info("ExeDataTable Is Success!Result(int));" + res + "");
                             }
                           
                         }
                     }
 
                     _watch.End();
-                    Logging.Logger.CurrentLog.Info("ExecuteTransaction Is Success!Result(int):" + num + "");
+                    Logger.CurrentLog.Info("ExecuteTransaction Is Success!Result(int):" + num + "");
 
                 }
             }

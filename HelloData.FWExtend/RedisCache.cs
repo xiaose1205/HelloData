@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using HelloData.FrameWork.Cache;
+using HelloData.FWCommon.Cache; 
 using ServiceStack.Redis;
 using System.IO;
 using System.Runtime.Serialization;

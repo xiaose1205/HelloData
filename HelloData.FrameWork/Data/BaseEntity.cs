@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HelloData.FWCommon;
 using HelloData.FrameWork.Data.Enum;
 
 namespace HelloData.FrameWork.Data
