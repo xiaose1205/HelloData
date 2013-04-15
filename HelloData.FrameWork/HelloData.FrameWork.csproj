@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AOP\AopEnum.cs" />
     <Compile Include="AOP\AopTimer.cs" />
     <Compile Include="AppCons.cs" />
     <Compile Include="Data\BaseEntity.cs" />

@@ -47,6 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AOP\AspectAttribute.cs" />
+    <Compile Include="AOP\DynamicProxyGenerator.cs" />
+    <Compile Include="AOP\Interface\IAdvice.cs" />
+    <Compile Include="AOP\Interface\IMethodAfterAdvice.cs" />
+    <Compile Include="AOP\Interface\IBeforeAdvice.cs" />
+    <Compile Include="AOP\Interface\IInterceptor.cs" />
+    <Compile Include="AOP\Interface\IMethodBeforeAdvice.cs" />
+    <Compile Include="AOP\Interface\IMethodInterceptor.cs" />
+    <Compile Include="AOP\Interface\IMethodThrowsAdvice.cs" />
+    <Compile Include="AOP\InvokeContext.cs" />
+    <Compile Include="AOP\Metadata\ExceptionMetadata.cs" />
+    <Compile Include="AOP\Metadata\MethodMetadata.cs" />
+    <Compile Include="AOP\Metadata\ParameterMetadata.cs" />
+    <Compile Include="AOP\Metadata\ResultMetadata.cs" />
+    <Compile Include="AOP\ProxyFactory.cs" />
     <Compile Include="Cache\CacheHelper.cs" />
     <Compile Include="Cache\ICache.cs" />
     <Compile Include="Cache\WebCache.cs" />
@@ -105,7 +120,9 @@
     <Compile Include="Utils\TypeConverter.cs" />
     <Compile Include="Utils\WebUtils.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="AOP\demo.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -31,7 +31,51 @@ namespace HelloData.FWCommon.Reflection
     */
     public class ReflectionMSIL
     {
-        public static FastInvokeHandler GetMethodInvoker(MethodInfo methodInfo)
+        private static readonly Dictionary<string, FastInvokeHandler> SDict = new Dictionary<string, FastInvokeHandler>();
+        private static readonly object SSyncHelper = new object();
+
+        static object InvokeMethod(FastInvokeHandler invoke, object target, params object[] paramters)
+        {
+            return invoke(target, paramters);
+        }
+
+        internal static void GenerateMethodKey(StringBuilder sb, MethodInfo mi)
+        {
+            sb.Append(mi.Module.FullyQualifiedName);
+            sb.Append("||");
+            sb.Append(mi.DeclaringType.FullName);
+            sb.Append("||");
+            sb.Append(mi.Name);
+        }
+
+        static string GenerateMethodKey(MethodInfo mi)
+        {
+            StringBuilder sb = new StringBuilder();
+            GenerateMethodKey(sb, mi);
+            return sb.ToString();
+        }
+
+        public static FastInvokeHandler Get(MethodInfo methodInfo)
+        {
+            FastInvokeHandler invc = null;
+            string cacheKey = GenerateMethodKey(methodInfo);
+
+            if (!SDict.TryGetValue(cacheKey, out invc))
+            {
+                lock (SSyncHelper)
+                {
+                    if (!SDict.TryGetValue(GenerateMethodKey(methodInfo), out invc))
+                    {
+                        invc = GetImpl(methodInfo);
+                        SDict.Add(cacheKey, invc);
+                    }
+                }
+            }
+
+            return invc;
+        }
+
+        private static FastInvokeHandler GetImpl(MethodInfo methodInfo)
         {
             DynamicMethod dynamicMethod = new DynamicMethod(string.Empty, typeof(object), new Type[] { typeof(object), typeof(object[]) }, methodInfo.DeclaringType.Module);
             ILGenerator il = dynamicMethod.GetILGenerator();
@@ -96,7 +140,7 @@ namespace HelloData.FWCommon.Reflection
             return invoder;
         }
 
-        public static void EmitCastToReference(ILGenerator il, System.Type type)
+        private static void EmitCastToReference(ILGenerator il, System.Type type)
         {
             if (type.IsValueType)
             {
@@ -108,7 +152,7 @@ namespace HelloData.FWCommon.Reflection
             }
         }
 
-        public static void EmitBoxIfNeeded(ILGenerator il, System.Type type)
+        private static void EmitBoxIfNeeded(ILGenerator il, System.Type type)
         {
             if (type.IsValueType)
             {
@@ -116,7 +160,7 @@ namespace HelloData.FWCommon.Reflection
             }
         }
 
-        public static void EmitFastInt(ILGenerator il, int value)
+        private static void EmitFastInt(ILGenerator il, int value)
         {
             switch (value)
             {
@@ -162,5 +206,4 @@ namespace HelloData.FWCommon.Reflection
             }
         }
     }
-
 }
