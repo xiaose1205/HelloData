@@ -70,3 +70,6 @@ D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\bin\Debug\HelloData.Fr
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\bin\Debug\HelloData.FWExtend.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\obj\x86\Debug\HelloData.Test.csprojResolveAssemblyReference.cache
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\bin\Debug\Newtonsoft.Json.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\bin\Debug\HelloData.FWCommon.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\bin\Debug\Aspose.Cells.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.Test\bin\Debug\HelloData.FWCommon.pdb

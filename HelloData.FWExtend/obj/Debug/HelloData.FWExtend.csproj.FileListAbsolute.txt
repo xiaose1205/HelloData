@@ -27,3 +27,6 @@ D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\obj\Debug\HelloDat
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\obj\Debug\HelloData.FWExtend.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\obj\Debug\HelloData.FWExtend.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\Newtonsoft.Json.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\Aspose.Cells.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\HelloData.FWCommon.dll
+D:\自己的产品\HelloData_Git\HelloData\HelloData.FWExtend\bin\Debug\HelloData.FWCommon.pdb

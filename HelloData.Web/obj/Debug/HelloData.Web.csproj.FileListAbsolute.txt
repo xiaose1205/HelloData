@@ -41,12 +41,10 @@ D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FWCommon.dll
 D:\自己的产品\HelloData\HelloData.Web\bin\Debug\HelloData.FWCommon.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\HelloData.Web.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\HelloData.Web.pdb
-D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\HelloData.FrameWork.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\HelloData.FWCommon.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\log4net.dll
-D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\Aspose.Cells.dll
-D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\HelloData.FrameWork.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\HelloData.FWCommon.pdb
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\obj\Debug\HelloData.Web.csprojResolveAssemblyReference.cache
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\obj\Debug\HelloData.Web.dll
 D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\obj\Debug\HelloData.Web.pdb
+D:\自己的产品\HelloData_Git\HelloData\HelloData.Web\bin\Debug\Newtonsoft.Json.dll
