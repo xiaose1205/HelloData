@@ -209,13 +209,13 @@ namespace HelloData.FWCommon.AOP
 
             #endregion
             //var classInfoLocal1 = _realProxyType.GetType();
-            //ArrountAttribute preAspectLocal1 =
-            //    (ArrountAttribute)Attribute.GetCustomAttribute(classInfoLocal1, typeof(ArrountAttribute));
+            //ArroundAttribute preAspectLocal1 =
+            //    (ArroundAttribute)Attribute.GetCustomAttribute(classInfoLocal1, typeof(ArroundAttribute));
             /*
              * C# 代码
              * MethodInfo classInfoLocal = _realProxyField.GetType().GetMethod("methodName");
-             * ArrountAttribute preAspectLocal = 
-             *      (ArrountAttribute)Attribute.GetCustomAttribute(classInfoLocal, typeof(ArrountAttribute))
+             * ArroundAttribute preAspectLocal = 
+             *      (ArroundAttribute)Attribute.GetCustomAttribute(classInfoLocal, typeof(ArroundAttribute))
              *      
              * if (preAspectLocal != null)
              * {
@@ -225,7 +225,7 @@ namespace HelloData.FWCommon.AOP
              */
 
             var classInfoLocal = il.DeclareLocal(_realProxyField.GetType());
-            LocalBuilder arrountAspectLocal = il.DeclareLocal(typeof(ArrountAttribute));
+            LocalBuilder arrountAspectLocal = il.DeclareLocal(typeof(ArroundAttribute));
             if (IsGloab)
             {
                 il.Emit(OpCodes.Ldarg_0);
@@ -255,7 +255,7 @@ namespace HelloData.FWCommon.AOP
                 il.Emit(OpCodes.Ldloc, classInfoLocal);
 
             }
-            il.Emit(OpCodes.Ldtoken, typeof(ArrountAttribute));
+            il.Emit(OpCodes.Ldtoken, typeof(ArroundAttribute));
             //generator.Emit(OpCodes.Ldloca, )
             il.Emit(OpCodes.Call,
                     typeof(System.Type).GetMethod("GetTypeFromHandle", new Type[] { typeof(System.RuntimeTypeHandle) }));
@@ -265,7 +265,7 @@ namespace HelloData.FWCommon.AOP
                                                             {
                                                                 typeof (System.Reflection.MemberInfo), typeof (System.Type)
                                                             }));
-            il.Emit(OpCodes.Castclass, typeof(ArrountAttribute));
+            il.Emit(OpCodes.Castclass, typeof(ArroundAttribute));
             il.Emit(OpCodes.Stloc, arrountAspectLocal);
 
             il.Emit(OpCodes.Ldloc, arrountAspectLocal);
@@ -276,7 +276,7 @@ namespace HelloData.FWCommon.AOP
             il.Emit(OpCodes.Ldloc, arrountAspectLocal);
             il.Emit(OpCodes.Ldloc, contextLocal);
             il.Emit(OpCodes.Callvirt,
-                typeof(ArrountAttribute).GetMethod("BeginAction", new Type[] { typeof(InvokeContext) }));
+                typeof(ArroundAttribute).GetMethod("BeginAction", new Type[] { typeof(InvokeContext) }));
 
             il.MarkLabel(castArroundSuccess);
 
@@ -438,8 +438,8 @@ namespace HelloData.FWCommon.AOP
             /*
              * C# 代码
              * MethodInfo classInfoLocal = _realProxyField.GetType().GetMethod("methodName");
-             * ArrountAttribute postAspectLocal = 
-             *      (ArrountAttribute)Attribute.GetCustomAttribute(classInfoLocal, typeof(ArrountAttribute))
+             * ArroundAttribute postAspectLocal = 
+             *      (ArroundAttribute)Attribute.GetCustomAttribute(classInfoLocal, typeof(ArroundAttribute))
              *      
              * if (postAspectLocal != null)
              * {
@@ -456,7 +456,7 @@ namespace HelloData.FWCommon.AOP
             il.Emit(OpCodes.Ldloc, arrountAspectLocal);
             il.Emit(OpCodes.Ldloc, contextLocal);
             il.Emit(OpCodes.Callvirt,
-                typeof(ArrountAttribute).GetMethod("EndAction", new Type[] { typeof(InvokeContext) }));
+                typeof(ArroundAttribute).GetMethod("EndAction", new Type[] { typeof(InvokeContext) }));
 
             il.MarkLabel(castAfterArroundSuccess);
 
@@ -485,7 +485,7 @@ namespace HelloData.FWCommon.AOP
               */
             // get exception aspect if has
             //var classInfoLocal = generator.DeclareLocal(typeof(System.Reflection.MethodInfo));
-            var exAspectLocal = il.DeclareLocal(typeof(ArrountAttribute));
+            var exAspectLocal = il.DeclareLocal(typeof(ArroundAttribute));
 
             /*   
             il.Emit(OpCodes.Ldarg_0);

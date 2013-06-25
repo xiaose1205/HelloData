@@ -44,7 +44,7 @@ namespace HelloData.FWCommon.AOP
         }
     }
 
-    public class ArroundAttribute : ArrountAttribute
+    public sealed class Arround1Attribute : ArroundAttribute
     {
 
     }

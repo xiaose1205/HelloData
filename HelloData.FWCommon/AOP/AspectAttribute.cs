@@ -34,7 +34,7 @@ namespace HelloData.FWCommon.AOP
     /// 环绕
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class)]
-    public abstract class ArrountAttribute : BaseAttribute
+    public abstract class ArroundAttribute : BaseAttribute
     {
         public virtual void BeginAction(InvokeContext context) { }
         public virtual void EndAction(InvokeContext context) { }

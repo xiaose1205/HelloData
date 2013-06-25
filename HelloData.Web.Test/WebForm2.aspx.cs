@@ -23,7 +23,7 @@ namespace HelloData.Web.Test
             {
                 user ss = new user() { sex = 222, username = "ssssss" };
                 //    RequestVariable.Current.BindObjectToControl("lb_", this, ss);
-                ss = RequestVariable.Current.BindFormToObject<user>("lb_");
+             //   ss = RequestVariable.Current.BindFormToObject<user>("lb_");
             }
         }
     }

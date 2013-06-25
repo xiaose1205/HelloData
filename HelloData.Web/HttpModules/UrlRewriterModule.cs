@@ -5,7 +5,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Xml;
-using HelloData.FrameWork.Cache;
+using HelloData.FWCommon.Cache;
+
 
 namespace HelloData.Web.HttpModules
 {
