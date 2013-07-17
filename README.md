@@ -5,6 +5,7 @@ HelloData分析：
 ,BaseManager<T, TU>,T为操作逻辑类，TU为操作逻辑对象类。继承后当前操作逻辑类为全局唯一实例，使用了单一模式，操作方法也是包含了那些常用的逻辑操作。
 书写Demo:
 
+
  using (DeleteAction delete = new DeleteAction(Entity))
  {
      delete.SqlWhere(cms_user.Columns.id, "1,2,3,4,5", RelationEnum.In);
@@ -36,6 +37,105 @@ using (SelectAction action = new SelectAction(""))
      PageList<cms_user> lists= action.QueryPage<cms_user>(1);
      return null;
  }
+ 
+ 加入linq的支持，事务的操作，及多表关联的操作
+ 
+ 
+ 
+        /// <summary>
+        /// linq方式指定条件插入
+        /// </summary>
+        public void AddDemo2()
+        {
+            using (InserAction action = new InserAction(Entity))
+            {
+                action.Cast<cms_user>()
+                    .SqlValue(u => u.username == "wangjun" && u.password == "123456")
+                      .UnCast().Excute();
+            }
+        }
+        /// <summary>
+        /// 批量插入
+        /// </summary>
+        public void AddDemo3()
+        {
+            using (InserAction action = new InserAction(new NullEntity()))
+            {
+                action.Cast().InsertList(() => new List<BaseEntity>()
+                    {
+                    new cms_user(){username="wangjun",password="123456"},
+                    new TestUser(){}
+                    });
+            }
+        }
+        /// <summary>
+        /// 查询一个实体
+        /// </summary>
+        /// <returns></returns>
+        public cms_user SelectDemo()
+        {
+            using (SelectAction action = new SelectAction(Entity))
+            {
+                action.SqlWhere(cms_user.Columns.username, "wang", RelationEnum.LikeLeft);
+                return action.QueryEntity<cms_user>();
+            }
+        }
+        public cms_user SelectDemo1()
+        {
+            using (SelectAction action = new SelectAction(Entity))
+            {
+                action.Cast<cms_user>()
+                      .Where(user1 => user1.username == "wangjun");
+                return action.QueryEntity<cms_user>();
+            }
+        }
+        /// <summary>
+        /// 获取第3组30条数据
+        /// </summary>
+        /// <returns></returns>
+        public PageList<cms_user> SelectDemo2()
+        {
+            using (SelectAction action = new SelectAction(Entity))
+            {
+                action.SqlPageParms(30).Cast<cms_user>()
+                      .Where(user1 => user1.username == "wangjun");
+                return action.QueryPage<cms_user>(3);
+            }
+        }
+        /// <summary>
+        /// 事务操作
+        /// </summary>
+        public void TranstionDemo()
+        {
+            MultiAction actions = new MultiAction();
+            for (int i = 0; i < 10; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    DeleteAction delete = new DeleteAction(Entity);
+                    delete.Cast<cms_user>().Where(u => u.username == "wangjun");
+                    actions.AddAction(delete);
+                }
+                if (i % 4 == 1)
+                {
+                    UpdateAction update = new UpdateAction(Entity);
+                    update.Cast<cms_user>()
+                        .Where(u => u.username == "wangjun")
+                        .UnCast()
+                        .SqlKeyValue(cms_user.Columns.password, "1234567");
+                    actions.AddAction(update);
+                }
+            }
+            try
+            {
+                actions.Commit();
+            }
+            catch (Exception)
+            {
+                actions.Rollback();
+            }
+        }
+ 
  操作数据库的时候可以加入缓存，缓存现支持webcache,Redis，MemberCache ，后两种可以支持分布式部署操作；
  2、HelloData.FWCommon：包含加密解密；导出操作：txt,csv，excel；序列化与反序列化：二进制，json，soap,xml；
  其他的常用操作，例如：html操作，socket网络爬虫等。
