@@ -5,39 +5,40 @@ HelloData分析：
 ,BaseManager<T, TU>,T为操作逻辑类，TU为操作逻辑对象类。继承后当前操作逻辑类为全局唯一实例，使用了单一模式，操作方法也是包含了那些常用的逻辑操作。
 书写Demo:
 
-
- using (DeleteAction delete = new DeleteAction(Entity))
- {
-     delete.SqlWhere(cms_user.Columns.id, "1,2,3,4,5", RelationEnum.In);
-     delete.Excute();
-     return delete.ReturnCode;
- }
  
-using (UpdateAction update = new UpdateAction(Entity))
- {
-     update.SqlKeyValue(cms_user.Columns.createtime, null);
-     update.SqlKeyValue(cms_user.Columns.password, "123456123");
-     update.Excute();
-     return update.ReturnCode;
- }
- 
-using (SelectAction select = new SelectAction(Entity))
- {
-     if (!string.IsNullOrEmpty(username))
-         select.SqlWhere(cms_user.Columns.username, username, RelationEnum.Like, ConditionEnum.Or);
-     select.SqlPageParms(pageSize);
-     return select.QueryPage<cms_user>(pageIndex);
- }
- 
-using (SelectAction action = new SelectAction(""))
- {
-    
-     action.SqlWhere(cms_user.Columns.username, "admin");
-     action.SqlWhere(cms_user.Columns.password, "123456");
-     PageList<cms_user> lists= action.QueryPage<cms_user>(1);
-     return null;
- }
- 
+          using (DeleteAction delete = new DeleteAction(Entity))
+           {
+               delete.SqlWhere(cms_user.Columns.id, "1,2,3,4,5", RelationEnum.In);
+               delete.Excute();
+               return delete.ReturnCode;
+           }
+           
+          using (UpdateAction update = new UpdateAction(Entity))
+           {
+               update.SqlKeyValue(cms_user.Columns.createtime, null);
+               update.SqlKeyValue(cms_user.Columns.password, "123456123");
+               update.Excute();
+               return update.ReturnCode;
+           }
+           
+          using (SelectAction select = new SelectAction(Entity))
+           {
+               if (!string.IsNullOrEmpty(username))
+                   select.SqlWhere(cms_user.Columns.username, username, RelationEnum.Like, ConditionEnum.Or);
+               select.SqlPageParms(pageSize);
+               return select.QueryPage<cms_user>(pageIndex);
+           }
+           
+          using (SelectAction action = new SelectAction(""))
+           {
+              
+               action.SqlWhere(cms_user.Columns.username, "admin");
+               action.SqlWhere(cms_user.Columns.password, "123456");
+               PageList<cms_user> lists= action.QueryPage<cms_user>(1);
+               return null;
+           }
+           
+           
  加入linq的支持，事务的操作，及多表关联的操作
  
  
